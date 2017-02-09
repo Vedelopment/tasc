@@ -1,0 +1,9 @@
+<%= form_for @student, url: "/sessions", method: "post" do |f| %>
+  <%= f.email_field :email, placeholder: "Email" %>
+  <%= f.password_field :password_digest, placeholder: "Password" %>
+  <div class="row">
+    <div class="col m6 offset-m3">
+      <%= f.submit "Log In", class: "waves-effect waves-light btn-large form-button" %>
+    </div>
+  </div>
+<% end %>
