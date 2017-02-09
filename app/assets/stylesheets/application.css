@@ -12,5 +12,5 @@
  *
  *= require_tree .
  *= require_self
- *= require_materialize-sass
  */
+ @import "materialize";
