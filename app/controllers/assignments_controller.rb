@@ -6,7 +6,7 @@ class AssignmentsController < ApplicationController
   end
 
   def show
-
+    @assignment = Assignment.find_by_id(params[:id])
   end
 
   def new

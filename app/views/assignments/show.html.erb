@@ -1,0 +1,6 @@
+<h1><%= @assignment.title %></h1>
+<h3><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %><h3>
+  <h3>Instructions:</h3>
+<p><%= @assignment.instructions %></p>
+<%= @assignment.assign_date %>
+<%= @assignment.duration %>

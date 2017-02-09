@@ -1087,3 +1087,65 @@ Processing by AssignmentsController#index as HTML
 Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/assignments/1" for 127.0.0.1 at 2017-02-09 12:12:29 -0800
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  Rendered assignments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 27.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assignments/1" for 127.0.0.1 at 2017-02-09 12:13:42 -0800
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  Rendered assignments/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    2: <h3>Due on: <%= @assignment.due_date %><h3>
+    3:   <h3>Instructions:</h3>
+    4: <p><%= @assignment.instructions %></p>
+    5: <%= @assignment.assign_date.strftime("Due on: %m/%d/%Y") %>
+    6: <%= @assignment.duration %>
+  
+app/views/assignments/show.html.erb:5:in `_app_views_assignments_show_html_erb__12385135608025503_70239857474240'
+  Rendering /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/rj/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.0ms)
+Started GET "/assignments/1" for 127.0.0.1 at 2017-02-09 12:13:55 -0800
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  Rendered assignments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assignments/1" for 127.0.0.1 at 2017-02-09 12:14:02 -0800
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  Rendered assignments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assignments/1" for 127.0.0.1 at 2017-02-09 12:14:09 -0800
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  Rendered assignments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
