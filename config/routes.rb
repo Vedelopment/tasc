@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  # About
+  get '/about' => 'about#index'
+
 end
