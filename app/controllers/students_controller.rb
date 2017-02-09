@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @course = Course.find_by_id(params:course_id)
-    @students = Student.all
+    @students = @course.students
   end
 
   def show
@@ -18,7 +18,8 @@ class StudentsController < ApplicationController
     @course = Course.find_by_id(params:course_id)
     student = Student.new(student_params)
       if student.save
-        ** SHOVE student IN student array **
+        # ** SHOVE student IN student array **
+        @course.students << student
         redirect_to student_path(@course, student)
       else
         flash [:error] = student.errors.full_messages.join(". ")
