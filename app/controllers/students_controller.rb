@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
 
   private
 
-  def user_params
+  def student_params
     params.require(:student).permit(:first_name, :last_name, :user_name, :email, :password_digest, :slack, :github, :linkedin)
   end
 
