@@ -6,5 +6,5 @@
 
 <h1>Assignments:</h1>
   <% @course.assignments.each do |a| %>
-  <%= "#{a.title} #{a.due_date}" %>
+  <%= "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}" %>
   <% end %>

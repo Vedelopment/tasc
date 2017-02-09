@@ -970,3 +970,23 @@ Processing by CoursesController#show as HTML
 Completed 200 OK in 225ms (Views: 218.2ms | ActiveRecord: 4.5ms)
 
 
+Started GET "/courses/1" for 127.0.0.1 at 2017-02-09 11:43:14 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = $1[0m  [["course_id", 1]]
+  Rendered courses/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-02-09 11:43:40 -0800
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."course_id" = $1[0m  [["course_id", 1]]
+  Rendered courses/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
