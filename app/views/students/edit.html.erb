@@ -1,0 +1,33 @@
+<h1>Edit Student page</h1>
+<div class="row">
+  <div class="col m6 offset-m3 form">
+    <%= form_for(@student, :url => {:action => 'update', :id => @student.id}) do |f| %>
+    <div class="col m12">
+      <%= f.text_field :first_name, class: "form-control", placeholder: "#{@student.first_name}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :last_name, class: "form-control", placeholder: "#{@student.last_name}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :user_name, class: "form-control", placeholder: "#{@student.user_name}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :email, class: "form-control", placeholder: "#{@student.email}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :slack, class: "form-control", placeholder: "#{@student.slack}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :github, class: "form-control", placeholder: "#{@student.github}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :likedin class: "form-control", placeholder: "#{@student.linkedin}" %>
+    </div>
+    <h3>insert option to change password here.  user should have to correctly enter password to be given an option to change it, need to confirm it after typing it, too.</h3>
+    <div class="col m6 offset-m3">
+      <br>
+      <%= f.submit "Save Post", class: "waves-effect waves-light btn-large form-button" %>
+      <br><br>
+    </div>
+    <% end %>
+  </div>
