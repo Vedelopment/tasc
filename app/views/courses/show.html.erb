@@ -1,0 +1,10 @@
+<div>
+  <h1><%= "#{@course.name} #{@course.number}" %></h1>
+  <h3><%= link_to "Schedule", "https://github.com/sf-wdi-34/schedule#" %></h3>
+</div>
+
+
+<h1>Assignments:</h1>
+  <% Course.assigments.each do |a| %>
+  <%= a.title, a.due_date %>
+  <% end %>

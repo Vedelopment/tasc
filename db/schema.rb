@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 20170209040427) do
     t.datetime "due_date"
     t.float    "duration"
     t.boolean  "visible"
+    t.integer  "course_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["course_id"], name: "index_assignments_on_course_id", using: :btree
   end
 
   create_table "courses", force: :cascade do |t|
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170209040427) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "assignments", "courses"
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
 end
