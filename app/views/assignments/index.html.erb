@@ -1,4 +1,6 @@
-<h1>Assignments for <%= "#{@course.name} #{@course.number}"%></h1>
+<h1>Assignments for <%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h1>
 <% @assignments.each do |a| %>
-  <%= "#{a.title} due on: #{a.due_date.strftime("Due on: %m/%d/%Y")}" %>
+  <div class ="card">
+    <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
+  </div>
 <% end %>
