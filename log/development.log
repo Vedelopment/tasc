@@ -330,3 +330,66 @@ Processing by StudentsController#show as HTML
 Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/courses/1/students/1" for 127.0.0.1 at 2017-02-09 11:24:49 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/Users/michaelblair/wdi/tasc/app/controllers/students_controller.rb:25: syntax error, unexpected '=', expecting keyword_end
+        flash [:error] = student.errors.full_messages.join(". ")
+                        ^):
+  
+app/controllers/students_controller.rb:25: syntax error, unexpected '=', expecting keyword_end
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.6ms)
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.7ms)
+Started GET "/login" for 127.0.0.1 at 2017-02-09 11:25:20 -0800
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 21.3ms)
+
+
+  
+NoMethodError (undefined method `has_mnany' for #<Class:0x007fb6319b5728>
+Did you mean?  has_many):
+  
+app/models/student.rb:5:in `<class:Student>'
+app/models/student.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:3:in `new'
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.8ms)
+Started GET "/login" for 127.0.0.1 at 2017-02-09 11:25:27 -0800
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `has_mnany' for #<Class:0x007fb630196700>
+Did you mean?  has_many):
+  
+app/models/student.rb:5:in `<class:Student>'
+app/models/student.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:3:in `new'
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/michaelblair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.5ms)
+Started GET "/login" for 127.0.0.1 at 2017-02-09 11:26:37 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 384ms (Views: 350.7ms | ActiveRecord: 8.7ms)
+
+
