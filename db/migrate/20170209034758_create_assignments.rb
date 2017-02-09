@@ -7,6 +7,7 @@ class CreateAssignments < ActiveRecord::Migration[5.0]
       t.timestamp :due_date
       t.float :duration
       t.boolean :visible
+      t.references :course, foreign_key: true
 
       t.timestamps
     end

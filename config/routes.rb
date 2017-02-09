@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # Assignments
   get '/courses/:course_id/assignments' => 'assignments#index', as: 'assignments'
-  get '/courses/:course_id/assignments/:id' => 'assignments#show', as: 'assignment'
+  get '/assignments/:id' => 'assignments#show', as: 'assignment'
 
   # Students
   get '/courses/:course_id/students' => 'students#index', as: 'students'
