@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  # About
+  get '/about' => 'about#index' as: 'about'
+
   # Courses
   get '/courses/:id' => 'courses#show', as: 'course'
 
