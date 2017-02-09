@@ -2,16 +2,16 @@
 
 <p>Example 1:</p>
 <% @students.each do |scholar| %>
-  First: <%= link_to "#{scholar.first_name }", student.path(scholar.id) %>
-  Last: <%= link_to "#{scholar.last_name }", student.path(scholar.id) %>
-  User Name: <%= link_to "#{scholar.user_name }", student.path(scholar.id) %>
-  Email: <%= link_to "#{scholar.email }", student.path(scholar.id) %>
-  Slack: <%= link_to "#{scholar.slack }", student.path(scholar.id) %>
-  Github: <%= link_to "#{scholar.github }", student.path(scholar.id) %>
-  Linkedin: <%= link_to "#{scholar.linkedin }", student.path(scholar.id) %>
+  First: <%= link_to "#{scholar.first_name }", student_path(@course, scholar) %>
+  Last: <%= link_to "#{scholar.last_name }", student_path(@course, scholar) %>
+  User Name: <%= link_to "#{scholar.user_name }", student_path(@course, scholar) %>
+  Email: <%= link_to "#{scholar.email }", student_path(@course, scholar) %>
+  Slack: <%= link_to "#{scholar.slack }", student_path(@course, scholar) %>
+  Github: <%= link_to "#{scholar.github }", student_path(@course, scholar) %>
+  Linkedin: <%= link_to "#{scholar.linkedin }", student_path(@course, scholar) %>
 <% end %>
 
 <p>Example 2</p>
 <% @students.each do |scholar| %>
-  <%= link_to "First: #{scholar.first_name } Last: #{scholar.last_name } User Name: #{scholar.user_name } Email: #{scholar.email} Slack: #{scholar.slack} Github: #{scholar.github} Linkedin: #{scholar.linkedin}, student.path(scholar.id)" %>
+  <%= link_to "First: #{scholar.first_name } Last: #{scholar.last_name } User Name: #{scholar.user_name } Email: #{scholar.email} Slack: #{scholar.slack} Github: #{scholar.github} Linkedin: #{scholar.linkedin}", student_path(@course, scholar) %>
 <% end %>

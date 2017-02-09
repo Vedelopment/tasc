@@ -1,35 +1,34 @@
 class StudentsController < ApplicationController
   def index
-    @course = Course.find_by_id(params:course_id)
+    @course = Course.find_by_id(params[:course_id])
     @students = @course.students
   end
 
   def show
-    @course = Course.find_by_id(params:course_id)
-    @student = Student.find_by_id(params:id)
+    @course = Course.find_by_id(params[:course_id])
+    @student = Student.find_by_id(params[:id])
   end
 
   def new
-    @course = Course.find_by_id(params:course_id)
-
+    @student = Student.new
+    @course = Course.find_by_id(params[:course_id])
   end
 
   def create
-    @course = Course.find_by_id(params:course_id)
+    @course = Course.last
     student = Student.new(student_params)
       if student.save
-        # ** SHOVE student IN student array **
         @course.students << student
         redirect_to student_path(@course, student)
       else
-        flash [:error] = student.errors.full_messages.join(". ")
+        flash[:error] = student.errors.full_messages.join(". ")
         redirect_to new_student_path
       end
   end
 
   def edit
-    @course = Course.find_by_id(params:course_id)
-    @student = Student.find_by_id(params:id)
+    @course = Course.find_by_id(params[:course_id])
+    @student = Student.find_by_id(params[:id])
   end
 
   private
