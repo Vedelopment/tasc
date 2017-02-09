@@ -1,0 +1,4 @@
+<h1>Assignments for <%= "#{@course.name} #{@course.number}"%></h1>
+<% @assignments.each do |a| %>
+  <%= "#{a.title} due on: #{a.due_date.strftime("Due on: %m/%d/%Y")}" %>
+<% end %>
