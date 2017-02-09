@@ -1,1 +1,17 @@
 <h1>students index</h1>
+
+<p>Example 1:</p>
+<% @students.each do |scholar| %>
+  First: <%= link_to "#{@student.first_name }", student.path(scholar.id) %>
+  Last: <%= link_to "#{@student.last_name }", student.path(scholar.id) %>
+  User Name: <%= link_to "#{@student.user_name }", student.path(scholar.id) %>
+  Email: <%= link_to "#{@student.email }", student.path(scholar.id) %>
+  Slack: <%= link_to "#{@student.slack }", student.path(scholar.id) %>
+  Github: <%= link_to "#{@student.github }", student.path(scholar.id) %>
+  Linkedin: <%= link_to "#{@student.linkedin }", student.path(scholar.id) %>
+<% end %>
+
+<p>Example 2</p>
+<% @students.each do |scholar| %>
+  <%= link_to "First: #{@student.first_name } Last: #{@student.last_name } User Name: #{@student.user_name } Email: #{@student.email} Slack: #{@student.slack} Github: #{@student.github} Linkedin: #{@student.linkedin}" %>
+<% end %>
