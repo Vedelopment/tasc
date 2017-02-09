@@ -5,6 +5,6 @@
 
 
 <h1>Assignments:</h1>
-  <% Course.assigments.each do |a| %>
-  <%= a.title, a.due_date %>
+  <% @course.assignments.each do |a| %>
+  <%= "#{a.title} #{a.due_date}" %>
   <% end %>
