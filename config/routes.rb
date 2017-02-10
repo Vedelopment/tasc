@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  # About
+  get '/about' => 'about#index', as: 'about'
+
   # Courses
   get '/courses/:id' => 'courses#show', as: 'course'
 
   # Assignments
   get '/courses/:course_id/assignments' => 'assignments#index', as: 'assignments'
-  get '/courses/:course_id/assignments/:id' => 'assignments#show', as: 'assignment'
+  get '/assignments/:id' => 'assignments#show', as: 'assignment'
 
   # Students
   get '/courses/:course_id/students' => 'students#index', as: 'students'
   get '/courses/:course_id/students/:id' => 'students#show', as: 'student'
   get '/students/new' => 'students#new', as: 'new_student'
-  post '/students' => 'students#create'
+  post '/students/new' => 'students#create'
   get '/students/:id/edit' => 'students#edit', as: 'edit_student'
   patch '/students/:id' => 'students#update'
 

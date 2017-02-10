@@ -1,0 +1,15 @@
+<div>
+  <h1><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h1>
+  <h3><%= link_to "Schedule", "https://github.com/sf-wdi-34/schedule#" %></h3>
+</div>
+
+
+<h1><%= link_to "Assignments:", assignments_path(@course) %></h1>
+    <% @course.assignments.each do |a| %>
+    <div class ="card">
+      <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
+    </div>
+  <% end %>
+
+
+<h1>Feedback:</h1>
