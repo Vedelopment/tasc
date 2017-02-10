@@ -1488,3 +1488,147 @@ Processing by StudentsController#show as HTML
 Completed 200 OK in 115ms (Views: 106.7ms | ActiveRecord: 1.0ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7600888032711824865);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTeachers (20170210002035)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "slack" character varying, "github" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170210002035"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubmissions (20170210002403)
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "submissions" ("id" serial primary key, "content" text, "link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170210002403"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFeedbacks (20170210003214)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "feedbacks" ("id" serial primary key, "score" float, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170210003214"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeacherCourses (20170210004124)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "teacher_courses" ("id" serial primary key, "teacher_id" integer, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_cb5bbf2f8f"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+, CONSTRAINT "fk_rails_362b249909"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_teacher_courses_on_teacher_id" ON "teacher_courses"  ("teacher_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_teacher_courses_on_course_id" ON "teacher_courses"  ("course_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170210004124"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7600888032711824865)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (177.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tasc_development"[0m
+  [1m[35m (180.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tasc_test"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" serial primary key, "title" character varying, "instructions" text, "assign_date" timestamp, "due_date" timestamp, "duration" float, "visible" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "courses" ("id" serial primary key, "name" character varying, "number" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "feedbacks" ("id" serial primary key, "score" float, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "student_courses" ("id" serial primary key, "student_id" integer, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_student_courses_on_course_id" ON "student_courses" USING btree ("course_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_student_courses_on_student_id" ON "student_courses" USING btree ("student_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "email" character varying, "password_digest" character varying, "slack" character varying, "github" character varying, "linkedin" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "submissions" ("id" serial primary key, "content" text, "link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "teacher_courses" ("id" serial primary key, "teacher_id" integer, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_teacher_courses_on_course_id" ON "teacher_courses" USING btree ("course_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX  "index_teacher_courses_on_teacher_id" ON "teacher_courses" USING btree ("teacher_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "slack" character varying, "github" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "student_courses" ADD CONSTRAINT "fk_rails_fee459e6de"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "student_courses" ADD CONSTRAINT "fk_rails_aab11897f1"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "teacher_courses" ADD CONSTRAINT "fk_rails_362b249909"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "teacher_courses" ADD CONSTRAINT "fk_rails_cb5bbf2f8f"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170210004124')[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170209034722'),
+('20170209034739'),
+('20170209034758'),
+('20170209040427'),
+('20170210002035'),
+('20170210002403'),
+('20170210003214');
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-10 00:56:14 UTC], ["updated_at", 2017-02-10 00:56:14 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" serial primary key, "title" character varying, "instructions" text, "assign_date" timestamp, "due_date" timestamp, "duration" float, "visible" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "courses" ("id" serial primary key, "name" character varying, "number" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "feedbacks" ("id" serial primary key, "score" float, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "student_courses" ("id" serial primary key, "student_id" integer, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_student_courses_on_course_id" ON "student_courses" USING btree ("course_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_student_courses_on_student_id" ON "student_courses" USING btree ("student_id")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "email" character varying, "password_digest" character varying, "slack" character varying, "github" character varying, "linkedin" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "submissions" ("id" serial primary key, "content" text, "link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "teacher_courses" ("id" serial primary key, "teacher_id" integer, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_teacher_courses_on_course_id" ON "teacher_courses" USING btree ("course_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_teacher_courses_on_teacher_id" ON "teacher_courses" USING btree ("teacher_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "password_digest" character varying, "email" character varying, "slack" character varying, "github" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "student_courses" ADD CONSTRAINT "fk_rails_fee459e6de"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "student_courses" ADD CONSTRAINT "fk_rails_aab11897f1"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "teacher_courses" ADD CONSTRAINT "fk_rails_362b249909"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "teacher_courses" ADD CONSTRAINT "fk_rails_cb5bbf2f8f"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170210004124')[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170209034722'),
+('20170209034739'),
+('20170209034758'),
+('20170209040427'),
+('20170210002035'),
+('20170210002403'),
+('20170210003214');
+
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-10 00:56:14 UTC], ["updated_at", 2017-02-10 00:56:14 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
