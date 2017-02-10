@@ -1,0 +1,16 @@
+<h1>teachers index</h1>
+
+<p>Example 1:</p>
+<% @teachers.each do |scholar| %>
+  First: <%= link_to "#{scholar.first_name }", teacher_path(@course, scholar) %>
+  Last: <%= link_to "#{scholar.last_name }", teacher_path(@course, scholar) %>
+  User Name: <%= link_to "#{scholar.user_name }", teacher_path(@course, scholar) %>
+  Email: <%= link_to "#{scholar.email }", teacher_path(@course, scholar) %>
+  Slack: <%= link_to "#{scholar.slack }", teacher_path(@course, scholar) %>
+  Github: <%= link_to "#{scholar.github }", teacher_path(@course, scholar) %>
+<% end %>
+
+<p>Example 2</p>
+<% @teachers.each do |scholar| %>
+  <%= link_to "First: #{scholar.first_name } Last: #{scholar.last_name } User Name: #{scholar.user_name } Email: #{scholar.email} Slack: #{scholar.slack} Github: #{scholar.github}", teacher_path(@course, scholar) %>
+<% end %>

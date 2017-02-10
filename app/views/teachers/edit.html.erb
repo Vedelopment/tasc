@@ -1,0 +1,30 @@
+<h1>Edit Teacher page</h1>
+<div class="row">
+  <div class="col m6 offset-m3 form">
+    <%= form_for(@teacher, :url => {:action => 'update', :id => @teacher.id}) do |f| %>
+    <div class="col m12">
+      <%= f.text_field :first_name, class: "form-control", placeholder: "#{@teacher.first_name}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :last_name, class: "form-control", placeholder: "#{@teacher.last_name}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :user_name, class: "form-control", placeholder: "#{@teacher.user_name}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :email, class: "form-control", placeholder: "#{@teacher.email}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :slack, class: "form-control", placeholder: "#{@teacher.slack}" %>
+    </div>
+    <div class="col m12">
+      <%= f.text_field :github, class: "form-control", placeholder: "#{@teacher.github}" %>
+    </div>
+    <h3>insert option to change password here.  user should have to correctly enter password to be given an option to change it, need to confirm it after typing it, too.</h3>
+    <div class="col m6 offset-m3">
+      <br>
+      <%= f.submit "Save Post", class: "waves-effect waves-light btn-large form-button" %>
+      <br><br>
+    </div>
+    <% end %>
+  </div>

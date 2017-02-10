@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   # Assignments
   get '/courses/:course_id/assignments' => 'assignments#index', as: 'assignments'
   get '/assignments/:id' => 'assignments#show', as: 'assignment'
+  post '/courses/:id/assignments' =>  'assignments#create', as: 'create_assignment'
+  get '/courses/:id/assignments/new' =>  'assignments#new', as: 'new_assignment'
+  get '/assignments/:id/edit' =>  'assignments#edit', as: 'edit_assignment'
+  patch '/assignment/:id' =>  'assignments#update'
+  delete '/assignments/:id' =>  'assignments#destroy'
+
 
   # Students
   get '/courses/:course_id/students' => 'students#index', as: 'students'
@@ -23,5 +29,15 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  # Teachers
+  get '/courses/:course_id/teachers' => 'teachers#index', as: 'teachers'
+  get '/courses/:course_id/teachers/:id' => 'teachers#show', as: 'teacher'
+  get '/teachers/new' => 'teachers#new', as: 'new_teacher'
+  post '/teachers/new' => 'teachers#create'
+  get '/teachers/:id/edit' => 'teachers#edit', as: 'edit_teacher'
+  patch '/teachers/:id' => 'teachers#update'
+
+
 
 end

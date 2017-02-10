@@ -1,0 +1,41 @@
+<h1>New assignment page</h1>
+<div class="row">
+  <div class="col m6 offset-m3 form">
+    <%= form_for [@course, @assignment], url: create_assignment_path do |f| %>
+    <div class="col m12">
+      Title:
+      <br>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="col m12">
+      Instructions:
+      <br>
+      <%= f.text_field :instructions, class: "form-control" %>
+    </div>
+    <div class="col m12">
+      Due Date:
+      <br>
+      <%= f.datetime_select :due_date, class: "form-control" %>
+    </div>
+    <div class="col m12">
+      Assign Date:
+      <br>
+      <%= f.datetime_select :assign_date, class: "form-control" %>
+    </div>
+    <div class="col m12">
+      Duration:
+      <br>
+      <%= f.text_field :duration, class: "form-control" %>
+    </div>
+    <div class="col m12">
+      Assigned:
+      <br>
+      <%= f.check_box :visible, class: "form-control" %>
+    </div>
+    <div class="col m6 offset-m3">
+      <br>
+      <%= f.submit "Save assignment", class: "waves-effect waves-light btn-large form-button" %>
+      <br><br>
+    </div>
+    <% end %>
+  </div>
