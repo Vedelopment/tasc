@@ -23,7 +23,7 @@ class SubmissionsController < ApplicationController
     else
       flash[:error] = student.errors.full_messages.join(". ")
       redirect_to new_submission_path
-    end 
+    end
   end
 
   def update
@@ -36,7 +36,7 @@ class SubmissionsController < ApplicationController
 
   private
 
-  def submission_params # MORE CHANGES NEEDED HERE
-    params.require(:submission).permit(:first_name, :last_name, :user_name, :email, :password_digest, :slack, :github, :linkedin)
+  def submission_params # content required.  link not required in case there is no homework on a day.
+    params.require(:submission).permit(:content)
   end
 end
