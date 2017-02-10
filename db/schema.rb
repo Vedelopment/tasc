@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209040427) do
+ActiveRecord::Schema.define(version: 20170210004124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20170209040427) do
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.float    "score"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +62,36 @@ ActiveRecord::Schema.define(version: 20170209040427) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "submissions", force: :cascade do |t|
+    t.text     "content"
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teacher_courses", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_teacher_courses_on_course_id", using: :btree
+    t.index ["teacher_id"], name: "index_teacher_courses_on_teacher_id", using: :btree
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "user_name"
+    t.string   "password_digest"
+    t.string   "email"
+    t.string   "slack"
+    t.string   "github"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   add_foreign_key "student_courses", "courses"
   add_foreign_key "student_courses", "students"
+  add_foreign_key "teacher_courses", "courses"
+  add_foreign_key "teacher_courses", "teachers"
 end
