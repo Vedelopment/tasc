@@ -30,6 +30,14 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  # Teachers
+  get '/courses/:course_id/teachers' => 'teachers#index', as: 'teachers'
+  get '/courses/:course_id/teachers/:id' => 'teachers#show', as: 'teacher'
+  get '/teachers/new' => 'teachers#new', as: 'new_teacher'
+  post '/teachers/new' => 'teachers#create'
+  get '/teachers/:id/edit' => 'teachers#edit', as: 'edit_teacher'
+  patch '/teachers/:id' => 'teachers#update'
+
 
 
 end
