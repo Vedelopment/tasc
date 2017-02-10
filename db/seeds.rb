@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Students.destroy_all
-Assignments.destroy_all
-Courses.destroy_all
-Submissions.destroy_all
-Feedbacks.destroy_all
+Student.destroy_all
+Assignment.destroy_all
+Course.destroy_all
+Submission.destroy_all
+Feedback.destroy_all
 
 student_data = [{
   first_name: "shiv",
@@ -31,7 +31,7 @@ course_data = [{
 assignment_data = [{
   title: "this is how we do it",
   instructions: "it's friday night and I feel all right.",
-  assign_date: ,
+  assign_date: nil,
   duration: 1.0,
   visible: true
   }]
@@ -42,6 +42,12 @@ submissions_data = [{
   }]
 
 feedback_data = [{
-  score: 2.4
+  score: 2.4,
   content: "I think you should focus on friendly URL."
   }]
+
+Student.create(student_data)
+Course.create(course_data)
+Assignment.create(assignment_data)
+Submission.create(submissions_data)
+Feedback.create(feedback_data)
