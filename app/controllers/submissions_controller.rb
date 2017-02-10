@@ -4,7 +4,8 @@ class SubmissionsController < ApplicationController
   end
 
   def new
-
+    @assignment = Assignment.find_by_id(params[:assignment_id])
+    @submission = Submission.find_by_id(params[:submission_id])
   end
 
   def edit
@@ -12,7 +13,17 @@ class SubmissionsController < ApplicationController
   end
 
   def create
+    @assignment = Assignment.find_by_id(params[:assignment_id])
+    submission = Submission.new(submission_params)
+    submission.assignment = @assignment
+    submission.student = Student.all.sample #this needs to be changed when we have sessions working
 
+    if submission.save
+      redirect_to assignments_path(@assignment.course)
+    else
+      flash[:error] = student.errors.full_messages.join(". ")
+      redirect_to new_submission_path
+    end 
   end
 
   def update
@@ -21,5 +32,11 @@ class SubmissionsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def submission_params # MORE CHANGES NEEDED HERE
+    params.require(:submission).permit(:first_name, :last_name, :user_name, :email, :password_digest, :slack, :github, :linkedin)
   end
 end
