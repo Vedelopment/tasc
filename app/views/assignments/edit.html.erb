@@ -1,11 +1,11 @@
 <h1>Edit assignment page</h1>
 <div class="row">
   <div class="col m6 offset-m3 form">
-    <%= form_for @assignment do |f| %>
+    <%= form_for @assignment, validate: true do |f| %>
     <div class="col m12">
       Title:
       <br>
-      <%= f.text_field :title, class: "form-control" %>
+      <%= f.text_field :title, class: "form-control", validate: { presence: true } %>
     </div>
     <div class="col m12">
       Instructions:

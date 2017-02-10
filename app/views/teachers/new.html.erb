@@ -1,7 +1,7 @@
 <h1>New Teacher page</h1>
 <div class="row">
   <div class="col m6 offset-m3 form">
-    <%= form_for [@course, @teacher], url: new_teacher_path do |f| %>
+    <%= form_for [@course, @teacher], url: new_teacher_path, validate: true do |f| %>
     <div class="col m12">
       First Name:
       <br>
