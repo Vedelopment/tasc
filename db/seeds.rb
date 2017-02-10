@@ -57,6 +57,15 @@ student_data = [{
     slack: "MisterWhite",
     github: "WWhite",
     linkedin: "WWhite"
+    }, {
+      first_name: "hodor",
+      last_name: "hodor",
+      user_name: "hodor",
+      email: "hodor@hodor.hodor",
+      password_digest: "hodor",
+      slack: "hodor",
+      github: "hodor",
+      linkedin: "hodor"
     }]
 
 course_data = [{
@@ -70,26 +79,37 @@ course_data = [{
 assignment_data = [{
   title: "this is how we do it",
   instructions: "it's friday night and I feel all right.",
-  assign_date: DateTime.new(2015,22,06),
+  assign_date: DateTime.new(2015,03,02),
+  due_date: DateTime.new(2015,04,02),
   duration: 1.0,
   visible: true
   }, {
     title: "Putting the fun in function!",
     instructions: "First, I need all of you to stop laughing.  Next, write a function.  Ain't that fun?",
-    assign_date: DateTime.new(2015,22,06),
+    assign_date: DateTime.new(2015,04,02),
+    due_date: DateTime.new(2015,05,02),
     duration: 0.25,
     visible: true
   }, {
-    title: "The dangers of body parsing without limbering up first",
-    instructions: "Near the surface of the DOM you'll find the body.  See it?  Good.  Now, parse it.",
-    assign_date: DateTime.new(2015,22,06),
+    title: "Always limber up before body parsing.",
+    instructions: "Everyone stretch for about 6 hours and 45 minutes.  Next look near the surface of the DOM and you'll find the body.  See it?  Good.  Now, parse it.",
+    assign_date: DateTime.new(2015,05,02),
+    due_date: DateTime.new(2015,10,02),
     duration: 7.0,
     visible: true
   }, {
     title: "Fear of commitment leads to lost data.",
     instructions: "Commit every time you do a thing that works or gives you one fewer error.  Here's a checklist for you:  a) Have you commited?  b) Did you do a thing?  C)  Does it work or did it give you at least one fewer error?  orange) See step 1.",
-    assign_date: DateTime.new(2015,22,06),
+    assign_date: DateTime.new(2015,06,02),
+    due_date: DateTime.new(2015,07,02),
     duration: 0.5,
+    visible: true
+  }, {
+    title: "A wonderful game",
+    instructions: "Now we're going to do something extremely fun.  We're going to play a wonderful game called who is my daddy, and what does he do?",
+    assign_date: DateTime.new(2015,08,02),
+    due_date: DateTime.new(2015,09,02),
+    duration: 1.5,
     visible: true
   }]
 
@@ -116,6 +136,12 @@ feedback_data = [{
   }, {
     score: 3.0,
     content: "It seemed clear, from the moment I saw these URLs that you were headed in the right direction.  These are some friendly URLs."
+  }, {
+    score: 2.0,
+    content: "Your usage of profanity as variables was an inspiring usage of the english language.  Exactly who or what it inspired is still up for debate."
+  }, {
+    score: 1.0,
+    content: "TL:DR"
   }]
 
 Student.create(student_data)
