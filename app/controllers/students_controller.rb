@@ -31,6 +31,21 @@ class StudentsController < ApplicationController
     @student = Student.find_by_id(params[:id])
   end
 
+  def update
+    student_id = params[:id]
+      @student = Student.find_by_id(student_id)
+
+      if @student.update_attributes(student_params)
+        flash[:notice] = "Updated successfully."
+        redirect_to student_path(@student)
+      else
+        @student.errors.full_messages.each do |message|
+          flash[:error] = message
+        end
+        redirect_to edit_student_path(@student)
+      end
+  end
+
   private
 
   def student_params
