@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   patch '/assignment/:id' =>  'assignments#update'
   delete '/assignments/:id' =>  'assignments#destroy'
 
-
   # Students
   get '/courses/:course_id/students' => 'students#index', as: 'students'
   get '/courses/:course_id/students/:id' => 'students#show', as: 'student'
@@ -29,6 +28,13 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  # Submissions
+  get '/assignments/:id/submissions/new' => 'submission#new', as: 'new_submission'
+  post '/assignments/:id/submissions' => 'submission#create', as: 'create_submission'
+  get '/submissions/:id' => 'submission#edit', as: 'edit_submission'
+  get '/submissions/:id' => 'submission#show', as: 'submission'
+  patch '/submissions/:id' => 'submission#show'
 
   # Teachers
   get '/courses/:course_id/teachers' => 'teachers#index', as: 'teachers'
