@@ -1,6 +1,23 @@
-<h1>Assignments for <%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h1>
-<% @assignments.each do |a| %>
-  <div class ="card">
-    <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
+<!-- Show all assignments for one course -->
+
+<div class="container">
+  <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
+  <h5>All assignments</h5>
+  <% @assignments.each do |a| %>
+  <div class ="row assignments hoverable">
+    <div class="row">
+      <div class="col s8">
+        <%= link_to "#{a.title}", assignment_path(a) %>
+      </div>
+      <div class="col s3 offset-s1">
+        <%= a.due_date.strftime("Due on: %m/%d/%Y") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <%= truncate a.instructions %>
+      </div>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>

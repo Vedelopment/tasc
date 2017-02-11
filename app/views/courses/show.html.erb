@@ -1,3 +1,5 @@
+<!-- Show one course -->
+
 <div class="container">
   <div>
     <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
@@ -26,4 +28,12 @@
   </div>
   <h5>Feedback:</h5>
   <hr>
+  <% current_student.submissions.each do |s| %>
+  <div class="col s8">
+    <%= s.feedback.score %>
+  </div>
+  <div class="col s3 offset-s1">
+
+  </div>
+  <% end %>
 </div>
