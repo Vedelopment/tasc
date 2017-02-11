@@ -11,7 +11,7 @@
       <% @course.assignments.each do |a| %>
       <div class ="row hoverable assignments">
         <div class="col s8">
-          <%= link_to "#{a.title}", assignment_path(a) %>
+          <h6><%= link_to "#{a.title}", assignment_path(a) %></h6>
         </div>
         <div class="col s3 offset-s1">
           <%= a.due_date.strftime("Due on: %m/%d/%Y") %>
@@ -28,12 +28,20 @@
   </div>
   <h5>Feedback:</h5>
   <hr>
-  <% current_student.submissions.each do |s| %>
-  <div class="col s8">
-    <%= s.feedback.score %>
+  <div class="row">
+    <div class="col m8">
+      Feedback for:
+    </div>
+    <div class="col m3">
+      Score:
+    </div>
+    <% current_student.submissions.each do |s| %>
+    <div class="col m8">
+      <%= s.assignment.title %>
+    </div>
+    <div class="col m3">
+      <%= s.feedback.score %>
+    </div>
+    <% end %>
   </div>
-  <div class="col s3 offset-s1">
-
-  </div>
-  <% end %>
 </div>
