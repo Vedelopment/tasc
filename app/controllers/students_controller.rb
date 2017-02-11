@@ -18,6 +18,7 @@ class StudentsController < ApplicationController
     @course = Course.last
     student = Student.new(student_params)
       if student.save
+        Student.get_profile_pic(student)
         @course.students << student
         redirect_to student_path(@course, student)
       else
@@ -46,10 +47,12 @@ class StudentsController < ApplicationController
       end
   end
 
+
+
   private
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :user_name, :email, :password, :slack, :github, :linkedin)
+    params.require(:student).permit(:first_name, :last_name, :user_name, :email, :password, :slack, :github, :linkedin, :profile_image)
   end
 
 end
