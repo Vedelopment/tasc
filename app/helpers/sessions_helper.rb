@@ -10,7 +10,7 @@ module SessionsHelper
   end
 
   def current_student
-    @current_student ||= student.find_by_id(session[:student_id])
+    @current_student ||= Student.find_by_id(session[:student_id])
   end
 
   def logged_in?
