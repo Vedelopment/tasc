@@ -4,12 +4,12 @@
   <div class="col m6 offset-m3 form">
     <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
     <div class="col m12">
-      First Name:
+      Content:
       <br>
       <%= f.text_field :content, class: "form-control" %>
     </div>
     <div class="col m12">
-      Last Name:
+      Link:
       <br>
       <%= f.text_field :link, class: "form-control" %>
     </div>

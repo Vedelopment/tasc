@@ -1,20 +1,21 @@
 class SubmissionsController < ApplicationController
+
   def show
-    @submission = Submission.find_by_id(params[:submission_id])
+    @submission = Submission.find_by_id(params[:id])
   end
 
   def new
-    @assignment = Assignment.find_by_id(params[:assignment_id])
-    @submission = Submission.find_by_id(params[:submission_id])
+    @assignment = Assignment.find_by_id(params[:id])
+    @submission = Submission.new
   end
 
   def edit
-    @assignment = Assignment.find_by_id(params[:assignment_id])
-    @submission = Submission.find_by_id(params[:submission_id])
+    @assignment = Assignment.find_by_id(params[:id])
+    @submission = Submission.find_by_id(params[:id])
   end
 
   def create
-    @assignment = Assignment.find_by_id(params[:assignment_id])
+    @assignment = Assignment.find_by_id(params[:id])
     submission = Submission.new(submission_params)
     submission.assignment = @assignment
     submission.student = Student.all.sample #this needs to be changed when we have sessions working
@@ -29,7 +30,7 @@ class SubmissionsController < ApplicationController
 
   def update
     submission_id = params[:id]
-    @submission = Submission.find_by_id(params[:submission_id])
+    @submission = Submission.find_by_id(params[:id])
 
     if @submission.update_attributes(submission_params)
       flash[:notice] = "Updated successfully."
@@ -39,6 +40,7 @@ class SubmissionsController < ApplicationController
         flash[:error] = message
       end
       redirect_to edit_submission_path
+    end
   end
 
   def destroy
@@ -48,17 +50,10 @@ class SubmissionsController < ApplicationController
     redirect_to assignment_path(assignment)
   end
 
-
-  def destroy
-    @city = City.find_by_id(params[:city_id])
-    post = Post.find_by_id(params[:id])
-    post.destroy
-    redirect_to city_path(@city)
-  end
-
   private
 
   def submission_params # content required.  link not required in case there is no homework on a day.
     params.require(:submission).permit(:content)
   end
+
 end

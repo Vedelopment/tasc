@@ -30,12 +30,12 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   # Submissions
-  get '/submissions/:id' => 'submission#show', as: 'submission'
-  get '/assignments/:id/submissions/new' => 'submission#new', as: 'new_submission'
-  post '/assignments/:id/submissions' => 'submission#create', as: 'create_submission'
-  get '/submissions/:id/edit' => 'submission#edit', as: 'edit_submission'
-  patch '/submissions/:id' => 'submission#show'
-  delete '/submissions/:id' => 'submission#destroy'
+  get '/submissions/:id' => 'submissions#show', as: 'submission'
+  get '/assignments/:id/submissions/new' => 'submissions#new', as: 'new_submission'
+  post '/assignments/:id/submissions/new' => 'submissions#create', as: 'create_submission'
+  get '/submissions/:id/edit' => 'submissions#edit', as: 'edit_submission'
+  patch '/submissions/:id' => 'submissions#show'
+  delete '/submissions/:id' => 'submissions#destroy'
 
   # Teachers
   get '/courses/:course_id/teachers' => 'teachers#index', as: 'teachers'
