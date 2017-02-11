@@ -1,0 +1,25 @@
+<!-- Form for feedback creation -->
+<div class="container">
+  <h4>Give Feedback</h4>
+  <div class="row">
+    <div class="col m6 offset-m3 form">
+      <%= form_for [@submission, @feedback], url: create_feedback_path do |f| %>
+      <div class="col m12">
+        Score:
+        <br>
+        <%= f.number_field :score, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Content:
+        <br>
+        <%= f.text_field :content, class: "form-control" %>
+      </div>
+      <div class="col m6 offset-m3">
+        <br>
+        <%= f.submit "Save feedback", class: "waves-effect waves-light btn-large form-button" %>
+        <br><br>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
