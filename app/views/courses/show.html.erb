@@ -1,15 +1,29 @@
-<div>
-  <h1><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h1>
-  <h3><%= link_to "Schedule", "https://github.com/sf-wdi-34/schedule#" %></h3>
-</div>
-
-
-<h1><%= link_to "Assignments:", assignments_path(@course) %></h1>
-    <% @course.assignments.each do |a| %>
-    <div class ="card">
-      <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
+<div class="container">
+  <div>
+    <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
+  </div>
+  <div class="row">
+    <div class="col m6">
+      <h5><%= link_to "Assignments:", assignments_path(@course) %></h5>
+      <hr>
+      <% @course.assignments.each do |a| %>
+      <div class ="row hoverable assignments">
+        <div class="col s8">
+          <%= link_to "#{a.title}", assignment_path(a) %>
+        </div>
+        <div class="col s3 offset-s1">
+          <%= a.due_date.strftime("Due on: %m/%d/%Y") %>
+        </div>
+      </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="col m6">
+      <h5><%= link_to "Schedule", "https://github.com/sf-wdi-34/schedule#" %></h5>
+      <hr>
+      <iframe src="https://github.com/sf-wdi-34/schedule"></iframe>
+    </div>
 
-
-<h1>Feedback:</h1>
+  </div>
+  <h5>Feedback:</h5>
+  <hr>
+</div>
