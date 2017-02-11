@@ -14,6 +14,11 @@ class StudentsController < ApplicationController
     @course = Course.find_by_id(params[:course_id])
   end
 
+  def edit
+    @course = Course.find_by_id(params[:course_id])
+    @student = Student.find_by_id(params[:id])
+  end
+
   def create
     @course = Course.last
     student = Student.new(student_params)
@@ -24,11 +29,6 @@ class StudentsController < ApplicationController
         flash[:error] = student.errors.full_messages.join(". ")
         redirect_to new_student_path
       end
-  end
-
-  def edit
-    @course = Course.find_by_id(params[:course_id])
-    @student = Student.find_by_id(params[:id])
   end
 
   def update
