@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   # Feedbacks
   get '/students/:id/feedbacks' => 'feedbacks#index', as: 'feedbacks'
-  get '/feedbacks/:id' => 'feedback#show', as: 'feedback'
+  get '/feedbacks/:id' => 'feedbacks#show', as: 'feedback'
   get '/submissions/:id/feedbacks/new' => 'feedbacks#new', as: 'new_feedback'
   post '/submissions/:id/feedbacks' => 'feedbacks#create', as: 'create_feedback'
   get '/feedbacks/:id/edit' => 'feedbacks#edit', as: 'edit_feedback'

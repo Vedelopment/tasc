@@ -1,5 +1,9 @@
 class FeedbacksController < ApplicationController
 
+  def index
+    @student = Student.find_by_id(params[:id])
+  end
+
   def show
     @feedback = Feedback.find_by_id(params[:id])
   end
