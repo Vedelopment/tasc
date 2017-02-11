@@ -4,3 +4,8 @@
     <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
   </div>
 <% end %>
+<br>
+<br>
+<div class="make-new">
+  <%= link_to "Make a new Assignment - teacher's only .... Mike", new_assignment_path(@course) %>
+</div>

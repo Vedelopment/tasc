@@ -6,3 +6,6 @@
 <p><%= @assignment.instructions %></p>
 <%= @assignment.assign_date %>
 <%= @assignment.duration %>
+<br>
+<br>
+<%= link_to "submit homework", new_submission_path(@assignment)%>

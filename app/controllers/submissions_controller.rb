@@ -23,7 +23,7 @@ class SubmissionsController < ApplicationController
     if submission.save
       redirect_to assignments_path(@assignment.course)
     else
-      flash[:error] = student.errors.full_messages.join(". ")
+      flash[:error] = @assignment.errors.full_messages.join(". ")
       redirect_to new_submission_path
     end
   end
