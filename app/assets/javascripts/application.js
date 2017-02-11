@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize-sprockets
+
+
+$(document).on('ready', function(){
+   $(".button-collapse").sideNav({
+     edge: 'right'
+   });
+})

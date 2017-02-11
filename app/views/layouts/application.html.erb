@@ -13,6 +13,8 @@
 
     <!-- This is where the widget will be. Don't forget the name attribute! -->
     <input type="hidden" role="uploadcare-uploader" name="my_file" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
 
   <body>
@@ -22,6 +24,24 @@
     <small> <%= name.capitalize %>: <%= msg %> </small>
      </p>
     <% end %>
+    <ul id="slide-out" class="side-nav right">
+        <li><div class="userView">
+          <div class="background">
+            <img src="/student.png">
+          </div>
+          <%= link_to "", student_path(Course.first, Student.first), :src => 'http://tctc.axstudent.com/images/CrsCat10v2z74006.jpg', :class => "circle" %>
+          <!-- <a href=""><img class="circle" src="images/yuna.jpg"></a> -->
+          <%= link_to "Shiv Gogna", student_path(Course.first, Student.first), :class =>"white-text name" %>
+          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+
+        </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="btn-floating btn-large red button-collapse right"><i class="material-icons">menu</i></a>
     <%= yield %>
   </body>
 </html>

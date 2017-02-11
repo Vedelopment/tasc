@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/assignments/:id/submissions/new' => 'submissions#new', as: 'new_submission'
   post '/assignments/:id/submissions/new' => 'submissions#create', as: 'create_submission'
   get '/submissions/:id/edit' => 'submissions#edit', as: 'edit_submission'
-  patch '/submissions/:id' => 'submissions#show'
+  patch '/submissions/:id' => 'submissions#update'
   delete '/submissions/:id' => 'submissions#destroy'
 
   # Teachers
@@ -45,6 +45,13 @@ Rails.application.routes.draw do
   get '/teachers/:id/edit' => 'teachers#edit', as: 'edit_teacher'
   patch '/teachers/:id' => 'teachers#update'
 
+  # Feedbacks
+  get '/students/:id/feedbacks' => 'feedbacks#index', as: 'feedbacks'
+  get '/feedbacks/:id' => 'feedbacks#show', as: 'feedback'
+  get '/submissions/:id/feedbacks/new' => 'feedbacks#new', as: 'new_feedback'
+  post '/submissions/:id/feedbacks' => 'feedbacks#create', as: 'create_feedback'
+  get '/feedbacks/:id/edit' => 'feedbacks#edit', as: 'edit_feedback'
+  patch '/feedbacks/:id' => 'feedbacks#update'
 
 
 end
