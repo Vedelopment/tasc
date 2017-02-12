@@ -1,33 +1,53 @@
-<h1>Edit Student page</h1>
+<!-- Edit Student Page -->
+
 <div class="row">
-  <div class="col m6 offset-m3 form">
+  <br>
+  <br>
+  <div class="col m6 offset-m3 form form-style">
+    <h4>Edit Your Profile</h4>
+    <hr>
     <%= form_for(@student, :url => {:action => 'update', :id => @student.id}) do |f| %>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      First Name:
+      <br>
       <%= f.text_field :first_name, class: "form-control", placeholder: "#{@student.first_name}" %>
     </div>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      Last Name:
+      <br>
       <%= f.text_field :last_name, class: "form-control", placeholder: "#{@student.last_name}" %>
     </div>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      Username:
+      <br>
       <%= f.text_field :user_name, class: "form-control", placeholder: "#{@student.user_name}" %>
     </div>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      Email:
+      <br>
       <%= f.text_field :email, class: "form-control", placeholder: "#{@student.email}" %>
     </div>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      Slack:
+      <br>
       <%= f.text_field :slack, class: "form-control", placeholder: "#{@student.slack}" %>
     </div>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      Github:
+      <br>
       <%= f.text_field :github, class: "form-control", placeholder: "#{@student.github}" %>
     </div>
-    <div class="col m12">
+    <div class="col m10 offset-m1">
+      Linkedin:
+      <br>
       <%= f.text_field :linkedin, class: "form-control", placeholder: "#{@student.linkedin}" %>
     </div>
-    <h3>insert option to change password here.  user should have to correctly enter password to be given an option to change it, need to confirm it after typing it, too.</h3>
-    <div class="col m6 offset-m3">
-      <br>
-      <%= f.submit "Save Post", class: "waves-effect waves-light btn-large form-button" %>
-      <br><br>
+    <h5 class="col m12">insert option to change password here.  user should have to correctly enter password to be given an option to change it, need to confirm it after typing it, too.</h5>
+
+    <div class="row">
+      <div class="col s12 center">
+        <%= f.submit "Save Profile", class: "waves-effect waves-light btn-large form-button form-submit-style" %>
+      </div>
     </div>
     <% end %>
   </div>

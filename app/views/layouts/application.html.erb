@@ -11,17 +11,26 @@
     <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
     <script src="https://ucarecdn.com/libs/widget/2.10.3/uploadcare.full.min.js" charset="utf-8"></script>
 
-    <!-- This is where the widget will be. Don't forget the name attribute! -->
-    <input type="hidden" role="uploadcare-uploader" name="my_file" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
 
   <body>
-    <%= link_to "TASC", root_path, class: "brand-logo logo center" %>
-    <% if current_student %>
-    <%= link_to "#{current_student.first_name}", student_path(1, current_student) %>
-    <% end %>
+    <nav id="navbar">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">&nbsp;TASC</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if current_student %>
+          <li><%= link_to "#{current_student.first_name}", student_path(1, current_student) %></li>
+          <li><%= link_to "Log Out", logout_path %></li>
+          <% else %>
+          <li><%= link_to "Sign Up", new_student_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+          <li><a data-activates="slide-out" class="menu-toggle"><i class="material-icons">menu</i></a></li>
+        </ul>
+      </div>
+    </nav>
     <% flash.each do |name, msg| %>
       <p>
     <small> <%= name.capitalize %>: <%= msg %> </small>
@@ -44,7 +53,6 @@
         <li><a class="subheader">Subheader</a></li>
         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
       </ul>
-      <a href="#" data-activates="slide-out" class="btn-floating btn-large red button-collapse right"><i class="material-icons">menu</i></a>
     <%= yield %>
   </body>
 </html>

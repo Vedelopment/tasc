@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'materialize-sass'
 
+gem 'jquery-turbolinks'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

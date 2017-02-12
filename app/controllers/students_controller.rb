@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
   def show
     @course = Course.find_by_id(params[:course_id])
     @student = Student.find_by_id(params[:id])
+    @submissions = @student.submissions
   end
 
   def new

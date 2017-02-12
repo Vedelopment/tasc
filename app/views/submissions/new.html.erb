@@ -1,29 +1,46 @@
-<h1>New Submission</h1>
+<!-- <div class="container"> -->
+<br>
+<br>
+  <div class="row">
+    <div class="row">
+      <div class="col m3 offset-m1 side-assignment-style">
+        <h4 class="center">Assignment</h4>
+        <br>
+        <div class="col s12 profile-style">
+          <h5><%= "#{@assignment.title}" %></h5>
+          <hr>
+          <b>Instructions:</b>
+          <p><%= "#{@assignment.instructions}" %></p>
+          <br>
+          <%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %>
+        </div>
+      </div>
+      <div class="col m8">
+        <div class="col m9 offset-m1 form form-style">
+          <h4 class="center">Submit Your Homework</h4>
+          <br>
+          <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
+          <div class="col m12">
+            Content:
+            <br>
+            <%= f.text_field :content, class: "form-control" %>
+          </div>
+          <div class="col m12">
+            Link:
+            <br>
+            <%= f.text_field :link, class: "form-control" %>
+          </div>
 
-<div class="row">
-  Assignment submission for assignment:
-  <br>
-  <%= "#{@assignment.title}" %>
-  <br>
-  <%= "Due #{@assignment.due_date}" %>
-  <br>
-  <br>
-  <div class="col m6 offset-m3 form">
-    <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
-    <div class="col m12">
-      Content:
-      <br>
-      <%= f.text_field :content, class: "form-control" %>
+          <!-- This is where the widget will be. Don't forget the name attribute! -->
+          <input type="hidden" role="uploadcare-uploader" name="my_file" />
+
+          <div class="center">
+            <br>
+            <%= f.submit "Save Submission", class: "waves-effect btn waves-light form-button form-submit-style" %>
+            <br><br>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="col m12">
-      Link:
-      <br>
-      <%= f.text_field :link, class: "form-control" %>
-    </div>
-    <div class="col m6 offset-m3">
-      <br>
-      <%= f.submit "Save Submission", class: "waves-effect waves-light btn-large form-button" %>
-      <br><br>
-    </div>
-    <% end %>
   </div>

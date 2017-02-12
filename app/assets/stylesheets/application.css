@@ -23,3 +23,30 @@
 .assignments {
   border: solid lightgrey;
 }
+
+.form-style {
+  border: solid lightgrey;
+  background-color: rgba(18,87,159,.75);
+  color: white;
+}
+
+.form-style h4 {
+  text-align: center;
+}
+
+.form-submit-style {
+  background-color: #12579F!important;
+}
+
+#navbar {
+  background-color: #12579F;
+}
+
+.profile-style {
+  border: solid lightgrey;
+}
+
+.side-assignment-style {
+  background-color: lightgrey;
+  border: solid grey;
+}

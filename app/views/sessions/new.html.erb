@@ -1,9 +1,25 @@
-<%= form_for @student, url: "/sessions", method: "post" do |f| %>
-  <%= f.email_field :email, placeholder: "Email" %>
-  <%= f.password_field :password, placeholder: "Password" %>
+<!-- Login Form -->
+
+<div class="container">
   <div class="row">
-    <div class="col m6 offset-m3">
-      <%= f.submit "Log In", class: "waves-effect waves-light btn-large form-button" %>
+    <br>
+    <br>
+    <div class="col m6 offset-m3 form-style">
+      <div class="row">
+        <div class="col s10 offset-s1">
+          <h4>Login</h4>
+          <hr class="col m4 offset-m4">
+          <%= form_for @student, url: "/sessions", method: "post" do |f| %>
+          <%= f.email_field :email, placeholder: "Email" %>
+          <%= f.password_field :password, placeholder: "Password" %>
+          <div class="row">
+            <div class="center">
+              <%= f.submit "Log In", class: "waves-effect waves-light btn form-button form-submit-style" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-<% end %>
+</div>
