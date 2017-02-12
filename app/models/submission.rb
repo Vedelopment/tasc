@@ -4,6 +4,4 @@ class Submission < ApplicationRecord
   has_one :feedback
 
 
-  validates :link, presence: true
-
 end

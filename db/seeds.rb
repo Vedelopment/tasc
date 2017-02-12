@@ -78,7 +78,7 @@ Student.create(student_data)
     last_name: "White",
     user_name: "TheOneWhoKnocks",
     email: "WW@google.com",
-    password_digest: "a",
+    password: "123456",
     slack: "MisterWhite",
     github: "WWhite"
   }, {
@@ -86,7 +86,7 @@ Student.create(student_data)
     last_name: "Cooper",
     user_name: "HangWithMe",
     email: "Coops@google.com",
-    password_digest: "a",
+    password: "123456",
     slack: "WishIWasPlayingBBall",
     github: "Cooooop"
   }, {
@@ -94,7 +94,7 @@ Student.create(student_data)
     last_name: "Todd",
     user_name: "Demon_Barber",
     email: "soilentgreen@google.com",
-    password_digest: "a",
+    password: "123456",
     slack: "freeShave",
     github: "STodd"
   }]
