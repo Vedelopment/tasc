@@ -6,9 +6,11 @@
 
 <h1><%= link_to "Assignments:", assignments_path(@course) %></h1>
     <% @course.assignments.each do |a| %>
-    <div class ="card">
-      <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
-    </div>
+    <% if a.visible === true  %>
+      <div class ="card">
+        <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
+      </div>
+    <% end %>
   <% end %>
 
 
