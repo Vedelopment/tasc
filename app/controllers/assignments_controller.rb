@@ -12,7 +12,6 @@ class AssignmentsController < ApplicationController
   def new
    @assignment = Assignment.new
    @course = Course.find_by_id(params[:id])
-
   end
 
   def edit
@@ -40,7 +39,7 @@ class AssignmentsController < ApplicationController
       @assignment = Assignment.find_by_id(assignment_id)
 
       if @assignment.update_attributes(assignment_params)
-        flash[:notice] = "Updated successfully."        
+        flash[:notice] = "Updated successfully."
         redirect_to course_path(@assignment.course)
       else
         @assignment.errors.full_messages.each do |message|
