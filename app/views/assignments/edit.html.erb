@@ -28,10 +28,10 @@
       <%= f.text_field :duration, class: "form-control" %>
     </div>
     <div class="col m12">
-      Assigned:
-      <br>
-      <%= f.check_box :visible, class: "form-control" %>
-    </div>
+          <br>
+          <%= f.check_box :visible, class: "form-control", id: "assign" %>
+          <%= f.label "Release Assignment", for:"assign" %>
+        </div>
     <div class="col m6 offset-m3">
       <br>
       <%= f.submit "Save assignment", class: "waves-effect waves-light btn-large form-button" %>

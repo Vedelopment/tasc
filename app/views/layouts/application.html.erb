@@ -19,6 +19,9 @@
 
   <body>
     <%= link_to "TASC", root_path, class: "brand-logo logo center" %>
+    <% if current_student %>
+    <%= link_to "#{current_student.first_name}", student_path(1, current_student) %>
+    <% end %>
     <% flash.each do |name, msg| %>
       <p>
     <small> <%= name.capitalize %>: <%= msg %> </small>

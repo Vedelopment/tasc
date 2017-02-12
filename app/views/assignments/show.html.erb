@@ -25,7 +25,10 @@
       </div>
     </div>
   </div>
+  <div class="homework-submission">
+    <% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
+      <%= link_to "You've submitted", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id))%>
+    <% end %>
+  </div>
   <%= link_to "submit homework", new_submission_path(@assignment)%>
-
-
 </div>

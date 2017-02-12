@@ -4,7 +4,6 @@ class Assignment < ApplicationRecord
   has_many :submissions
 
   validates :title, presence: true
-  validates :assign_date, presence: true
-  validates :visible, acceptance: true
-  validates :duration, numericality: { only_integer: true }
+  validates :instructions, presence: true
+  validates :duration, numericality: { only_float: true }
 end
