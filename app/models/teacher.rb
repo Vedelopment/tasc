@@ -6,5 +6,10 @@ class Teacher < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
+  has_secure_password
 
+  def self.confirm(params)
+    @teacher = Teacher.find_by({email: params[:email]})
+    @teacher ? @teacher.authenticate(params[:password]) : false
+  end
 end

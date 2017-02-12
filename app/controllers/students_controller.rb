@@ -21,13 +21,14 @@ class StudentsController < ApplicationController
 
   def create
     @course = Course.last
-    student = Student.new(student_params)
-      if student.save
-        Student.get_profile_pic(student)
-        @course.students << student
-        redirect_to student_path(@course, student)
+    @student = Student.new(student_params)
+      if @student.save
+        login(@student)
+        Student.get_profile_pic(@student)
+        @course.students << @student
+        redirect_to student_path(@course, @student)
       else
-        flash[:error] = student.errors.full_messages.join(". ")
+        flash[:error] = @student.errors.full_messages.join(". ")
         redirect_to new_student_path
       end
   end
