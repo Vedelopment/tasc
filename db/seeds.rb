@@ -103,10 +103,12 @@ Teacher.create(teacher_data)
 
 course_data = [{
   name: "WDI",
-  number: 34
+  number: 34,
+  github: "https://github.com/sf-wdi-34/schedule"
   }, {
     name: "WDI",
-    number: 35
+    number: 35,
+    github: "https://github.com/sf-wdi-35/schedule"
     }]
 Course.create(course_data)
 
