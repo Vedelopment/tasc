@@ -4,6 +4,6 @@ class Submission < ApplicationRecord
   has_one :feedback
 
 
-  validates :link, presence: true
+  validates :content, presence: true   #needed to remove to get these to save
 
 end

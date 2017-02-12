@@ -16,3 +16,10 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require rails.validations
+
+
+$(document).on('ready', function(){
+   $(".button-collapse").sideNav({
+     edge: 'right'
+   });
+})

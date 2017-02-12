@@ -1,17 +1,65 @@
-<div>
-  <h1><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h1>
-  <h3><%= link_to "Schedule", "https://github.com/sf-wdi-34/schedule#" %></h3>
-</div>
+<!-- Show one course -->
 
 
-<h1><%= link_to "Assignments:", assignments_path(@course) %></h1>
-    <% @course.assignments.each do |a| %>
-    <% if a.visible === true  %>
-      <div class ="card">
-        <%= link_to "#{a.title} #{a.due_date.strftime("Due on: %m/%d/%Y")}", assignment_path(a) %>
+<div class="container">
+  <div>
+    <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
+  </div>
+  <div class="row">
+    <div class="col m6">
+      <h5><%= link_to "Assignments:", assignments_path(@course) %></h5>
+      <hr>
+      <% @course.assignments.each do |a| %>
+        <% if a.visible === true  %>
+          <div class ="row hoverable assignments">
+            <div class="col s8">
+              <h6><%= link_to "#{a.title}", assignment_path(a) %></h6>
+            </div>
+            <div class="col s3 offset-s1">
+              <%= a.due_date.strftime("Due on: %m/%d/%Y") %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col m6">
+      <div class="row">
+        <div class="col s12">
+          <h5><%= link_to "Schedule", "#{@course.github}" %></h5>
+          <hr>
+          <iframe src="https://github.com/sf-wdi-34/schedule"></iframe>
+        </div>
       </div>
+      <div class="row">
+        <div class="col s12">
+          <h5>Students</h5>
+          <hr>
+          <% @course.students.each do |s| %>
+          <div class="col m3">
+            <%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(@course, s) %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <h5>Feedback:</h5>
+  <hr>
+  <div class="row">
+    <div class="col m8">
+      Feedback for:
+    </div>
+    <div class="col m3">
+      Score:
+    </div>
+    <% current_student.submissions.each do |s| %>
+    <div class="col m8">
+      <%= s.assignment.title %>
+    </div>
+    <div class="col m3">
+      <%= s.feedback.score %>
+    </div>
     <% end %>
-  <% end %>
-
-
-<h1>Feedback:</h1>
+  </div>
+</div>
