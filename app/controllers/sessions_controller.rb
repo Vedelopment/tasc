@@ -6,12 +6,13 @@ class SessionsController < ApplicationController
   def create
     student_params = params.require(:student).permit(:email, :password)
 
+
     if @student = Student.confirm(student_params)
       login(@student)
       flash[:notice] = "Dude!  You logged in!"
       redirect_to course_path(Course.first)
-    elsif @student = Teacher.confirm(student_params)
-      login(@student)
+    elsif @teacher = Teacher.confirm(student_params)
+      tlogin(@teacher)
       flash[:notice] = "Dude!  You logged in!"
       redirect_to teachers_path(Course.first)
 
