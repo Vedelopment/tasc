@@ -1,56 +1,64 @@
-<h1>New Student page</h1>
-<div class="row">
-  <div class="col m6 offset-m3 form">
-    <%= form_for [@course, @student], url: new_student_path do |f| %>
-    <div class="col m12">
-      First Name:
-      <br>
-      <%= f.text_field :first_name, class: "form-control" %>
+<!-- Student Account Creation Page -->
+
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <div class="col m6 offset-m3 form form-style">
+      <h4>Create your Student Account</h4>
+      <hr>
+      <%= form_for [@course, @student], url: new_student_path do |f| %>
+      <div class="col m12">
+        First Name:
+        <br>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Last Name:
+        <br>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Username:
+        <br>
+        <%= f.text_field :user_name, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Email:
+        <br>
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Slack Username:
+        <br>
+        <%= f.text_field :slack, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Github URL:
+        <br>
+        <%= f.text_field :github, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Linkedin Profile URL:
+        <br>
+        <%= f.text_field :linkedin, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Password:
+        <br>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Password Confirmation:
+        <br>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <%= f.submit "Create Account", class: "waves-effect waves-light btn-large form-button form-submit-style" %>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <div class="col m12">
-      Last Name:
-      <br>
-      <%= f.text_field :last_name, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Username:
-      <br>
-      <%= f.text_field :user_name, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Email:
-      <br>
-      <%= f.text_field :email, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Slack Username:
-      <br>
-      <%= f.text_field :slack, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Github URL:
-      <br>
-      <%= f.text_field :github, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Linkedin Profile URL:
-      <br>
-      <%= f.text_field :linkedin, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Password:
-      <br>
-      <%= f.password_field :password, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Password Confirmation:
-      <br>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
-    </div>
-    <div class="col m6 offset-m3">
-      <br>
-      <%= f.submit "Save Student", class: "waves-effect waves-light btn-large form-button" %>
-      <br><br>
-    </div>
-    <% end %>
   </div>
+</div>
