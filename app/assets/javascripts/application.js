@@ -13,5 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 //= require materialize-sprockets
+
+
+$(document).on('ready page:load', function() {
+  Waves.displayEffect();
+   $(".menu-toggle").sideNav({
+     edge: 'right'
+   });
+})

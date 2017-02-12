@@ -8,11 +8,11 @@
 
 StudentCourse.destroy_all
 TeacherCourse.destroy_all
+Feedback.destroy_all
 Submission.destroy_all
 Student.destroy_all
 Assignment.destroy_all
 Course.destroy_all
-Feedback.destroy_all
 Teacher.destroy_all
 
 student_data = [{
@@ -20,7 +20,7 @@ student_data = [{
   last_name: "Tinkle",
   user_name: "ivyT",
   email: "ivyT@google.com",
-  password_digest: "a",
+  password: "12345",
   slack: "ivyT",
   github: "ivyT",
   linkedin: "IvyT"
@@ -29,7 +29,7 @@ student_data = [{
     last_name: "Hugunkys",
     user_name: "AmandaH",
     email: "AHugunkys@google.com",
-    password_digest: "a",
+    password: "12345",
     slack: "AmandaH",
     github: "AHugunkys",
     linkedin: "AHugunkys"
@@ -38,7 +38,7 @@ student_data = [{
     last_name: "Jetson",
     user_name: "MeetMe",
     email: "MistaJ2@google.com",
-    password_digest: "a",
+    password: "12345",
     slack: "MistaJ2",
     github: "GeorgeJ",
     linkedin: "GeorgeJ"
@@ -47,7 +47,7 @@ student_data = [{
     last_name: "Morgan",
     user_name: "Dex",
     email: "splatterGuy@google.com",
-    password_digest: "a",
+    password: "12345",
     slack: "Dex",
     github: "MiamiSplatter",
     linkedin: "DexterMorgan"
@@ -56,7 +56,7 @@ student_data = [{
     last_name: "D",
     user_name: "TheDD",
     email: "LD@google.com",
-    password_digest: "a",
+    password: "12345",
     slack: "eldee",
     github: "eldee",
     linkedin: "eldee"
@@ -65,7 +65,7 @@ student_data = [{
       last_name: "hodor",
       user_name: "hodor",
       email: "hodor@hodor.hodor",
-      password_digest: "hodor",
+      password: "hodor",
       slack: "hodor",
       github: "hodor",
       linkedin: "hodor"
@@ -78,7 +78,7 @@ Student.create(student_data)
     last_name: "White",
     user_name: "TheOneWhoKnocks",
     email: "WW@google.com",
-    password_digest: "a",
+    password: "123456",
     slack: "MisterWhite",
     github: "WWhite"
   }, {
@@ -86,7 +86,7 @@ Student.create(student_data)
     last_name: "Cooper",
     user_name: "HangWithMe",
     email: "Coops@google.com",
-    password_digest: "a",
+    password: "123456",
     slack: "WishIWasPlayingBBall",
     github: "Cooooop"
   }, {
@@ -94,7 +94,7 @@ Student.create(student_data)
     last_name: "Todd",
     user_name: "Demon_Barber",
     email: "soilentgreen@google.com",
-    password_digest: "a",
+    password: "123456",
     slack: "freeShave",
     github: "STodd"
   }]
@@ -103,10 +103,12 @@ Teacher.create(teacher_data)
 
 course_data = [{
   name: "WDI",
-  number: 34
+  number: 34,
+  github: "https://github.com/sf-wdi-34/schedule"
   }, {
     name: "WDI",
-    number: 35
+    number: 35,
+    github: "https://github.com/sf-wdi-35/schedule"
     }]
 Course.create(course_data)
 
