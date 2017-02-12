@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170211210700) do
     t.datetime "assign_date"
     t.datetime "due_date"
     t.float    "duration"
-    t.boolean  "visible",      default: true, null: false
+    t.boolean  "visible",      default: true
     t.integer  "course_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
