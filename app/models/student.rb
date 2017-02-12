@@ -3,6 +3,7 @@ class Student < ApplicationRecord
   has_many :courses, through: :student_courses
 
   has_many :submissions
+  has_many :assignments, through: :submissions
 
   validates :user_name, presence: true, uniqueness: true, length: {minimum: 3}
   validates :first_name, presence: true
