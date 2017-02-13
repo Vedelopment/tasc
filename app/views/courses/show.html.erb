@@ -36,7 +36,7 @@
           <hr>
           <% @course.students.each do |s| %>
           <div class="col m3">
-            <%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(@course, s) %>
+            <%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(s) %>
           </div>
           <% end %>
         </div>

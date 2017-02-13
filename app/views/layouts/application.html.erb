@@ -21,11 +21,14 @@
         <a href="/" class="brand-logo">&nbsp;TASC</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_student %>
-          <li><%= link_to "#{current_student.first_name}", student_path(1, current_student) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+          <% elsif current_teacher %>
+            <li><%= link_to "#{current_teacher.first_name}", teacher_path(current_teacher) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
-          <li><%= link_to "Sign Up", new_student_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
+            <li><%= link_to "Sign Up", new_student_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
           <% end %>
           <li><a data-activates="slide-out" class="menu-toggle"><i class="material-icons">menu</i></a></li>
         </ul>
@@ -41,7 +44,7 @@
           <div class="background">
             <img src="/student.png">
           </div>
-          <%= link_to "", student_path(Course.first, Student.first), :src => 'http://tctc.axstudent.com/images/CrsCat10v2z74006.jpg', :class => "circle" %>
+          <%= link_to "", student_path(current_student), :src => 'http://tctc.axstudent.com/images/CrsCat10v2z74006.jpg', :class => "circle" %>
           <!-- <a href=""><img class="circle" src="images/yuna.jpg"></a> -->
           <%= link_to "Shiv Gogna", student_path(Course.first, Student.first), :class =>"white-text name" %>
           <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>

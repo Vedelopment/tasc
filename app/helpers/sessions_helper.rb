@@ -11,7 +11,9 @@ module SessionsHelper
 
   def logout
     session[:student_id] = nil
+    session[:teacher_id] = nil
     @current_student = nil
+    @current_teacher = nil
   end
 
   def current_student
