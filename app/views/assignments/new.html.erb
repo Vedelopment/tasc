@@ -1,7 +1,7 @@
 <h1>New assignment page</h1>
 <div class="row">
   <div class="col m6 offset-m3 form">
-    <%= form_for [@course, @assignment], url: create_assignment_path do |f| %>
+    <%= form_for [@course, @assignment], url: create_assignment_path, validate: true do |f| %>
     <div class="col m12">
       Title:
       <br>

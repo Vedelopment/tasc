@@ -16,6 +16,7 @@
 //= require jquery.turbolinks
 //= require_tree .
 //= require materialize-sprockets
+//= require rails.validations
 
 
 $(document).on('ready page:load', function() {
