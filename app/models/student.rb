@@ -9,7 +9,7 @@ class Student < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :password, confirmation: true, :format => {:with => /\A(?=.*[a-zA-Z])(?=.*[0-9]).{6,}\z/, message: "must be at least 6 characters and include one number and one letter."}
+  validates :password, confirmation: true
   has_secure_password
 
   def self.confirm(params)
@@ -33,7 +33,4 @@ class Student < ApplicationRecord
     username = temp_array[temp_array.length - 1]
     return username
   end
-
-
-
 end
