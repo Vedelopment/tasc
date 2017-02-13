@@ -2,19 +2,19 @@
 
 <p>Example 1:</p>
 <% @students.each do |scholar| %>
-  First: <%= link_to "#{scholar.first_name }", student_path(@course, scholar) %>
+  First: <%= link_to "#{scholar.first_name }", student_path(scholar) %>
   <br>
-  Last: <%= link_to "#{scholar.last_name }", student_path(@course, scholar) %>
+  Last: <%= link_to "#{scholar.last_name }", student_path(scholar) %>
   <br>
-  User Name: <%= link_to "#{scholar.user_name }", student_path(@course, scholar) %>
+  User Name: <%= link_to "#{scholar.user_name }", student_path(scholar) %>
   <br>
-  Email: <%= link_to "#{scholar.email }", student_path(@course, scholar) %>
+  Email: <%= link_to "#{scholar.email }", student_path(scholar) %>
   <br>
-  Slack: <%= link_to "#{scholar.slack }", student_path(@course, scholar) %>
+  Slack: <%= link_to "#{scholar.slack }", student_path(scholar) %>
   <br>
-  Github: <%= link_to "#{scholar.github }", student_path(@course, scholar) %>
+  Github: <%= link_to "#{scholar.github }", student_path(scholar) %>
   <br>
-  Linkedin: <%= link_to "#{scholar.linkedin }", student_path(@course, scholar) %>
+  Linkedin: <%= link_to "#{scholar.linkedin }", student_path(scholar) %>
   <br>
   <br>
 <% end %>

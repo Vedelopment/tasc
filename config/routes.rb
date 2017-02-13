@@ -18,8 +18,8 @@ Rails.application.routes.draw do
 
   # Students
   get '/courses/:course_id/students' => 'students#index', as: 'students'
-  get '/courses/:course_id/students/:id' => 'students#show', as: 'student'
   get '/students/new' => 'students#new', as: 'new_student'
+  get '/students/:id' => 'students#show', as: 'student'
   post '/students/new' => 'students#create'
   get '/students/:id/edit' => 'students#edit', as: 'edit_student'
   patch '/students/:id' => 'students#update'
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   # Teachers
   get '/courses/:course_id/teachers' => 'teachers#index', as: 'teachers'
-  get '/courses/:course_id/teachers/:id' => 'teachers#show', as: 'teacher'
+  get '/teachers/:id' => 'teachers#show', as: 'teacher'
   get '/teachers/new' => 'teachers#new', as: 'new_teacher'
   post '/teachers/new' => 'teachers#create'
   get '/teachers/:id/edit' => 'teachers#edit', as: 'edit_teacher'

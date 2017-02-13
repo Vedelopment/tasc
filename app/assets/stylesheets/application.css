@@ -16,12 +16,17 @@
  */
  @import "materialize";
 
+body {
+  background-color: #F5F1E5
+}
+
 .background {
   background-color: rgba(0,0,0,.25)
 }
 
 .assignments {
-  border: solid lightgrey;
+  border: solid rgba(18,87,159,.75);
+  background-color: rgba(18,87,159,.2);
 }
 
 .form-style {
@@ -43,10 +48,15 @@
 }
 
 .profile-style {
-  border: solid lightgrey;
+  border: solid rgba(18,87,159,.75);
+  background-color: rgba(18,87,159,.2);
 }
 
 .side-assignment-style {
   background-color: lightgrey;
   border: solid grey;
+}
+
+.teacher-button-style {
+  background-color: #FF0700!important;
 }

@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    @course = Course.find_by_id(params[:course_id])
+    @course = Course.find_by_id(params[:course_id]) #Is this line neccessary?
   end
 
   def edit

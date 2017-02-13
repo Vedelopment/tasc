@@ -27,7 +27,6 @@ class TeachersController < ApplicationController
   end
 
   def edit
-    @course = Course.find_by_id(params[:course_id])
     @teacher = Teacher.find_by_id(params[:id])
   end
 

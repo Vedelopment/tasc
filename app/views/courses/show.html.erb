@@ -1,6 +1,5 @@
 <!-- Show one course -->
 
-
 <div class="container">
   <div>
     <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
@@ -36,7 +35,7 @@
           <hr>
           <% @course.students.each do |s| %>
           <div class="col m3">
-            <%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(@course, s) %>
+            <%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(s) %>
           </div>
           <% end %>
         </div>
@@ -53,13 +52,15 @@
     <div class="col m3">
       Score:
     </div>
-    <% current_student.submissions.each do |s| %>
-    <div class="col m8">
-      <%= s.assignment.title %>
-    </div>
-    <div class="col m3">
-      <%= s.feedback.score %>
-    </div>
+    <% if current_student %>
+      <% current_student.submissions.each do |s| %>
+        <div class="col m8">
+          <%= s.assignment.title %>
+        </div>
+        <div class="col m3">
+          <%= s.feedback.score %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
