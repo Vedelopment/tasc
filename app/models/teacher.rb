@@ -10,8 +10,7 @@ class Teacher < ApplicationRecord
   validates :password, :format => {:with => /\A(?=.*[a-zA-Z])(?=.*[0-9]).{6,}\z/, message: "must be at least 6 characters and include one number and one letter."}
 
   def self.confirm(params)
-    @student = Student.find_by({email: params[:email]})
-    @student ? @student.authenticate(params[:password]) : false
+    @teacher = Teacher.find_by({email: params[:email]})
+    @teacher ? @teacher.authenticate(params[:password]) : false
   end
-
 end

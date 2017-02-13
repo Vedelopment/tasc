@@ -13,13 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 //= require materialize-sprockets
 //= require rails.validations
 
 
-$(document).on('ready', function(){
-   $(".button-collapse").sideNav({
+$(document).on('ready page:load', function() {
+  Waves.displayEffect();
+   $(".menu-toggle").sideNav({
      edge: 'right'
    });
 })

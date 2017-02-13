@@ -1,12 +1,93 @@
-<h1>HI I'M SHIV!</h1>
-<h4>student show page</h4>
+<!-- Student Profile Page -->
 
-<%= "First: #{@student.first_name}" %>
-<%= "Last: #{@student.last_name}" %>
-<%= "User Name: #{@student.user_name}" %>
-<%= "Email: #{@student.email}" %>
-<%= "Slack: #{@student.slack}" %>
-<%= "Github: #{@student.github}" %>
-<%= "Linkedin: #{@student.linkedin}" %>
-<%= "Linkedin: #{@student.linkedin}" %>
-<img src="<%= @student.profile_image %>" alt="profile">
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col m4 profile-style">
+      <img src="<%= @student.profile_image %>" alt="profile" class="center">
+      <div class="row">
+        <div class="col s4">
+          <p> First: </p>
+          <p> Last: </p>
+          <p> User Name: </p>
+          <p> Email: </p>
+          <p> Slack: </p>
+          <p> Github: </p>
+          <p> Linkedin: </p>
+        </div>
+        <div class="col s8 center">
+          <p><%=@student.first_name %></p>
+          <p><%=@student.last_name %></p>
+          <p><%=@student.user_name %></p>
+          <p><%=@student.email %></p>
+          <p><%=@student.slack %></p>
+          <p><%=@student.github %></p>
+          <p><%=@student.linkedin %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <% if @student == current_student %>
+          <%= link_to "Edit", edit_student_path(current_student), class:"btn form-submit-style" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+<!-- Card with Tabs for each course -->
+    <div class="col m8">
+      <div class="card">
+        <div class="card-content">
+          <p></p>
+        </div>
+        <div class="card-tabs">
+
+          <!-- Code that establishes tabs for each course -->
+          <ul class="tabs tabs-fixed-width">
+            <% @student.courses.each do |c| %>
+            <li class="tab"><%=link_to "#{c.name} #{c.number}", "##{c.id}"%></li>
+            <% end %>
+          </ul>
+          <div class="card-content grey lighten-4">
+            <% @student.courses.each do |c| %>
+
+            <!-- Code for content of each course card -->
+            <div id="<%= c.id %>">
+              <div class="row">
+
+                <!-- Assignments -->
+                <p class="col s8">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
+                <p class="col s4"> Submitted:</p>
+                <br>
+                <br>
+                <%c.assignments.each do |a|%>
+                <p class="col m8">
+                  <%= a.due_date.strftime("%m/%d/%Y") %> -
+                  <%=link_to "#{a.title}", assignment_path(a) %>
+                </p>
+
+                <!-- Determines if submitted -->
+                <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
+                <% if @submissions.find_by({assignment_id: a.id}) %>
+                  X
+                </p>
+                <!-- Feedback if provided -->
+                <p class="col m3">
+                  <%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %>
+                  <% end %>
+                </p> <!-- This </p> must come AFTER the end -->
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
