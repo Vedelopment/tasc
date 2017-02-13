@@ -1,7 +1,7 @@
 <h1>Edit Teacher page</h1>
 <div class="row">
   <div class="col m6 offset-m3 form">
-    <%= form_for(@teacher, :url => {:action => 'update', :id => @teacher.id}), validate: true do |f| %>
+    <%= form_for(@teacher, :url => {:action => 'update', :id => @teacher.id}) do |f| %>
     <div class="col m12">
       <%= f.text_field :first_name, class: "form-control", placeholder: "#{@teacher.first_name}" %>
     </div>
