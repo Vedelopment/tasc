@@ -20,7 +20,7 @@ student_data = [{
   last_name: "Tinkle",
   user_name: "ivyT",
   email: "ivyT@google.com",
-  password: "aaaaaa6",
+  password: "aaaaa6",
   slack: "ivyT",
   github: "ivyT",
   linkedin: "IvyT"
@@ -29,7 +29,7 @@ student_data = [{
     last_name: "Hugunkys",
     user_name: "AmandaH",
     email: "AHugunkys@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "AmandaH",
     github: "AHugunkys",
     linkedin: "AHugunkys"
@@ -38,7 +38,7 @@ student_data = [{
     last_name: "Jetson",
     user_name: "MeetMe",
     email: "MistaJ2@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "MistaJ2",
     github: "GeorgeJ",
     linkedin: "GeorgeJ"
@@ -47,7 +47,7 @@ student_data = [{
     last_name: "Morgan",
     user_name: "Dex",
     email: "splatterGuy@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "Dex",
     github: "MiamiSplatter",
     linkedin: "DexterMorgan"
@@ -56,7 +56,7 @@ student_data = [{
     last_name: "D",
     user_name: "TheDD",
     email: "LD@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "eldee",
     github: "eldee",
     linkedin: "eldee"
@@ -78,7 +78,7 @@ Student.create(student_data)
     last_name: "White",
     user_name: "TheOneWhoKnocks",
     email: "WW@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "MisterWhite",
     github: "WWhite"
   }, {
@@ -86,7 +86,7 @@ Student.create(student_data)
     last_name: "Cooper",
     user_name: "HangWithMe",
     email: "Coops@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "WishIWasPlayingBBall",
     github: "Cooooop"
   }, {
@@ -94,7 +94,7 @@ Student.create(student_data)
     last_name: "Todd",
     user_name: "Demon_Barber",
     email: "soilentgreen@google.com",
-    password: "aaaaaa6",
+    password: "aaaaa6",
     slack: "freeShave",
     github: "STodd"
   }]
@@ -106,8 +106,10 @@ course_data = [{
   number: 34
   }, {
     name: "WDI",
-    number: 35
+    number: 35,
+    students: []
     }]
+
 Course.create(course_data)
 
 
@@ -231,6 +233,6 @@ Teacher.all.each do |f|
   Course.first.teachers << f
 end
 
-# Submission.all.each do |f|
-#   Assignment.sample.submissions << f
-# end
+Submission.all.each do |f|
+  Assignment.all.sample.submissions << f
+end
