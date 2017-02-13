@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/courses/:id/assignments' =>  'assignments#create', as: 'create_assignment'
   get '/courses/:id/assignments/new' =>  'assignments#new', as: 'new_assignment'
   get '/assignments/:id/edit' =>  'assignments#edit', as: 'edit_assignment'
-  patch '/assignment/:id' =>  'assignments#update'
+  patch '/assignments/:id' =>  'assignments#update'
   delete '/assignments/:id' =>  'assignments#destroy'
 
   # Students
