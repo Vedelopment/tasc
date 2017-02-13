@@ -25,7 +25,8 @@ body {
 }
 
 .assignments {
-  border: solid lightgrey;
+  border: solid rgba(18,87,159,.75);
+  background-color: rgba(18,87,159,.2);
 }
 
 .form-style {
@@ -47,7 +48,8 @@ body {
 }
 
 .profile-style {
-  border: solid lightgrey;
+  border: solid rgba(18,87,159,.75);
+  background-color: rgba(18,87,159,.2);
 }
 
 .side-assignment-style {

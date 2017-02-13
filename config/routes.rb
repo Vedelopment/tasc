@@ -18,8 +18,8 @@ Rails.application.routes.draw do
 
   # Students
   get '/courses/:course_id/students' => 'students#index', as: 'students'
-  get '/students/:id' => 'students#show', as: 'student'
   get '/students/new' => 'students#new', as: 'new_student'
+  get '/students/:id' => 'students#show', as: 'student'
   post '/students/new' => 'students#create'
   get '/students/:id/edit' => 'students#edit', as: 'edit_student'
   patch '/students/:id' => 'students#update'
