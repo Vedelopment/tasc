@@ -2,7 +2,14 @@
 
 <div class="container">
   <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
-  <h5>All assignments</h5>
+  <div class="row">
+    <h5 class="col m6">All assignments</h5>
+    <% if current_teacher %>
+      <div class="make-new col m6">
+        <%= link_to "Make a new Assignment", new_assignment_path(@course), :class =>"btn teacher-button-style right" %>
+      </div>
+    <% end %>
+  </div>
   <% @assignments.each do |a| %>
   <div class ="row assignments hoverable">
     <div class="row">
@@ -20,9 +27,4 @@
     </div>
   </div>
   <% end %>
-  <br>
-  <br>
-  <div class="make-new">
-    <%= link_to "Make a new Assignment - teacher's only .... Mike", new_assignment_path(@course), :class =>"btn" %>
-  </div>
 </div>

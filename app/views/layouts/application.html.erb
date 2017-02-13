@@ -44,9 +44,9 @@
           <div class="background">
             <img src="/student.png">
           </div>
-          <%= link_to "", student_path(current_student), :src => 'http://tctc.axstudent.com/images/CrsCat10v2z74006.jpg', :class => "circle" %>
+          <%= link_to "", student_path(Student.first), :src => 'http://tctc.axstudent.com/images/CrsCat10v2z74006.jpg', :class => "circle" %>
           <!-- <a href=""><img class="circle" src="images/yuna.jpg"></a> -->
-          <%= link_to "Shiv Gogna", student_path(Course.first, Student.first), :class =>"white-text name" %>
+          <%= link_to "Shiv Gogna", student_path(Student.first), :class =>"white-text name" %>
           <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
 
         </div></li>

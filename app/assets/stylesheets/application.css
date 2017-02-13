@@ -50,3 +50,7 @@
   background-color: lightgrey;
   border: solid grey;
 }
+
+.teacher-button-style {
+  background-color: #FF0700!important;
+}
