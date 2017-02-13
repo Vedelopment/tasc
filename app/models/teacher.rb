@@ -1,6 +1,7 @@
 class Teacher < ApplicationRecord
   has_many :teacher_courses
   has_many :courses, through: :teacher_courses
+  has_many :feedbacks, as: :communication
 
   has_secure_password
   validates :user_name, presence: true, uniqueness: true, length: {minimum: 3}

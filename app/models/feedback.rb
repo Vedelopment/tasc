@@ -1,3 +1,3 @@
 class Feedback < ApplicationRecord
-  belongs_to :submission
+  belongs_to :communication, polymorphic: true
 end
