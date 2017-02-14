@@ -85,7 +85,7 @@ body {
   transform: scale(1.1);
 }
 
-.hover-pic p {
+.hover-pic div {
   visibility: hidden;
   position: absolute;
   left: 30%;
@@ -93,6 +93,6 @@ body {
   right: 30%
 }
 
-.hover-pic:hover p {
+.hover-pic:hover div {
   visibility: visible;
 }
