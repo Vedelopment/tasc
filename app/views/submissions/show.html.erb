@@ -29,9 +29,13 @@
             <div class="col m12">
               <%= @submission.link %>
             </div>
-            <div class="col s12 center">
-              <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
-              <br><br>
+            <div class="">
+              <% if current_student %>
+                <div class="col s12 center">
+                  <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
+                  <br><br>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
