@@ -7,11 +7,11 @@
     <div class="col m6 offset-m3 form-style">
       <div class="row">
         <div class="col s10 offset-s1">
-          <h4>Login</h4>
-          <hr class="col m4 offset-m4">
+          <h4><b>LOGIN</b></h4>
+          <br class="col m4 offset-m4">
           <%= form_for @student, url: "/sessions", method: "post" do |f| %>
-          <%= f.email_field :email, placeholder: "Email" %>
-          <%= f.password_field :password, placeholder: "Password" %>
+          <%= f.email_field :email, placeholder: "Email", class:"form-control" %>
+          <%= f.password_field :password, placeholder: "Password", class:"form-control" %>
           <div class="row">
             <div class="center">
               <%= f.submit "Log In", class: "waves-effect waves-light btn form-button form-submit-style" %>
