@@ -44,6 +44,7 @@ class StudentsController < ApplicationController
       @student = Student.find_by_id(student_id)
 
       if @student.update_attributes(student_params)
+        Student.get_profile_pic(@student)
         flash[:notice] = "Updated successfully."
         redirect_to student_path(@student)
       else
