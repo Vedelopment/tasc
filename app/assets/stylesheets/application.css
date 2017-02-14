@@ -41,7 +41,7 @@ p {
   border-radius: .3em;
   /*background-color: rgba(250,250,250,1);*/
   padding: 1em;
-  
+
 }
 .form-style {
   /*background-color: #F6F6F6;*/
@@ -96,6 +96,11 @@ p {
   visibility: visible;
 }
 
+.brand-logo {
+  width: 200px;
+  margin: 10px;
+}
+ 
 .profile_image {
   height: 200px;
   display: block;
@@ -107,5 +112,29 @@ border-width: 25px;
 border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
 border-style: solid;
 margin: 0 auto;
+}
 
+/*d3 stuff*/
+div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;
+    background-color: red;
+    margin-right: 1px;
+}
+
+.chart-container {
+  margin: 3em 3em 3em 0;
+}
+
+#graphBar {
+  border: 2px solid black;
+  padding: 10px;
+  width: 200px;
+}
+
+#graphCircle {
+  border: 2px solid black;
+  padding: 10px;
+  width: 300px;
 }
