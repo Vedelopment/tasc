@@ -4,7 +4,7 @@ var dataset = [];                        //Initialize empty array
 
 $( document ).ready(function() {
     console.log( "... and ready for d3!" );
-    $.get('http://localhost:3000/feedbacks')
+    $.get('/feedbacks')
     .then(function(success){
       success.forEach(function(elem) {
         dataset.push(Math.floor(elem.score+1));
