@@ -1,25 +1,60 @@
 <!-- Form for feedback creation -->
 <div class="container">
-  <h4><b>GIVE FEEDBACK</b></h4>
+  <h4><b>Give Feedback</b></h4>
   <div class="row">
-    <div class="col m6 offset-m3 form">
+    <div class="col m6 offset-m3 form form-style">
       <%= form_for [@submission, @feedback], url: create_feedback_path do |f| %>
-      <div class="col m12">
-        Score:
-        <br>
-        <%= f.number_field :score, class: "form-control" %>
-      </div>
-      <div class="col m12">
-        Content:
-        <br>
-        <%= f.text_area :content, class: "form-control materialize-textarea" %>
-      </div>
-      <div class="col m6 offset-m3">
-        <br>
-        <%= f.submit "Save feedback", class: "waves-effect waves-light btn-large form-button" %>
-        <br><br>
-      </div>
+        <div class="col m12">
+          Score:
+          <br>
+          <%= f.number_field :score, class: "form-control" %>
+        </div>
+        <div class="col m12">
+          Feedback for the student:
+          <br>
+          <%= f.text_area :content, class: "form-control materialize-textarea" %>
+        </div>
+        <div class="col m6 offset-m3">
+          <br>
+          <%= f.submit "Save feedback", class: "waves-effect waves-light btn-large form-button form-submit-style" %>
+          <br><br>
+        </div>
       <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="row">
+    <div class="col m3 offset-m1 side-assignment-style">
+      <h4 class="center">Assignment</h4>
+      <br>
+      <div class="col s12">
+        <h5><%= link_to "#{@submission.assignment.title}",  assignment_path(@submission.assignment)%></h5>
+        <hr>
+        <%= @submission.assignment.due_date.strftime("Due on: %m/%d/%Y") %>
+      </div>
+    </div>
+    <div class="col m8">
+      <div class="col m9 offset-m1 form form-style">
+        <h4 class="center">Student Homework</h4>
+        <br>
+        <div class="col m12">
+          <b>Student's Homework</b>
+          <br>
+          <%= @submission.content %>
+        </div>
+        <div class="col m12">
+          <% if @submission.link %>
+            <b>Link:</b>
+            <br>
+            <%= "#{@submission.link}"  %>
+          <% end %>
+          <hr>
+          <b>Created </b> <%= @submission.created_at.strftime("%m/%d/%Y") %>
+          <br>
+          <b>Edited </b> <%= @submission.updated_at.strftime("%m/%d/%Y") %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

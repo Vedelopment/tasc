@@ -1,6 +1,3 @@
-
-<br>
-<br>
 <div class="row">
   <div class="row">
     <div class="col m3 offset-m1 side-assignment-style">
@@ -20,22 +17,21 @@
           <h4 class="center"><b>SUBMIT HOMEWORK</b></h4>
           <br>
           <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
-
-          <div class="col m12">
-            Insert your solution for the assignment here:
-            <br>
-            <%= f.text_area :content, class: "form-control materialize-textarea" %>
-          </div>
-          <div class="col m12">
-            Link:
-            <br>
-            <%= f.text_field :link, class: "form-control" %>
-          </div>
-          <div class="col s12 center">
-            <%= f.submit "Save Submission", class: "waves-effect btn waves-light form-button form-submit-style" %>
-            <br><br>
-          </div>
-        <% end %>
+            <div class="col m12">
+              Insert your solution for the assignment here:
+              <br>
+              <%= f.text_area :content, class: "form-control materialize-textarea" %>
+            </div>
+            <div class="col m12">
+              Link:
+              <br>
+              <%= f.text_field :link, class: "form-control" %>
+            </div>
+            <div class="col s12 center">
+              <%= f.submit "Save Submission", class: "waves-effect btn waves-light form-button form-submit-style" %>
+              <br><br>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
