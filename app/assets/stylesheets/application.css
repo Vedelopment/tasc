@@ -58,8 +58,13 @@ p {
   text-decoration: none!important;
   border: solid 2px #FBD334!important;
 }
+
 .form-submit-style {
   background-color: #FA4542!important;
+}
+
+.new-submit-style {
+  background-color: #0BE000!important;
 }
 
 .form-style h4 {
@@ -113,7 +118,7 @@ p {
   width: 200px;
   margin: 10px;
 }
- 
+
 .profile_image {
   height: 200px;
   display: block;
