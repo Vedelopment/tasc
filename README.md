@@ -66,36 +66,36 @@ def self.get_profile_pic(student)
   end
 end
 ```
-### Different Blair
+### Mike
 ```
 <div>
-              <% if current_student == @submission.student %>
-                <div class="col s12 center">
-                  <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+      <% if current_student == @submission.student %>
+        <div class="col s12 center">
+          <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
         </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+</div>
+<div class="row">
+<% if current_teacher %>
+  <div class="col m9 offset-m1 form form-style">
+    <h4 class="center">Homework Feedback</h4>
+    <% if @submission.feedback %>
+      <%= @submission.feedback.content %>
+      <div class="center">
+        <%= link_to "Edit Feedback", edit_feedback_path(@submission.feedback), class:"waves-effect btn waves-light form-submit-style" %>
       </div>
-      <div class="row">
-        <% if current_teacher %>
-          <div class="col m9 offset-m1 form form-style">
-            <h4 class="center">Homework Feedback</h4>
-            <% if @submission.feedback %>
-              <%= @submission.feedback.content %>
-              <div class="center">
-                <%= link_to "Edit Feedback", edit_feedback_path(@submission.feedback), class:"waves-effect btn waves-light form-submit-style" %>
-              </div>
-            <% else %>
-              <div class="center">
-                <%= link_to "Provide Feedback", new_feedback_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        <br><br>
+    <% else %>
+      <div class="center">
+        <%= link_to "Provide Feedback", new_feedback_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
       </div>
+    <% end %>
+  </div>
+<% end %>
+<br><br>
+</div>
 ```
 ### LD
 ```
