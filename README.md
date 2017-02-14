@@ -27,10 +27,10 @@ Slack notifier
 Chron Job
 
 ### Contributors:
-LD - https://github.com/Vedelopment
-Michael - https://github.com/mblair415
-Ricardo - https://github.com/ricarellano
-RJ - https://github.com/johnson-rl
+* LD - https://github.com/Vedelopment
+* Michael - https://github.com/mblair415
+* Ricardo - https://github.com/ricarellano
+* RJ - https://github.com/johnson-rl
 
 ### Flexible Technical Requirements:
 Authentication & Authorization
