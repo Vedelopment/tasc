@@ -56,7 +56,9 @@
 
                   <!-- Assignments -->
                   <p class="col s8">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
+                  <% if current_teacher %>
                   <p class="col s4"> Released:</p>
+                  <% end %>
                   <br>
                   <br>
                   <%c.assignments.each do |a|%>
@@ -66,9 +68,9 @@
                   </p>
 
                   <!-- Determines if released -->
-                  <% if a.visible %>
+                  <% if a.visible && current_teacher%>
                   <p class="col m4">Yes</p>
-                  <% else %>
+                  <% elsif current_teacher %>
                   <p class="col m4">No</p>
                   <% end %>
                   <% end %>
