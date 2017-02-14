@@ -1,5 +1,7 @@
 class SubmissionsController < ApplicationController
 
+  before_filter :require_login
+
   def show
     @submission = Submission.find_by_id(params[:id])
     @assignment = @submission.assignment
@@ -11,8 +13,8 @@ class SubmissionsController < ApplicationController
   end
 
   def edit
-    @assignment = Assignment.find_by_id(params[:id])
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def create

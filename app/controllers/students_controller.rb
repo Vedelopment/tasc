@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+  before_filter :require_login
+
   def index
     @course = Course.find_by_id(params[:course_id])
     @students = @course.students
@@ -8,6 +11,11 @@ class StudentsController < ApplicationController
     @course = Course.find_by_id(params[:course_id])
     @student = Student.find_by_id(params[:id])
     @submissions = @student.submissions
+    if current_student == @student
+      @display = true
+    else
+      @display = false
+    end
   end
 
   def new
@@ -27,7 +35,7 @@ class StudentsController < ApplicationController
         login(@student)
         Student.get_profile_pic(@student)
         @course.students << @student
-        redirect_to student_path(@course, @student)
+        redirect_to student_path(@student)
       else
         flash[:error] = @student.errors.full_messages.join(". ")
         redirect_to new_student_path
@@ -39,6 +47,7 @@ class StudentsController < ApplicationController
       @student = Student.find_by_id(student_id)
 
       if @student.update_attributes(student_params)
+        Student.get_profile_pic(@student)
         flash[:notice] = "Updated successfully."
         redirect_to student_path(@student)
       else
@@ -48,8 +57,6 @@ class StudentsController < ApplicationController
         redirect_to edit_student_path(@student)
       end
   end
-
-
 
   private
 

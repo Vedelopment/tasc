@@ -1,5 +1,7 @@
 class FeedbacksController < ApplicationController
 
+  before_filter :require_login
+
   def index
     @feedback = Feedback.all
 
@@ -11,6 +13,9 @@ class FeedbacksController < ApplicationController
 
   def show
     @feedback = Feedback.find_by_id(params[:id])
+    if current_student != @feedback.submission.student
+      redirect_to student_path(current_student)
+    end
   end
 
   def new
@@ -53,7 +58,7 @@ class FeedbacksController < ApplicationController
   def destroy
     @feedback = Feedback.find_by_id(params[:id])
     @feedback.delete
-    # redirect_to current_teacher
+    redirect_to current_teacher
   end
 
   private
