@@ -1,7 +1,13 @@
 class FeedbacksController < ApplicationController
 
   def index
-    @student = Student.find_by_id(params[:id])
+    # @student = Student.find_by_id(params[:id])
+    @feedback = Feedback.all
+
+    # respond_to do |format|
+    #   format.json { render :json => @feedback .to_json }
+    #   format.html
+    # end
   end
 
   def show

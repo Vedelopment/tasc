@@ -5,8 +5,8 @@
     <br>
     <br>
     <div class="col m6 offset-m3 form form-style">
-      <h4><b>EDIT ASSIGNMENT</b></h4>
-      <%= form_for @assignment, url: create_assignment_path, validate: true do |f| %>
+      <h4>Edit Assignment</h4>
+      <%= form_for @assignment, url: {action: 'update', id: @assignment.id}, validate: true do |f| %>
       <div class="col m12">
         Title:
         <br>
