@@ -1,0 +1,23 @@
+<div class="container">
+  <h4>All Feedback</h4>
+
+  <div id="graphBar"></div>
+  <div id="graphCircle"></div>
+
+  <div class="row">
+
+    <% @feedback.each do |f| %>
+      <div class="col s11">
+        <h6>Feedback:</h6>
+        <hr>
+        <%= f.content %>
+      </div>
+      <div class="col s1">
+        <h6>score</h6>
+        <hr>
+        <span class="right"><%= f.score %></span>
+      </div>
+    <% end %>
+
+  </div>
+</div>
