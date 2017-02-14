@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-  before_filter :require_login
+  before_filter :require_login, :except => [:new, :create]
 
   def index
     @course = Course.find_by_id(params[:course_id])
