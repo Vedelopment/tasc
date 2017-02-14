@@ -63,15 +63,16 @@
     <div class="col m3">
       Score:
     </div>
-    <% if current_student %>
+    <% if current_student.submissions %>
       <%  current_student.submissions.each do |s| %>
-
+      <% if s.feedback %>
         <div class="col m8">
-          <%= link_to "#{s.assignment.title}", feedback_path %>
+          <%= link_to "#{s.assignment.title}", submission_path(s) %>
         </div>
         <div class="col m3">
-          <%= s.feedback.score %>
+          <%= link_to "#{s.feedback.score}", feedback_path(s.feedback)%>
         </div>
+        <% end %>
        <% end %>
     <% end %>
   </div>
