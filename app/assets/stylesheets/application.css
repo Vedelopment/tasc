@@ -17,7 +17,7 @@
  @import "materialize";
 
 body {
-  background-color: #F5F1E5
+  /*background-color: #F6F6F6;*/
 }
 
 .background {
@@ -30,21 +30,48 @@ body {
 }
 
 .form-style {
-  border: solid lightgrey;
-  background-color: rgba(18,87,159,.75);
-  color: white;
+  /*background-color: #F6F6F6;*/
+  /*color: black;*/
+}
+
+::-webkit-input-placeholder {
+   color: red;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: red;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
+:-ms-input-placeholder {
+   color: red;
+}
+
+.form-control {
+  border: solid 2px lightgrey!important;
+}
+
+.form-control:focus {
+  border-bottom: none!important;
+  box-shadow: none!important;
+  text-decoration: none!important;
+  border: solid 2px #FBD334!important;
+}
+
+.form-submit-style {
+  background-color: #FA4542!important;
 }
 
 .form-style h4 {
   text-align: center;
 }
 
-.form-submit-style {
-  background-color: #12579F!important;
+#navbar {
+  background-color: #000000;
 }
 
-#navbar {
-  background-color: #12579F;
+#navbar li :hover {
+  background-color: #FA4542;
 }
 
 .profile-style {
@@ -58,5 +85,13 @@ body {
 }
 
 .teacher-button-style {
-  background-color: #FF0700!important;
+  background-color: #FA4542!important;
+}
+
+.mike p {
+  visibility:hidden;
+}
+
+.mike:hover p {
+  visibility: visible;
 }
