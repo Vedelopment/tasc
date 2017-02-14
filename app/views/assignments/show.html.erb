@@ -17,7 +17,7 @@
             <% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
               <%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center form-submit-style" %>
             <% else %>
-              <%= link_to "Submit", new_submission_path(@assignment), class:"btn center new-submit-style"%>
+              <%= link_to "Submit", new_submission_path(@assignment), class:"btn center form-submit-style"%>
             <% end %>
           </div>
           <% elsif current_teacher %>

@@ -28,7 +28,7 @@
         <% if current_student.submissions.find_by(assignment_id: a.id) %>
           <%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: a.id)), class:"btn center form-submit-style" %>
         <% else %>
-          <%= link_to "Submit", new_submission_path(a), class:"btn center form-submit-style submit-style"%>
+          <%= link_to "Submit", new_submission_path(a), class:"btn center  new-submit-style"%>
         <% end %>
       </div>
     </div>
