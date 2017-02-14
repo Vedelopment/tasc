@@ -58,8 +58,9 @@
                 <div class="row">
 
                   <!-- Assignments -->
-                  <p class="col s8">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
-                  <p class="col s4"> Submitted:</p>
+                  <p class="col s7">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
+                  <p class="col s2"> Submitted:</p>
+                  <p class="col s2"> Feedback:<p>
                   <br>
                   <br>
                   <%c.assignments.each do |a|%>
@@ -71,11 +72,14 @@
                   <!-- Determines if submitted -->
                   <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
                     <% if @submissions.find_by({assignment_id: a.id}) %>
-                    X
+                    <!-- X -->
+                    <i class="tiny material-icons">done</i>
                   </p>
                   <!-- Feedback if provided -->
                   <p class="col m3">
+                    <% if @submissions.find_by({assignment_id: a.id}).feedback %>
                     <%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %>
+                    <% end %>
                     <% end %>
                   </p> <!-- This </p> must come AFTER the end -->
                   <% end %>
