@@ -95,3 +95,10 @@ body {
 .mike:hover p {
   visibility: visible;
 }
+
+.schedule_img {
+  height: 270px;
+  width:  390px;
+
+
+}
