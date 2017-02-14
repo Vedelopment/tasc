@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @course = Course.last
+    @course = Course.first
     @student = Student.new(student_params)
       if @student.save
         login(@student)

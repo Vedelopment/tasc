@@ -17,9 +17,9 @@
     </div>
     <div class="col m8">
       <div class="col m9 offset-m1 form form-style">
-        <h4 class="center">Submit Your Homework</h4>
+        <h4 class="center">Edit Your Homework</h4>
         <br>
-        <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
+        <%= form_for @submission, url: {action: 'update', id: @submission.id}, validate: true do |f| %>
           <div class="col m12">
             Insert your solution for the assignment here:
             <br>
