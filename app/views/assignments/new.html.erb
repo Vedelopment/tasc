@@ -5,13 +5,14 @@
     <br>
     <br>
     <div class="col m6 offset-m3 form form-style">
-      <h4>Create an Assignment</h4>
-      <hr>
+      <h4><b>CREATE AN ASSIGNMENT</b></h4>
       <%= form_for [@course, @assignment], url: create_assignment_path, validate: true do |f| %>
       <div class="col m12">
         Title:
         <br>
-        <%= f.text_field :title, class: "form-control" %>
+        <div class="form-input">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
       </div>
       <div class="col m12">
         Instructions:
