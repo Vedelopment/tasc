@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
         login(@student)
         Student.get_profile_pic(@student)
         @course.students << @student
-        redirect_to student_path(@course, @student)
+        redirect_to student_path(@student)
       else
         flash[:error] = @student.errors.full_messages.join(". ")
         redirect_to new_student_path
