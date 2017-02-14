@@ -17,21 +17,21 @@ Teacher.destroy_all
 
 student_data = [{
   first_name: "Ivana",
-  last_name: "Tinkle",
+  last_name: "Tudor",
   user_name: "ivyT",
   email: "ivyT@google.com",
   password: "aaaaa6",
   slack: "ivyT",
-  github: "ivyT",
+  github: "image",
   linkedin: "IvyT"
   }, {
     first_name: "Amanda",
-    last_name: "Hugunkys",
+    last_name: "Hodgkins",
     user_name: "AmandaH",
-    email: "AHugunkys@google.com",
+    email: "Amandahugs@google.com",
     password: "aaaaa6",
     slack: "AmandaH",
-    github: "AHugunkys",
+    github: "image",
     linkedin: "AHugunkys"
   }, {
     first_name: "George",
@@ -40,7 +40,7 @@ student_data = [{
     email: "MistaJ2@google.com",
     password: "aaaaa6",
     slack: "MistaJ2",
-    github: "GeorgeJ",
+    github: "image",
     linkedin: "GeorgeJ"
   }, {
     first_name: "Dexter",
@@ -49,7 +49,7 @@ student_data = [{
     email: "splatterGuy@google.com",
     password: "aaaaa6",
     slack: "Dex",
-    github: "MiamiSplatter",
+    github: "image",
     linkedin: "DexterMorgan"
   }, {
     first_name: "LD",
@@ -58,7 +58,7 @@ student_data = [{
     email: "LD@google.com",
     password: "aaaaa6",
     slack: "eldee",
-    github: "eldee",
+    github: "image",
     linkedin: "eldee"
     }, {
       first_name: "hodor",
@@ -67,9 +67,18 @@ student_data = [{
       email: "hodor@hodor.hodor",
       password: "hodor6",
       slack: "hodor",
-      github: "hodor",
+      github: "image",
       linkedin: "hodor"
-    }]
+    }, {
+      first_name: "GA",
+      last_name: "Student",
+      user_name: "GA-Student",
+      email: "GA@student.com",
+      password: "GAisnum1",
+      slack: "GA-Student",
+      github: "generalassembly",
+      linkedin: "GA-Student"
+      }]
 Student.create(student_data)
 
 
@@ -90,24 +99,26 @@ Student.create(student_data)
     slack: "WishIWasPlayingBBall",
     github: "Cooooop"
   }, {
-    first_name: "Sweeney",
-    last_name: "Todd",
-    user_name: "Demon_Barber",
-    email: "soilentgreen@google.com",
-    password: "aaaaa6",
-    slack: "freeShave",
-    github: "STodd"
+    first_name: "GA",
+    last_name: "Teacher",
+    user_name: "GA-Teacher",
+    email: "GA@teacher.com",
+    password: "GAisnum1",
+    slack: "GA-Teacher",
+    github: "GA-Teacher"
   }]
 Teacher.create(teacher_data)
 
 
 course_data = [{
   name: "WDI",
-  number: 34
+  number: 34,
+  github: "https://github.com/sf-wdi-34/schedule"
   }, {
     name: "WDI",
     number: 35,
-    students: []
+    students: [],
+    github: "https://github.com/sf-wdi-35/schedule#"
     }]
 
 Course.create(course_data)
@@ -234,8 +245,55 @@ end
 
 Teacher.all.each do |f|
   Course.first.teachers << f
+  Course.second.teachers << f
 end
 
-Submission.all.each do |f|
-  Assignment.all.sample.submissions << f
-end
+# Submission.all.each do |f|
+#   Assignment.all.sample.submissions << f
+# end
+
+
+#Below is the code that sets up just the info for the sample accounts
+
+sample_submission = [{content: ipsum,
+link: "https://www.google.com",
+assignment: Assignment.first,
+student: Student.last
+}, {
+  content: ipsum,
+  link: "http://img.memecdn.com/epic-face_o_232179.gif",
+  assignment: Assignment.third,
+  student: Student.last
+}, {
+  content: ipsum,
+  link: "https://s-media-cache-ak0.pinimg.com/originals/48/10/7e/48107e9a87c50894b348df59fc875830.jpg",
+  assignment: Assignment.fourth,
+  student: Student.last
+}, {
+  content: "bagels for a snack sound good",
+  link: "https://www.google.com",
+  assignment: Assignment.last,
+  student: Student.last
+}]
+
+sam_sub = Submission.create(sample_submission)
+
+sample_feedback = [{
+  score: 2.4,
+  content: ipsum,
+  submission: sam_sub[0]
+  }, {
+    score: 3.6,
+    content: "Did you know that the best time to start implementing friendly URLs is always?",
+    submission: sam_sub[1]
+  }, {
+    score: 3.0,
+    content: ipsum,
+    submission: sam_sub[2]
+  }, {
+    score: 3.14,
+    content: ipsum,
+    submission: sam_sub[3]
+  }]
+
+Feedback.create(sample_feedback)
