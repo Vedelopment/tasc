@@ -11,8 +11,8 @@ class SubmissionsController < ApplicationController
   end
 
   def edit
-    @assignment = Assignment.find_by_id(params[:id])
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def create
