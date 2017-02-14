@@ -14,12 +14,12 @@
         <br>
         <%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %>
       </div>
-    </div>
-    <div class="col m8">
-      <div class="col m9 offset-m1 form form-style">
-        <h4 class="center">Submit Your Homework</h4>
-        <br>
-        <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
+      <div class="col m8">
+        <div class="col m9 offset-m1 form form-style">
+          <h4 class="center"><b>SUBMIT HOMEWORK</b></h4>
+          <br>
+          <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
+
           <div class="col m12">
             Insert your solution for the assignment here:
             <br>
