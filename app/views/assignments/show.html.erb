@@ -8,9 +8,9 @@
       <% if current_student %>
       <div class="homework-submission">
         <% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
-          <%= link_to "You've submitted", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center form-submit-style" %>
+          <%= link_to "Edit", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center form-submit-style" %>
         <% else %>
-          <%= link_to "submit homework", new_submission_path(@assignment), class:"btn center form-submit-style"%>
+          <%= link_to "Submit", new_submission_path(@assignment), class:"btn center form-submit-style"%>
         <% end %>
       </div>
       <% elsif current_teacher %>
@@ -34,6 +34,15 @@
           </div>
           <div class="right">
             <%= @assignment.assign_date.strftime("Assigned on: %m/%d/%Y") %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+          <div>
+            <% @assignment.submissions.each do |c| %>
+            <li><%=link_to "#{c.content}, submitted by: #{c.student.first_name} #{c.student.last_name[0]}."%></li>
+            <% end %>
           </div>
         </div>
       </div>

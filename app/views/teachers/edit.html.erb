@@ -6,7 +6,7 @@
   <div class="col m6 offset-m3 form form-style">
     <h4>Edit Your Profile</h4>
     <hr>
-     <%= form_for(@teacher, :url => {:action => 'update', :id => @teacher.id}) do |f| %>
+     <%= form_for @teacher, url: {action: 'update', id: @teacher.id}, validate: true do |f| %>
     <div class="col m10 offset-m1">
       First Name:
       <br>
