@@ -1,23 +1,38 @@
 <div class="container">
-  <h4>All Feedback</h4>
-
-  <div id="graphBar"></div>
-  <div id="graphCircle"></div>
+  <h4>Submission Feedback</h4>
 
   <div class="row">
 
-    <% @feedback.each do |f| %>
-      <div class="col s11">
-        <h6>Feedback:</h6>
-        <hr>
-        <%= f.content %>
+    <div class="col m6">
+      <h5>Bar:</h5>
+      <div id="graphBar"></div>
+      <h6>Student Progress as Bar Chart</h6>
+      <br>
+      <h5>Bubble:</h5>
+      <div id="graphCircle"></div>
+      <h6>Student Progress as Bubble Bath</h6>
+    </div>
+
+    <div class="col m6">
+      <div class="row">
+        <% @feedback.each do |f| %>
+          <div class="row assignments hoverable">
+            <div class="col m10">
+              <h6>Feedback:</h6>
+              <hr>
+              <%= f.content %>
+            </div>
+            <div class="col m2">
+              <h6>Score:</h6>
+              <hr>
+              <span><%= f.score %></span>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="col s1">
-        <h6>score</h6>
-        <hr>
-        <span class="right"><%= f.score %></span>
-      </div>
-    <% end %>
+    </div>
 
   </div>
+
+
 </div>
