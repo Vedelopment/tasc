@@ -44,7 +44,7 @@
           <hr>
           <ol>
           <% @course.teachers.each do |t| %>
-            <li><%= link_to "#{t.first_name} #{t.last_name[0]}", teacher_path %></li>
+            <li><%= link_to "#{t.first_name} #{t.last_name[0]}", teacher_path(t) %></li>
           <% end %>
         </ol>
         </div>
