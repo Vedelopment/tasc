@@ -1,0 +1,17 @@
+<div class="container">
+  <br>
+  <br>
+  <h5>Feedback for <%= link_to "#{@feedback.submission.assignment.title}", assignment_path(@feedback.submission.assignment) %></h5>
+  <div class="row">
+    <div class="col s11">
+      <h6>Feedback:</h6>
+      <hr>
+      <%= @feedback.content %>
+    </div>
+    <div class="col s1">
+      <h6>score</h6>
+      <hr>
+      <span class="right"><%= @feedback.score %></span>
+    </div>
+  </div>
+</div>
