@@ -1,11 +1,17 @@
 <!-- Show one course -->
 
 <div class="container">
-  <div>
-    <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
-  </div>
   <div class="row">
     <div class="col m6">
+      <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
+    </div>
+      <div class="col m6 right-align">
+        <h5><%= link_to "Schedule", "#{@course.github}" %></h5>
+
+      </div>
+  </div>
+  <div class="row">
+    <div class="col m7">
       <h5><%= link_to "Assignments:", assignments_path(@course) %></h5>
       <hr>
 
@@ -22,41 +28,37 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col m6">
-      <div class="row">
+    <div class="col m5">
+      <!-- <div class="row">
         <div class="col s12">
           <h5><%= link_to "Schedule", "#{@course.github}" %></h5>
-          <hr>
+          <hr> -->
             <!-- <%= image_tag "/assets/schedule.png", :class => "schedule_img"%> -->
-        </div>
-      </div>
+        <!-- </div>
+      </div> -->
       <div class="row">
-        <div class="col s12">
-          <h5>Students</h5>
+        <div class="col s6">
+          <h5><%= link_to "Students:", students_path(@course) %></h5>
           <hr>
+          <ol>
           <% @course.students.each do |s| %>
-          <div class="col m3">
-            <%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(s) %>
-
-
-          </div>
+               <li><%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(s) %></li>
           <% end %>
+        </ol>
+        </div>
+        <div class="col s6">
+          <h5><%= link_to "Teachers:", teachers_path(@course) %></h5>
+          <hr>
+          <ol>
+          <% @course.teachers.each do |t| %>
+            <li><%= link_to "#{t.first_name} #{t.last_name[0]}", teacher_path %></li>
+
+          <% end %>
+        </ol>
         </div>
       </div>
  <!-- Teachers -->
-      <div class="row">
-        <div class="col s12">
-          <h5>Teachers</h5>
-          <hr>
-          <% @course.teachers.each do |t| %>
-          <div class="col m3">
-            <%= link_to "#{t.first_name} #{t.last_name[0]}", teacher_path %>
 
-
-          </div>
-          <% end %>
-        </div>
-      </div>
     </div>
     <!-- <h5><%= link_to "Teachers:", teachers_path(@course) %></h5> -->
   </div>
@@ -71,6 +73,7 @@
     </div>
     <% if current_student %>
       <%  current_student.submissions.each do |s| %>
+
         <div class="col m8">
           <%= link_to "#{s.assignment.title}", feedback_path %>
         </div>

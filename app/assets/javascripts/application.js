@@ -17,11 +17,3 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require rails.validations
-
-
-$(document).on('ready page:load', function() {
-  Waves.displayEffect();
-   $(".menu-toggle").sideNav({
-     edge: 'right'
-   });
-})
