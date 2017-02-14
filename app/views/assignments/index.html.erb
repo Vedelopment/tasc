@@ -3,7 +3,7 @@
 <div class="container">
   <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
   <div class="row">
-    <h5 class="col m6">All assignments</h5>
+    <h5 class="col m6">ASSIGNMENTS</h5>
     <% if current_teacher %>
       <div class="make-new col m6">
         <%= link_to "Make a new Assignment", new_assignment_path(@course), :class =>"btn teacher-button-style right" %>

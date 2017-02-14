@@ -38,7 +38,8 @@ Rails.application.routes.draw do
   get '/teachers/:id/edit' => 'teachers#edit', as: 'edit_teacher'
   patch '/teachers/:id' => 'teachers#update'
   # Feedbacks
-  get '/students/:id/feedbacks' => 'feedbacks#index', as: 'feedbacks'
+  # get '/students/:id/feedbacks' => 'feedbacks#index', as: 'feedbacks'
+  get '/feedbacks' => 'feedbacks#index', as: 'feedbacks'
   get '/feedbacks/:id' => 'feedbacks#show', as: 'feedback'
   get '/submissions/:id/feedbacks/new' => 'feedbacks#new', as: 'new_feedback'
   post '/submissions/:id/feedbacks' => 'feedbacks#create', as: 'create_feedback'
