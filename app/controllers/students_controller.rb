@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+  before_filter :require_login
+
   def index
     @course = Course.find_by_id(params[:course_id])
     @students = @course.students
@@ -54,8 +57,6 @@ class StudentsController < ApplicationController
         redirect_to edit_student_path(@student)
       end
   end
-
-
 
   private
 
