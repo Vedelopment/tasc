@@ -8,6 +8,11 @@ class StudentsController < ApplicationController
     @course = Course.find_by_id(params[:course_id])
     @student = Student.find_by_id(params[:id])
     @submissions = @student.submissions
+    if current_student == @student
+      @display = true
+    else
+      @display = false
+    end
   end
 
   def new

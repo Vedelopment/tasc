@@ -6,6 +6,9 @@ class FeedbacksController < ApplicationController
 
   def show
     @feedback = Feedback.find_by_id(params[:id])
+    if current_student != @feedback.submission.student
+      redirect_to student_path(current_student)
+    end
   end
 
   def new

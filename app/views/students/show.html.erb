@@ -59,8 +59,10 @@
 
                   <!-- Assignments -->
                   <p class="col s7">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
+                  <% if @display %>
                   <p class="col s2"> Submitted:</p>
                   <p class="col s2"> Feedback:<p>
+                  <% end %>
                   <br>
                   <br>
                   <%c.assignments.each do |a|%>
@@ -71,8 +73,7 @@
 
                   <!-- Determines if submitted -->
                   <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
-                    <% if @submissions.find_by({assignment_id: a.id}) %>
-                    <!-- X -->
+                    <% if @submissions.find_by({assignment_id: a.id}) && @display %>
                     <i class="tiny material-icons">done</i>
                   </p>
                   <!-- Feedback if provided -->
