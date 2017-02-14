@@ -76,10 +76,23 @@ body {
   background-color: #FA4542!important;
 }
 
-.mike p {
-  visibility:hidden;
+.about-pic {
+  width: 90%;
+  border-radius: 20px;
 }
 
-.mike:hover p {
+.about-pic:hover {
+  transform: scale(1.1);
+}
+
+.hover-pic p {
+  visibility: hidden;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  right: 30%
+}
+
+.hover-pic:hover p {
   visibility: visible;
 }
