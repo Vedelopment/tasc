@@ -58,8 +58,7 @@ We find that the most imporatant use of our site is that the most relevant infor
 * students can view released assignments and their own submissions - like looking at assigned homework and the same student’s responses.
 * students can view feedback provided by teachers on that student’s submissions - students can only see feedback given to them
 
-![wireframes one](https://files.slack.com/files-pri/T0351JZQ0-F44NPR2G0/img_20170214_121856.jpg)
-![wireframes two](https://files.slack.com/files-tmb/T0351JZQ0-F465M9154-8cb631c877/img_20170214_121936_1024.jpg)
+![wireframes one](https://i.imgur.com/gqRqpas.jpg)
 
 ## Code we are proud of
 
@@ -119,6 +118,9 @@ end
 </div>
 ```
 ### LD
+
+#### D3
+
 ```
   var viz = function(dataset){
     d3.select("#graphBar").selectAll("div")
@@ -130,6 +132,16 @@ end
           var barHeight = d * 20;  //Scale up by factor of 5
           return barHeight + "px";
     });
+```
+#### Polymorphic Relationships
+```
+class Student < ApplicationRecord
+  has_many :student_courses
+  has_many :courses, through: :student_courses
+  has_many :submissions
+  has_many :feedbacks, as: :communication
+  has_many :assignments, through: :submissions
+Add Comment Collapse
 ```
 
 ### Ryan
