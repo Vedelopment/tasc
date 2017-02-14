@@ -6,7 +6,7 @@
       <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
     </div>
       <div class="col m6 right-align">
-        <h5><%= link_to "Schedule", "#{@course.github}" %></h5>
+        <h5><%= link_to "Schedule", "#{@course.github}", class: "waves-effect waves-light btn red" %></h5>
 
       </div>
   </div>
@@ -29,20 +29,13 @@
       <% end %>
     </div>
     <div class="col m5">
-      <!-- <div class="row">
-        <div class="col s12">
-          <h5><%= link_to "Schedule", "#{@course.github}" %></h5>
-          <hr> -->
-            <!-- <%= image_tag "/assets/schedule.png", :class => "schedule_img"%> -->
-        <!-- </div>
-      </div> -->
       <div class="row">
-        <div class="col s6">
+        <div class="col s6 ">
           <h5><%= link_to "Students:", students_path(@course) %></h5>
           <hr>
           <ol>
           <% @course.students.each do |s| %>
-               <li><%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(s) %></li>
+               <li ><%= link_to "#{s.first_name} #{s.last_name[0]}", student_path(s) %></li>
           <% end %>
         </ol>
         </div>
@@ -52,7 +45,6 @@
           <ol>
           <% @course.teachers.each do |t| %>
             <li><%= link_to "#{t.first_name} #{t.last_name[0]}", teacher_path %></li>
-
           <% end %>
         </ol>
         </div>
@@ -64,7 +56,7 @@
   </div>
   <h5>Feedback:</h5>
   <hr>
-  <div class="row">
+  <div class="row hoverable feedbacks">
     <div class="col m8">
       Feedback for:
     </div>
