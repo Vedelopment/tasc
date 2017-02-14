@@ -40,6 +40,27 @@ Additional Associations
 ### Further Exploration:
 Sessions
 
+## Who is our user
+
+All of us!  
+
+We find that the most imporatant use of our site is that the most relevant information is easy to access and that communication flows freely.
+
+### Teachers
+
+* teachers can create assignments - like creating a homework assignment.
+* teachers can create feedbacks on submissions - like providing feedback on homework.
+* teachers can look at all assignments and all submissions - like looking at all homework assignments and all homework submissions from all students. 
+
+### Students
+
+* students can create submissions on released assignments - like turning in homework on an assigned assignment.
+* students can view released assignments and their own submissions - like looking at assigned homework and the same student’s responses.
+* students can view feedback provided by teachers on that student’s submissions - students can only see feedback given to them
+
+![wireframes one](https://files.slack.com/files-tmb/T0351JZQ0-F44QG6DLH-15e25370f0/img_20170214_121856_1024.jpg)
+![wireframes two](https://files.slack.com/files-tmb/T0351JZQ0-F465M9154-8cb631c877/img_20170214_121936_1024.jpg)
+
 ## Code we are proud of
 
 ### Ricardo
