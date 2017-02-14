@@ -25,9 +25,9 @@
         <%= truncate a.instructions %>
       </div>
       <div class="homework-submission col s4">
-        <% if current_student.submissions.find_by(assignment_id: a.id) %>
+        <% if current_student && current_student.submissions.find_by(assignment_id: a.id) %>
           <%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: a.id)), class:"btn center form-submit-style" %>
-        <% else %>
+        <% elsif current_student %>
           <%= link_to "Submit", new_submission_path(a), class:"btn center  new-submit-style"%>
         <% end %>
       </div>
