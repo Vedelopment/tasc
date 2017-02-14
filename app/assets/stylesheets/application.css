@@ -39,9 +39,11 @@ body {
   /*background-color: #F6F6F6;*/
   /*color: black;*/
 }
+
 .form-control {
   border: solid 2px lightgrey!important;
 }
+
 .form-control:focus {
   border-bottom: none!important;
   box-shadow: none!important;
@@ -51,12 +53,14 @@ body {
 .form-submit-style {
   background-color: #FA4542!important;
 }
+
 .form-style h4 {
   text-align: center;
 }
 #navbar {
   background-color: #000000;
 }
+
 #navbar li :hover {
   background-color: #FA4542;
 }
@@ -71,9 +75,11 @@ body {
 .teacher-button-style {
   background-color: #FA4542!important;
 }
+
 .mike p {
   visibility:hidden;
 }
+
 .mike:hover p {
   visibility: visible;
 }

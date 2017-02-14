@@ -112,6 +112,9 @@ course_data = [{
 
 Course.create(course_data)
 
+ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra convallis est ut efficitur. In placerat, lorem id blandit congue, justo ligula varius mi, ut tincidunt nulla ex ac ipsum. Praesent nec purus erat. Donec malesuada mauris odio, sit amet imperdiet magna dictum vitae. Morbi iaculis pulvinar risus a posuere. Nulla hendrerit varius felis euismod sodales. Phasellus vulputate ipsum accumsan arcu lobortis, eu malesuada augue laoreet. Ut mauris elit, pellentesque a blandit quis, cursus et risus.
+
+Ut leo purus, pharetra non euismod ut, tincidunt quis velit. Sed sit amet velit non dolor pharetra lobortis. Curabitur porttitor mauris ac elementum sollicitudin. Ut at malesuada diam, at lobortis velit. Phasellus aliquam elit cursus, mollis sem nec, commodo tortor. In hac habitasse platea dictumst. Fusce dapibus magna eget nisi lobortis fringilla. Vestibulum fermentum ligula augue, mollis ullamcorper libero lacinia cursus. Nam euismod laoreet metus vestibulum facilisis"
 
 assignment_data = [{
   title: "this is how we do it",
@@ -123,7 +126,7 @@ assignment_data = [{
   course: Course.first
   }, {
     title: "Putting the fun in function!",
-    instructions: "First, I need all of you to stop laughing.  Next, write a function.  Ain't that fun?",
+    instructions: ipsum,
     assign_date: DateTime.new(2015,04,02),
     due_date: DateTime.new(2015,05,02),
     duration: 0.25,
@@ -131,7 +134,7 @@ assignment_data = [{
     course: Course.first
   }, {
     title: "Always limber up before body parsing.",
-    instructions: "Everyone stretch for about 6 hours and 45 minutes.  Next look near the surface of the DOM and you'll find the body.  See it?  Good.  Now, parse it.",
+    instructions: ipsum,
     assign_date: DateTime.new(2015,05,02),
     due_date: DateTime.new(2015,10,02),
     duration: 7.0,
@@ -139,7 +142,7 @@ assignment_data = [{
     course: Course.first
   }, {
     title: "Fear of commitment leads to lost data.",
-    instructions: "Commit every time you do a thing that works or gives you one fewer error.  Here's a checklist for you:  a) Have you commited?  b) Did you do a thing?  C)  Does it work or did it give you at least one fewer error?  orange) See step 1.",
+    instructions: ipsum,
     assign_date: DateTime.new(2015,06,02),
     due_date: DateTime.new(2015,07,02),
     duration: 0.5,
@@ -147,7 +150,7 @@ assignment_data = [{
     course: Course.first
   }, {
     title: "A wonderful game",
-    instructions: "Now we're going to do something extremely fun.  We're going to play a wonderful game called who is my daddy, and what does he do?",
+    instructions: ipsum,
     assign_date: DateTime.new(2015,06,02),
     due_date: DateTime.new(2015,07,02),
     duration: 1.5,
@@ -158,17 +161,17 @@ Assignment.create(assignment_data)
 
 
 submissions_data = [{
-  content: "ooga, booga",
+  content: ipsum,
   link: "https://www.google.com",
   assignment: Assignment.all.sample,
   student: Student.all.sample
   }, {
-    content: "You have to look carefully for errors.",
+    content: ipsum,
     link: "http://img.memecdn.com/epic-face_o_232179.gif",
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }, {
-    content: "Submission data, submission data.  Submission ... data.  sbmssndt, wait, I mean SUBMISSION DATA!",
+    content: ipsum,
     link: "https://s-media-cache-ak0.pinimg.com/originals/48/10/7e/48107e9a87c50894b348df59fc875830.jpg",
     assignment: Assignment.all.sample,
     student: Student.all.sample
@@ -178,7 +181,7 @@ submissions_data = [{
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }, {
-    content: "the muffin was pretty good though",
+    content: ipsum,
     link: "https://www.google.com",
     assignment: Assignment.all.sample,
     student: Student.all.sample
@@ -193,7 +196,7 @@ Submission.create(submissions_data)
 
 feedback_data = [{
   score: 2.4,
-  content: "I think you should focus on friendly URLs.",
+  content: ipsum,
   submission: Submission.first
   }, {
     score: 3.6,
@@ -205,11 +208,11 @@ feedback_data = [{
     submission: Submission.third
   }, {
     score: 3.0,
-    content: "It seemed clear, from the moment I saw these URLs that you were headed in the right direction.  These are some friendly URLs.",
+    content: ipsum,
     submission: Submission.fourth
   }, {
     score: 2.0,
-    content: "Your usage of profanity as variables was an inspiring usage of the english language.  Exactly who or what it inspired is still up for debate.",
+    content: ipsum,
     submission: Submission.fifth
   }, {
     score: 1.0,
