@@ -54,7 +54,7 @@
     </div>
     <!-- <h5><%= link_to "Teachers:", teachers_path(@course) %></h5> -->
   </div>
-  <h5>Feedback:</h5>
+  <h5><%= link_to "Feedback:", feedbacks_path %></h5>
   <hr>
   <div class="row hoverable feedbacks">
     <div class="col m8">
@@ -63,7 +63,7 @@
     <div class="col m3">
       Score:
     </div>
-    <% if current_student.submissions %>
+    <% if current_student && current_student.submissions %>
       <%  current_student.submissions.each do |s| %>
       <% if s.feedback %>
         <div class="col m8">
