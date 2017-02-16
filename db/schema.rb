@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20170212003125) do
     t.datetime "assign_date"
     t.datetime "due_date"
     t.float    "duration"
-    t.boolean  "visible"
+    t.boolean  "visible",      default: true
     t.integer  "course_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["course_id"], name: "index_assignments_on_course_id", using: :btree
   end
 

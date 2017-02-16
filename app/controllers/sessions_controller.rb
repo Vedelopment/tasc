@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     elsif @teacher = Teacher.confirm(student_params)
       tlogin(@teacher)
       flash[:notice] = "Dude!  You logged in!"
-      redirect_to teachers_path(Course.first)
+      redirect_to teacher_path(@teacher)
 
     else
       flash[:error] = "You typed your password or email wrong. Check caps lock!"
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:student_id] = nil
+    logout
     flash[:notice] = "You've logged out."
     redirect_to root_path
   end

@@ -1,9 +1,9 @@
 <!-- Form for feedback edit -->
 <div class="container">
-  <h4>Give Feedback</h4>
+  <h4><b>EDIT FEEDBACK</b></h4>
   <div class="row">
     <div class="col m6 offset-m3 form">
-      <%= form_for @feedback do |f| %>
+      <%= form_for @feedback, url: {action: 'update', id: @feedback.id}, validate: true do |f| %>
       <div class="col m12">
         Score:
         <br>

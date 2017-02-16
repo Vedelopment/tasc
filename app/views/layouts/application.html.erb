@@ -2,57 +2,66 @@
 <html>
   <head>
     <title>Tasc</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!-- The best place for this one is your <HEAD> tag -->
-    <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
-    <script src="https://ucarecdn.com/libs/widget/2.10.3/uploadcare.full.min.js" charset="utf-8"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
 
   <body>
+
+    <!-- Navbar -->
     <nav id="navbar">
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">&nbsp;TASC</a>
+        <a href="/"><img class="brand-logo" src="/TASC_logo.png"/></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_student %>
-          <li><%= link_to "#{current_student.first_name}", student_path(1, current_student) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <% if current_student.courses.count > 1 %>
+              <li><a class="dropdown-button" data-activates="dropdown1">Course<i class="material-icons right">arrow_drop_down</i></a></li>
+            <% else %>
+              <li><%=link_to "Course", course_path(current_student.courses[0]) %></li>
+            <% end %>
+          <% elsif current_teacher %>
+            <li><%= link_to "#{current_teacher.first_name}", teacher_path(current_teacher) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <% if current_teacher.courses.count > 1 %>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Course<i class="material-icons right">arrow_drop_down</i></a></li>
+            <% else %>
+              <li><%=link_to "Course", course_path(current_teacher.courses[0]) %></li>
+            <% end %>
           <% else %>
-          <li><%= link_to "Sign Up", new_student_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
+            <li><%= link_to "Sign Up", new_student_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
           <% end %>
-          <li><a data-activates="slide-out" class="menu-toggle"><i class="material-icons">menu</i></a></li>
+          <li><%= link_to "About", about_path %> </li>
         </ul>
       </div>
     </nav>
+
+    <!-- Dropdown for Nav -->
+    <% if current_teacher || current_student %>
+      <% user = current_teacher || current_student %>
+      <ul id="dropdown1" class="dropdown-content">
+        <% user.courses.each do |c| %>
+          <li><%=link_to "#{c.number}", course_path(c)%></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+
+    <!-- Flash Messages -->
     <% flash.each do |name, msg| %>
       <p>
     <small> <%= name.capitalize %>: <%= msg %> </small>
      </p>
     <% end %>
-    <ul id="slide-out" class="side-nav right">
-        <li><div class="userView">
-          <div class="background">
-            <img src="/student.png">
-          </div>
-          <%= link_to "", student_path(Course.first, Student.first), :src => 'http://tctc.axstudent.com/images/CrsCat10v2z74006.jpg', :class => "circle" %>
-          <!-- <a href=""><img class="circle" src="images/yuna.jpg"></a> -->
-          <%= link_to "Shiv Gogna", student_path(Course.first, Student.first), :class =>"white-text name" %>
-          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-
-        </div></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-      </ul>
     <%= yield %>
   </body>
 </html>

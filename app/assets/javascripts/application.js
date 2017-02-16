@@ -16,11 +16,5 @@
 //= require jquery.turbolinks
 //= require_tree .
 //= require materialize-sprockets
-
-
-$(document).on('ready page:load', function() {
-  Waves.displayEffect();
-   $(".menu-toggle").sideNav({
-     edge: 'right'
-   });
-})
+//= require rails.validations
+//= require d3

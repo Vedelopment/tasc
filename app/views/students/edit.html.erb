@@ -6,7 +6,7 @@
   <div class="col m6 offset-m3 form form-style">
     <h4>Edit Your Profile</h4>
     <hr>
-    <%= form_for(@student, :url => {:action => 'update', :id => @student.id}) do |f| %>
+     <%= form_for @student, url: {action: 'update', id: @student.id}, validate: true do |f| %>
     <div class="col m10 offset-m1">
       First Name:
       <br>
@@ -42,8 +42,6 @@
       <br>
       <%= f.text_field :linkedin, class: "form-control", placeholder: "#{@student.linkedin}" %>
     </div>
-    <h5 class="col m12">insert option to change password here.  user should have to correctly enter password to be given an option to change it, need to confirm it after typing it, too.</h5>
-
     <div class="row">
       <div class="col s12 center">
         <%= f.submit "Save Profile", class: "waves-effect waves-light btn-large form-button form-submit-style" %>
@@ -51,3 +49,4 @@
     </div>
     <% end %>
   </div>
+</div>

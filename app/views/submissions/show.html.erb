@@ -1,3 +1,67 @@
-<h1>YO, SUBMISSION</h1>
-Content: <%= @submission.content %>
-Link: <%= @submission.link %>
+
+<br>
+<br>
+<div class="row">
+  <div class="row">
+    <div class="col m3 offset-m1 side-assignment-style">
+      <h4 class="center">Assignment</h4>
+      <br>
+      <div class="col s12">
+        <h5><%= "#{@assignment.title}" %></h5>
+        <hr>
+        <p class="center"><b>Instructions</b></p>
+        <p><%= "#{@assignment.instructions}" %></p>
+        <br>
+        <%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %>
+      </div>
+    </div>
+    <div class="col m8">
+      <div class="row">
+        <div class="col m9 offset-m1 form form-style">
+          <h4 class="center">Submit Your Homework</h4>
+          <br>
+          <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
+            <div class="col m12">
+              <%= @submission.content %>
+            </div>
+            <br>
+            <br>
+            <div class="col m12">
+              <%= @submission.link %>
+            </div>
+            <div class="">
+              <% if current_student == @submission.student %>
+                <div class="col s12 center">
+                  <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
+                  <br><br>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <% if current_teacher %>
+          <div class="col m9 offset-m1 form form-style">
+            <h4 class="center">Homework Feedback</h4>
+            <% if @submission.feedback %>
+              <%= @submission.feedback.content %>
+              <br>
+              <br>
+              <div class="center">
+                <%= link_to "Edit Feedback", edit_feedback_path(@submission.feedback), class:"waves-effect btn waves-light form-submit-style" %>
+              </div>
+            <% else %>
+              <div class="center">
+                <%= link_to "Provide Feedback", new_feedback_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
+              </div>
+            <% end %>
+            <br>
+            <br>
+          </div>
+        <% end %>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>

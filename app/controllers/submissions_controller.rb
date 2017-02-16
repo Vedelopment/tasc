@@ -1,7 +1,10 @@
 class SubmissionsController < ApplicationController
 
+  before_filter :require_login
+
   def show
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def new
@@ -10,15 +13,15 @@ class SubmissionsController < ApplicationController
   end
 
   def edit
-    @assignment = Assignment.find_by_id(params[:id])
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def create
     @assignment = Assignment.find_by_id(params[:id])
     submission = Submission.new(submission_params)
     submission.assignment = @assignment
-    submission.student = Student.all.sample #this needs to be changed when we have sessions working
+    submission.student = current_student
 
     if submission.save
       redirect_to assignments_path(@assignment.course)
@@ -53,7 +56,7 @@ class SubmissionsController < ApplicationController
   private
 
   def submission_params # content required.  link not required in case there is no homework on a day.
-    params.require(:submission).permit(:content)
+    params.require(:submission).permit(:content, :link)
   end
 
 end

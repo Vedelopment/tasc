@@ -1,41 +1,49 @@
-<h1>New assignment page</h1>
-<div class="row">
-  <div class="col m6 offset-m3 form">
-    <%= form_for [@course, @assignment], url: create_assignment_path do |f| %>
-    <div class="col m12">
-      Title:
-      <br>
-      <%= f.text_field :title, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Instructions:
-      <br>
-      <%= f.text_field :instructions, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Due Date:
-      <br>
-      <%= f.date_field :due_date, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Assign Date:
-      <br>
-      <%= f.date_field :assign_date, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Duration:
-      <br>
-      <%= f.text_field :duration, class: "form-control" %>
-    </div>
-    <div class="col m12">
-          <br>
-          <%= f.check_box :visible, class: "form-control", id: "assign" %>
-          <%= f.label "Release Assignment", for:"assign" %>
+<!-- New Assignment Page -->
+
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <div class="col m6 offset-m3 form form-style">
+      <h4><b>CREATE AN ASSIGNMENT</b></h4>
+      <%= form_for [@course, @assignment], url: create_assignment_path, validate: true do |f| %>
+      <div class="col m12">
+        Title:
+        <br>
+        <div class="form-input">
+          <%= f.text_field :title, class: "form-control" %>
         </div>
-    <div class="col m6 offset-m3">
-      <br>
-      <%= f.submit "Save assignment", class: "waves-effect waves-light btn-large form-button" %>
-      <br><br>
+      </div>
+      <div class="col m12">
+        Instructions:
+        <br>
+        <%= f.text_area :instructions, class: "form-control materialize-textarea" %>
+      </div>
+      <div class="col m12">
+        Due Date:
+        <br>
+        <%= f.date_field :due_date, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Assign Date:
+        <br>
+        <%= f.date_field :assign_date, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Duration:
+        <br>
+        <%= f.text_field :duration, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        <%= f.check_box :visible, class: "form-control", id: "assign" %>
+        <%= f.label "Release Assignment", for:"assign" %>
+      </div>
+      <div class="col m6 offset-m3">
+        <br>
+        <%= f.submit "Save assignment", class: "waves-effect waves-light btn form-button form-submit-style" %>
+        <br><br>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
+</div>
