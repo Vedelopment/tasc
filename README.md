@@ -1,3 +1,4 @@
+
 # TASC - Teachers And Students Connecting
 [Heroku Link](https://floating-lowlands-88571.herokuapp.com/)
 
@@ -161,5 +162,6 @@ Add Comment Collapse
 ```
 
 ## The TASC ERD
+
 
 ![Database ERD](https://i.imgur.com/MW9gotA.png)
