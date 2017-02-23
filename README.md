@@ -4,10 +4,16 @@
 
 ##### Sample Logins:
 
-email: GA@student.com
-password: GAisnum1
+Student Account
 
 email: GA@student.com
+
+password: GAisnum1
+
+Teacher Account:
+
+email: GA@student.com
+
 password: GAisnum1
 
 ##### Elevator Pitch:
