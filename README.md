@@ -2,21 +2,17 @@
 # TASC - Teachers And Students Connecting
 [Heroku Link](https://floating-lowlands-88571.herokuapp.com/)
 
-##### Sample Logins:
+#### Sample Logins:
 
-Student Account
+##### Student Account
+- email: GA@student.com
+- password: GAisnum1
 
-email: GA@student.com
+##### Teacher Account:
+- email: GA@student.com
+- password: GAisnum1
 
-password: GAisnum1
-
-Teacher Account:
-
-email: GA@student.com
-
-password: GAisnum1
-
-##### Elevator Pitch:
+#### Elevator Pitch:
 We asked ourselves, how hard could it be to make something better than Schoology that provides the same Schoology functionality, but with a better user experience and also was the location for all regular homework assignment and project completion?  We took it upon ourselves to look for a real world problem we faced and try to solve it.  We learned a whole lot in the process!
 
 [Task Tracking](https://github.com/Vedelopment/learning-hub/projects/1)
