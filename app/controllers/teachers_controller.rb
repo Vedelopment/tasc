@@ -20,13 +20,13 @@ class TeachersController < ApplicationController
   def create
     @course = Course.last
     teacher = Teacher.new(teacher_params)
-      if teacher.save
-        @course.teachers << teacher
-        redirect_to teacher_path(@course, teacher)
-      else
-        flash[:error] = teacher.errors.full_messages.join(". ")
-        redirect_to new_teacher_path
-      end
+    if teacher.save
+      @course.teachers << teacher
+      redirect_to teacher_path(@course, teacher)
+    else
+      flash[:error] = teacher.errors.full_messages.join(". ")
+      redirect_to new_teacher_path
+    end
   end
 
   def edit
@@ -35,17 +35,17 @@ class TeachersController < ApplicationController
 
   def update
     teacher_id = params[:id]
-      @teacher = Teacher.find_by_id(teacher_id)
+    @teacher = Teacher.find_by_id(teacher_id)
 
-      if @teacher.update_attributes(teacher_params)
-        flash[:notice] = "Updated successfully."
-        redirect_to teacher_path(@teacher)
-      else
-        @teacher.errors.full_messages.each do |message|
-          flash[:error] = message
-        end
-        redirect_to edit_teacher_path(@teacher)
+    if @teacher.update_attributes(teacher_params)
+      flash[:notice] = "Updated successfully."
+      redirect_to teacher_path(@teacher)
+    else
+      @teacher.errors.full_messages.each do |message|
+        flash[:error] = message
       end
+      redirect_to edit_teacher_path(@teacher)
+    end
   end
   private
 
