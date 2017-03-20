@@ -14,39 +14,146 @@
  *= require_self
  *= require materialize
  */
+
  @import "materialize";
+body {
+  /*background-color: #F6F6F6;*/
+}
+
+p {
+  font-size: .8em;
+}
 
 .background {
   background-color: rgba(0,0,0,.25)
 }
 
 .assignments {
-  border: solid lightgrey;
+  box-shadow: 0px 5px 7px 3px rgba(0,0,0,.1),
+              0 5px 7px -2px rgba(0,0,0,.12);
+  border-radius: .3em;
+  /*background-color: rgba(250,250,250,1);*/
+  padding: 1em;
 }
 
+.feedbacks {
+  box-shadow: 0px 5px 7px 3px rgba(0,0,0,.1),
+              0 5px 7px -2px rgba(0,0,0,.12);
+  border-radius: .3em;
+  /*background-color: rgba(250,250,250,1);*/
+  padding: 1em;
+
+}
 .form-style {
-  border: solid lightgrey;
-  background-color: rgba(18,87,159,.75);
-  color: white;
+  /*background-color: #F6F6F6;*/
+  /*color: black;*/
+}
+
+.form-control {
+  border: solid 2px lightgrey!important;
+}
+
+.form-control:focus {
+  border-bottom: none!important;
+  box-shadow: none!important;
+  text-decoration: none!important;
+  border: solid 2px #FBD334!important;
+}
+
+.form-submit-style {
+  background-color: #FA4542!important;
+}
+
+.new-submit-style {
+  background-color: #0BE000!important;
 }
 
 .form-style h4 {
   text-align: center;
 }
 
-.form-submit-style {
-  background-color: #12579F!important;
+#navbar {
+  background-color: #000000;
 }
 
-#navbar {
-  background-color: #12579F;
+#navbar li :hover {
+  background-color: #FA4542;
 }
 
 .profile-style {
-  border: solid lightgrey;
+  border: solid rgba(18,87,159,.75);
+  background-color: rgba(18,87,159,.2);
 }
 
 .side-assignment-style {
   background-color: lightgrey;
   border: solid grey;
+}
+
+.teacher-button-style {
+  background-color: #FA4542!important;
+}
+
+.about-pic {
+  width: 90%;
+  border-radius: 20px;
+}
+
+.about-pic:hover {
+  transform: scale(1.1);
+}
+
+.hover-pic div {
+  visibility: hidden;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  right: 30%
+}
+
+.hover-pic:hover div {
+  visibility: visible;
+}
+
+.brand-logo {
+  width: 200px;
+  margin: 10px;
+}
+
+.profile_image {
+  height: 200px;
+  display: block;
+position: relative;
+
+border-color: white;
+border-width: 25px;
+-moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+border-style: solid;
+margin: 0 auto;
+}
+
+/*d3 stuff*/
+div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;
+    background-color: red;
+    margin-right: 1px;
+}
+
+.chart-container {
+  margin: 3em 3em 3em 0;
+}
+
+#graphBar {
+  border: 2px solid black;
+  padding: 10px;
+  width: 300px;
+}
+
+#graphCircle {
+  border: 2px solid black;
+  padding: 10px;
+  width: 400px;
 }
