@@ -1,5 +1,7 @@
 class AssignmentsController < ApplicationController
 
+  before_filter :require_login
+
   def index
     @course = Course.find_by_id(params[:course_id])
     @assignments = @course.assignments

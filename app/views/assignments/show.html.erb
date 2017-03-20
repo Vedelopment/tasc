@@ -2,33 +2,58 @@
 <div class="container">
   <h4><%= link_to "#{@assignment.course.name} #{@assignment.course.number}", course_path(@assignment.course) %></h4>
   <div class="row">
-    <div class="col s8">
-      <h4><%= @assignment.title %></h4>
-    </div>
-    <div class="col s3 offset-s1">
-      <h5 class="right"><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %><h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col m8 assignments">
-      <h5>Instructions:</h5>
-      <p><%= @assignment.instructions %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col m8">
-      <div class="left">
-        Estimated duration: <%= @assignment.duration %>
+
+    <!-- <div class="col m8"> -->
+      <br>
+
+      <div class="col m6">
+        <h5>Assignment:</h5>
+        <div class="row assignments hoverable">
+          <h4><%= @assignment.title %></h4>
+          <h6><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %></h6>
+          <hr>
+          <% if current_student %>
+          <div class="homework-submission">
+            <% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
+              <%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center form-submit-style" %>
+            <% else %>
+              <%= link_to "Submit", new_submission_path(@assignment), class:"btn center form-submit-style"%>
+            <% end %>
+          </div>
+          <% elsif current_teacher %>
+            <div class="row">
+              <%=link_to "Edit", edit_assignment_path(@assignment), class:"btn center teacher-button-style" %>
+            </div>
+          <% end %>
+
+          <h5>Instructions:</h5>
+          <p><%= @assignment.instructions %></p>
+          <hr>
+
+          <div class="left">
+            Estimated duration: <%= @assignment.duration %>
+          </div>
+          <div class="right">
+            <%= @assignment.assign_date.strftime("Assigned on: %m/%d/%Y") %>
+          </div>
+        </div>
       </div>
-      <div class="right">
-        <%= @assignment.assign_date.strftime("Assigned on: %m/%d/%Y") %>
+
+      <div class="row">
+        <div class="col m6">
+          <div>
+            <% if current_teacher %>
+            <h5>Submissions:</h5>
+            <div class="col m12 assignments hoverable">
+              <% @assignment.submissions.each do |c| %>
+                  <li><%=link_to "#{c.student.first_name} #{c.student.last_name[0]}.", submission_path(c)%></li>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
       </div>
-    </div>
+
+    <!-- </div> -->
   </div>
-  <div class="homework-submission">
-    <% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
-      <%= link_to "You've submitted", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id))%>
-    <% end %>
-  </div>
-  <%= link_to "submit homework", new_submission_path(@assignment)%>
 </div>

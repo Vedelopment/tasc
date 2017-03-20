@@ -9,7 +9,7 @@ class Student < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :password, confirmation: true
+  # validates :password, :format => {:with => /\A(?=.*[a-zA-Z])(?=.*[0-9]).{6,}\z/, message: "must be at least 6 characters and include one number and one letter."}
   has_secure_password
 
   def self.confirm(params)
@@ -23,7 +23,13 @@ class Student < ApplicationRecord
   end
 
   def self.get_github_img (github_user)
-    github_username = Student.parse_github_username(github_user)
+    if github_user.include? "http"
+      github_username = Student.parse_github_username(github_user)
+    elsif github_user == ""
+      github_username = "image"
+    else
+      github_username = github_user
+    end
     response = HTTParty.get('https://api.github.com/users/' + github_username)
     return response["avatar_url"]
   end
@@ -33,7 +39,4 @@ class Student < ApplicationRecord
     username = temp_array[temp_array.length - 1]
     return username
   end
-
-
-
 end

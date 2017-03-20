@@ -1,51 +1,51 @@
 <h1>New Teacher page</h1>
 <div class="row">
   <div class="col m6 offset-m3 form">
-    <%= form_for [@course, @teacher], url: new_teacher_path do |f| %>
-    <div class="col m12">
-      First Name:
-      <br>
-      <%= f.text_field :first_name, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Last Name:
-      <br>
-      <%= f.text_field :last_name, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Username:
-      <br>
-      <%= f.text_field :user_name, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Email:
-      <br>
-      <%= f.text_field :email, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Slack Username:
-      <br>
-      <%= f.text_field :slack, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Github URL:
-      <br>
-      <%= f.text_field :github, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Password:
-      <br>
-      <%= f.password_field :password, class: "form-control" %>
-    </div>
-    <div class="col m12">
-      Password Confirmation:
-      <br>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
-    </div>
-    <div class="col m6 offset-m3">
-      <br>
-      <%= f.submit "Save Teacher", class: "waves-effect waves-light btn-large form-button" %>
-      <br><br>
-    </div>
+    <%= form_for [@course, @teacher], url: new_teacher_path, validate: true do |f| %>
+      <div class="col m12">
+        First Name:
+        <br>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Last Name:
+        <br>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Username:
+        <br>
+        <%= f.text_field :user_name, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Email:
+        <br>
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Slack Username:
+        <br>
+        <%= f.text_field :slack, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Github URL:
+        <br>
+        <%= f.text_field :github, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Password:
+        <br>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="col m12">
+        Password Confirmation:
+        <br>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="col m6 offset-m3">
+        <br>
+        <%= f.submit "Save Teacher", class: "waves-effect waves-light btn-large form-button" %>
+        <br><br>
+      </div>
     <% end %>
   </div>

@@ -16,3 +16,5 @@
 //= require jquery.turbolinks
 //= require_tree .
 //= require materialize-sprockets
+//= require rails.validations
+//= require d3

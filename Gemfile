@@ -36,6 +36,9 @@ gem 'materialize-sass'
 
 gem 'jquery-turbolinks'
 
+gem "d3-rails"
+gem 'client_side_validations'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
