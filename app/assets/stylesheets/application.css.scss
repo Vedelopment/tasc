@@ -76,8 +76,18 @@ p {
   background-color: #000000;
 }
 
-#navbar li :hover {
+#navbar li:hover {
   background-color: #FA4542;
+}
+
+#parallax {
+    background-image: url("Classroom.jpg");
+    // min-height: 450px;
+    // max-height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .profile-style {
