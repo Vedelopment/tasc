@@ -6,7 +6,6 @@
     <div class="col m4 profile-style">
       <img src="<%= @student.profile_image %>" alt="profile" class="center profile_image">
       <div class="row">
-
         <div class="col s6">
           <p> Name: </p>
           <p> Username: </p>
@@ -16,7 +15,7 @@
           <p> Linkedin: </p>
         </div>
         <div class="col s6">
-          <p><%=@student.first_name%> <%=@student.last_name%></p>
+          <p class="wrap"><%=@student.first_name%> <%=@student.last_name%></p>
           <p><%=@student.user_name %></p>
           <p class="wrap"><%=@student.email %></p>
           <p><%=@student.slack %></p>
@@ -27,12 +26,11 @@
       <div class="row">
         <div class="col s12 center">
           <% if @student == current_student %>
-          <%= link_to "Edit", edit_student_path(current_student), class:"btn form-submit-style" %>
+            <%= link_to "Edit", edit_student_path(current_student), class:"btn form-submit-style" %>
           <% end %>
         </div>
       </div>
     </div>
-
 
 <!-- Card with Tabs for each course -->
     <div class="col m8">
@@ -59,8 +57,8 @@
                   <!-- Assignments -->
                   <p class="col s7">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
                   <% if @display %>
-                  <p class="col s2"> Submitted:</p>
-                  <p class="col s2"> Feedback:<p>
+                    <p class="col s2"> Submitted:</p>
+                    <p class="col s2"> Feedback:<p>
                   <% end %>
                   <br>
                   <br>
