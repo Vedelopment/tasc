@@ -61,7 +61,9 @@
             <li><%= link_to "#{current_teacher.first_name}", teacher_path(current_teacher) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
             <% if current_teacher.courses.count > 1 %>
-              <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Course<i class="material-icons right">arrow_drop_down</i></a></li>
+              <% user.courses.each do |c| %>
+              <li><%=link_to "Course #{c.number}", course_path(c)%></li>
+              <% end %>
             <% else %>
               <li><%=link_to "Course", course_path(current_teacher.courses[0]) %></li>
             <% end %>
