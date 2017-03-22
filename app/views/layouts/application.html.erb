@@ -53,7 +53,9 @@
             <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
             <% if current_student.courses.count > 1 %>
-              <li><a class="dropdown-button" data-activates="dropdown3">Course<i class="material-icons right">arrow_drop_down</i></a></li>
+              <% user.courses.each do |c| %>
+                <li><%=link_to "Course #{c.number}", course_path(c)%></li>
+              <% end %>
             <% else %>
               <li><%=link_to "Course", course_path(current_student.courses[0]) %></li>
             <% end %>
@@ -62,7 +64,7 @@
             <li><%= link_to "Log Out", logout_path %></li>
             <% if current_teacher.courses.count > 1 %>
               <% user.courses.each do |c| %>
-              <li><%=link_to "Course #{c.number}", course_path(c)%></li>
+                <li><%=link_to "Course #{c.number}", course_path(c)%></li>
               <% end %>
             <% else %>
               <li><%=link_to "Course", course_path(current_teacher.courses[0]) %></li>
