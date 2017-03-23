@@ -31,12 +31,11 @@ class Student < ApplicationRecord
       github_username = github_user
     end
     response = HTTParty.get('https://api.github.com/users/' + github_username)
-    return response["avatar_url"]
+    response["avatar_url"]
   end
 
   def self.parse_github_username (github_url)
     temp_array = github_url.split('/')
     username = temp_array[temp_array.length - 1]
-    return username
   end
 end

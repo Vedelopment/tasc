@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
       tlogin(@teacher)
       flash[:notice] = "Dude!  You logged in!"
       redirect_to teacher_path(@teacher)
-
     else
       flash[:error] = "You typed your password or email wrong. Check caps lock!"
       redirect_to login_path

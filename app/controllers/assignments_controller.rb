@@ -38,17 +38,17 @@ class AssignmentsController < ApplicationController
 
   def update
     assignment_id = params[:id]
-      @assignment = Assignment.find_by_id(assignment_id)
+    @assignment = Assignment.find_by_id(assignment_id)
 
-      if @assignment.update_attributes(assignment_params)
-        flash[:notice] = "Updated successfully."
-        redirect_to course_path(@assignment.course)
-      else
-        @assignment.errors.full_messages.each do |message|
-          flash[:error] = message
-        end
-        redirect_to edit_assignment_path(@assignment)
+    if @assignment.update_attributes(assignment_params)
+      flash[:notice] = "Updated successfully."
+      redirect_to course_path(@assignment.course)
+    else
+      @assignment.errors.full_messages.each do |message|
+        flash[:error] = message
       end
+      redirect_to edit_assignment_path(@assignment)
+    end
   end
 
   def destroy

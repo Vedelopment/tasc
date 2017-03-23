@@ -8,8 +8,8 @@
 - email: GA@student.com
 - password: GAisnum1
 
-##### Teacher Account:
-- email: GA@student.com
+##### Teacher Account
+- email: GA@teacher.com  <!-- ?? -->
 - password: GAisnum1
 
 #### Elevator Pitch:
@@ -18,24 +18,24 @@ We asked ourselves, how hard could it be to make something better than Schoology
 [Task Tracking](https://github.com/Vedelopment/learning-hub/projects/1)
 
 ### Technologies:
-Ruby
-Rails
-Materialize
-JavaScript
-Jquery
-Bcrypt
-client_side_validations
-Github API
+Ruby  
+Rails  
+Materialize  
+JavaScript  
+Jquery  
+Bcrypt  
+client_side_validations  
+Github API  
 
 ### Wish List:
-Teacher to teacher feedback
-Student to teacher pulse checks
-Teacher to student feedback
-Emails
-Attendence tracking
-Friendly URLs
-Slack notifier
-Chron Job
+Teacher to teacher feedback  
+Student to teacher pulse checks  
+Teacher to student feedback  
+Emails  
+Attendence tracking  
+Friendly URLs  
+Slack notifier  
+Chron Job  
 
 ### Contributors:
 * LD - https://github.com/Vedelopment
@@ -44,9 +44,9 @@ Chron Job
 * RJ - https://github.com/johnson-rl
 
 ### Flexible Technical Requirements:
-Authentication & Authorization
-External API
-Additional Associations
+Authentication & Authorization  
+External API  
+Additional Associations  
 
 ### Further Exploration:
 Sessions
@@ -55,13 +55,13 @@ Sessions
 
 All of us!  
 
-We find that the most imporatant use of our site is that the most relevant information is easy to access and that communication flows freely.
+We find that the most important use of our site is that the most relevant information is easy to access and that communication flows freely.
 
 ### Teachers
 
 * teachers can create assignments - like creating a homework assignment.
 * teachers can create feedbacks on submissions - like providing feedback on homework.
-* teachers can look at all assignments and all submissions - like looking at all homework assignments and all homework submissions from all students. 
+* teachers can look at all assignments and all submissions - like looking at all homework assignments and all homework submissions from all students.
 
 ### Students
 
@@ -74,7 +74,7 @@ We find that the most imporatant use of our site is that the most relevant infor
 ## Code we are proud of
 
 ### Ricardo
-```
+```ruby
 def self.get_profile_pic(student)
     student.profile_image = Student.get_github_img (student.github)
     student.save
@@ -98,7 +98,7 @@ def self.get_profile_pic(student)
 end
 ```
 ### Mike
-```
+```html
 <div>
       <% if current_student == @submission.student %>
         <div class="col s12 center">
@@ -132,20 +132,22 @@ end
 
 #### D3
 
+```js
+var viz = function(dataset){
+  d3.select("#graphBar").selectAll("div")
+    .data(dataset)
+    .enter()
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function(d) {
+        var barHeight = d * 20;  //Scale up by factor of 5
+        return barHeight + "px";
+  });
 ```
-  var viz = function(dataset){
-    d3.select("#graphBar").selectAll("div")
-      .data(dataset)
-      .enter()
-      .append("div")
-      .attr("class", "bar")
-      .style("height", function(d) {
-          var barHeight = d * 20;  //Scale up by factor of 5
-          return barHeight + "px";
-    });
-```
+
 #### Polymorphic Relationships
-```
+
+```ruby
 class Student < ApplicationRecord
   has_many :student_courses
   has_many :courses, through: :student_courses
@@ -156,19 +158,19 @@ Add Comment Collapse
 ```
 
 ### Ryan
-```
+```html
 <!-- Determines if submitted -->
-                  <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
-                    <% if @submissions.find_by({assignment_id: a.id}) && @display %>
-                    <i class="tiny material-icons">done</i>
-                  </p>
-                  <!-- Feedback if provided -->
-                  <p class="col m3">
-                    <% if @submissions.find_by({assignment_id: a.id}).feedback %>
-                      <%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %>
-                    <% end %>
-                    <% end %>
-                  </p> <!-- This </p> must come AFTER the end -->
+  <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
+    <% if @submissions.find_by({assignment_id: a.id}) && @display %>
+    <i class="tiny material-icons">done</i>
+  </p>
+  <!-- Feedback if provided -->
+  <p class="col m3">
+    <% if @submissions.find_by({assignment_id: a.id}).feedback %>
+      <%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %>
+    <% end %>
+    <% end %>
+  </p> <!-- This </p> must come AFTER the end -->
 ```
 
 ## The TASC ERD

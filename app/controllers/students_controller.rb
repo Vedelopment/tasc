@@ -31,31 +31,31 @@ class StudentsController < ApplicationController
   def create
     @course = Course.first
     @student = Student.new(student_params)
-      if @student.save
-        login(@student)
-        Student.get_profile_pic(@student)
-        @course.students << @student
-        redirect_to student_path(@student)
-      else
-        flash[:error] = @student.errors.full_messages.join(". ")
-        redirect_to new_student_path
-      end
+    if @student.save
+      login(@student)
+      Student.get_profile_pic(@student)
+      @course.students << @student
+      redirect_to student_path(@student)
+    else
+      flash[:error] = @student.errors.full_messages.join(". ")
+      redirect_to new_student_path
+    end
   end
 
   def update
     student_id = params[:id]
-      @student = Student.find_by_id(student_id)
+    @student = Student.find_by_id(student_id)
 
-      if @student.update_attributes(student_params)
-        Student.get_profile_pic(@student)
-        flash[:notice] = "Updated successfully."
-        redirect_to student_path(@student)
-      else
-        @student.errors.full_messages.each do |message|
-          flash[:error] = message
-        end
-        redirect_to edit_student_path(@student)
+    if @student.update_attributes(student_params)
+      Student.get_profile_pic(@student)
+      flash[:notice] = "Updated successfully."
+      redirect_to student_path(@student)
+    else
+      @student.errors.full_messages.each do |message|
+        flash[:error] = message
       end
+      redirect_to edit_student_path(@student)
+    end
   end
 
   private
