@@ -9,11 +9,11 @@ class SessionsController < ApplicationController
 
     if @student = Student.confirm(student_params)
       login(@student)
-      flash[:notice] = "Dude!  You logged in!"
+      flash[:notice] = "You've signed in."
       redirect_to course_path(Course.first)
     elsif @teacher = Teacher.confirm(student_params)
       tlogin(@teacher)
-      flash[:notice] = "Dude!  You logged in!"
+      flash[:notice] = "You've signed in."
       redirect_to teacher_path(@teacher)
 
     else
