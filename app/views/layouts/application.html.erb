@@ -2,22 +2,20 @@
 <html>
   <head>
     <title>Tasc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   </head>
 
   <body>
-
     <!-- Navbar -->
     <nav id="navbar">
       <div class="nav-wrapper">
+        <a href="#" data-activates='dropdown2' class="button-collapse dropdown-button grey-text lighten-4"><i class="material-icons">menu</i></a>
         <a href="/"><img class="brand-logo" src="/TASC_logo.png"/></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_student %>
@@ -42,19 +40,43 @@
           <% end %>
           <li><%= link_to "About", about_path %> </li>
         </ul>
+          <% if current_teacher || current_student %>
+            <ul id="dropdown1" class="dropdown-content">
+              <% user = current_teacher || current_student %>
+              <% user.courses.each do |c| %>
+                <li><%=link_to "#{c.number}", course_path(c)%></li>
+              <% end %>
+            </ul>
+          <% end %>
+        <ul class="dropdown-content" id="dropdown2">
+          <% if current_student %>
+            <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <% if current_student.courses.count > 1 %>
+              <% user.courses.each do |c| %>
+                <li><%=link_to "Course #{c.number}", course_path(c)%></li>
+              <% end %>
+            <% else %>
+              <li><%=link_to "Course", course_path(current_student.courses[0]) %></li>
+            <% end %>
+          <% elsif current_teacher %>
+            <li><%= link_to "#{current_teacher.first_name}", teacher_path(current_teacher) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <% if current_teacher.courses.count > 1 %>
+              <% user.courses.each do |c| %>
+                <li><%=link_to "Course #{c.number}", course_path(c)%></li>
+              <% end %>
+            <% else %>
+              <li><%=link_to "Course", course_path(current_teacher.courses[0]) %></li>
+            <% end %>
+          <% else %>
+            <li><%= link_to "Sign Up", new_student_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+          <li><%= link_to "About", about_path %> </li>
+        </ul>
       </div>
     </nav>
-
-    <!-- Dropdown for Nav -->
-    <% if current_teacher || current_student %>
-      <% user = current_teacher || current_student %>
-      <ul id="dropdown1" class="dropdown-content">
-        <% user.courses.each do |c| %>
-          <li><%=link_to "#{c.number}", course_path(c)%></li>
-        <% end %>
-      </ul>
-    <% end %>
-
 
     <!-- Flash Messages -->
     <% flash.each do |name, msg| %>

@@ -5,8 +5,7 @@
       <img src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/apple-touch-icon_Zb6Ub.png" alt="profile" class="center">
       <div class="row">
         <div class="col s4">
-          <p> First: </p>
-          <p> Last: </p>
+          <p> Name: </p>
           <p> User Name: </p>
           <p> Email: </p>
           <p> Slack: </p>
@@ -14,10 +13,9 @@
           <p> Linkedin: </p>
         </div>
         <div class="col s8 center">
-          <p><%=@teacher.first_name %></p>
-          <p><%=@teacher.last_name %></p>
+          <p class="wrap"><%=@teacher.first_name %> <%=@teacher.last_name%></p>
           <p><%=@teacher.user_name %></p>
-          <p><%=@teacher.email %></p>
+          <p class="wrap"><%=@teacher.email %></p>
           <p><%=@teacher.slack %></p>
           <p><%=@teacher.github %></p>
         </div>
