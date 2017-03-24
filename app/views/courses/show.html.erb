@@ -15,7 +15,7 @@
       <h5><%= link_to "Assignments:", assignments_path(@course) %></h5>
       <hr>
 
-      <% @course.assignments.reverse_each do |a| %>
+      <% @course.assignments.order(:assign_date).reverse.each do |a| %>
         <% if a.visible === true  %>
           <div class ="row hoverable assignments">
             <div class="col s8">

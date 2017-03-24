@@ -4,7 +4,7 @@ class AssignmentsController < ApplicationController
 
   def index
     @course = Course.find_by_id(params[:course_id])
-    @assignments = @course.assignments.order(:due_date).reverse
+    @assignments = @course.assignments.order(:assign_date).reverse
   end
 
   def show
