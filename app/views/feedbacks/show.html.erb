@@ -1,17 +1,130 @@
 <div class="container">
-  <br>
-  <br>
-  <h5>Feedback for <%= link_to "#{@feedback.submission.assignment.title}", assignment_path(@feedback.submission.assignment) %></h5>
   <div class="row">
-    <div class="col s11">
-      <h6>Feedback:</h6>
-      <hr>
-      <%= @feedback.content %>
+
+    <!-- Section for showing the feedback -->
+    <div class="col m5">
+      <br>
+      <br>
+      <h5>Feedback for <%= link_to "#{@assignment.title}", assignment_path(@assignment) %></h5>
+      <div class="row">
+        <div class="col s11">
+          <h6>Feedback:</h6>
+          <hr>
+          <%= @feedback.content %>
+        </div>
+        <div class="col s1">
+          <h6>score</h6>
+          <hr>
+          <span class="right"><%= @feedback.score %></span>
+        </div>
+      </div>
     </div>
-    <div class="col s1">
-      <h6>score</h6>
-      <hr>
-      <span class="right"><%= @feedback.score %></span>
+
+
+    <!-- Tabbed Card for Assignment/Submission View -->
+    <div class="col m6 offset-m1">
+      <br>
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <p></p>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a href="#test4">Assignment</a></li>
+              <li class="tab"><a class="active" href="#test5">Submission</a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4">
+
+            <!-- Section for showing the assignment. -->
+            <div id="test4">
+              <div class="row">
+                <h4><%= @assignment.title %></h4>
+                <h6><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %></h6>
+                <hr>
+                <h5>Instructions:</h5>
+                <p><%= @assignment.instructions %></p>
+                <hr>
+
+                <div class="left">
+                  Estimated duration: <%= @assignment.duration %>
+                </div>
+                <div class="right">
+                  <%= @assignment.assign_date.strftime("Assigned on: %m/%d/%Y") %>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Section for showing the assignment -->
+            <div id="test5">
+              <div class="row">
+                <h4 class="center">Your Submitted Homework</h4>
+                <br>
+                <div class="col m12">
+                  <%= @submission.content %>
+                </div>
+                <br>
+                <br>
+                <div class="col m12">
+                  <h6><%=link_to "Submission Link", @submission.link %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- <% if current_student %>
+<div class="homework-submission">
+<% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
+<%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center form-submit-style" %>
+<% else %>
+<%= link_to "Submit", new_submission_path(@assignment), class:"btn center form-submit-style"%>
+<% end %>
+</div>
+<% elsif current_teacher %>
+<div class="row">
+<%=link_to "Edit", edit_assignment_path(@assignment), class:"btn center teacher-button-style" %>
+</div>
+<% end %> -->
+
+      <!-- This is the section for showing the assignment -->
+      <!-- <div class="row">
+        <h4 class="center">Your Submitted Homework</h4>
+        <br>
+        <div class="col m12">
+          <%= @submission.content %>
+        </div>
+        <br>
+        <br>
+        <div class="col m12">
+          <%= @submission.link %>
+        </div>
+      </div> -->
+      <!-- <div class="col m6 form form-style">
+      <h4 class="center">Your Submitted Homework</h4>
+      <br>
+      <%= form_for [@assignment, @submission], url: new_submission_path do |f| %>
+      <div class="col m12">
+      <%= @feedback.submission.content %>
+    </div>
+    <br>
+    <br>
+    <div class="col m12">
+    <%= @feedback.submission.link %>
+  </div>
+  <div class="">
+  <% if current_student == @feedback.submission.student %>
+  <div class="col s12 center">
+  <%= link_to "Edit Submission", edit_submission_path(@feedback.submission), class:"waves-effect btn waves-light form-submit-style" %>
+  <br><br>
+</div>
+<% end %>
+</div>
+<% end %>
+</div> -->
