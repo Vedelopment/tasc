@@ -54,7 +54,11 @@
     </div>
     <!-- <h5><%= link_to "Teachers:", teachers_path(@course) %></h5> -->
   </div>
-  <% if current_student && current_student.submissions %>
+
+
+
+  <% if current_student && current_student.submissions.any? {|s| s.feedback} %>
+
   <h5><%= link_to "Feedback:", feedbacks_path %></h5>
   <hr>
   <div class="row hoverable feedbacks">
@@ -66,18 +70,18 @@
     </div>
 
 
-    <% elsif current_student && current_student.submissions %>
       <%  current_student.submissions.each do |s| %>
       <% if s.feedback %>
         <div class="col m8">
-          <%= link_to "#{s.assignment.title}", submission_path(s) %>
+          <%= link_to "#{s.assignment.title}", feedback_path(s.feedback) %>
         </div>
         <div class="col m3">
           <%= link_to "#{s.feedback.score}", feedback_path(s.feedback)%>
         </div>
         <% end %>
        <% end  %>
-
+      <% elsif current_student %>
+      <h6>Your feedback will appear here once provided.</h6>
     <% end %>
   </div>
 </div>
