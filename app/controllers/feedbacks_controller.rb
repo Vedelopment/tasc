@@ -23,10 +23,13 @@ class FeedbacksController < ApplicationController
   def new
     @feedback = Feedback.new
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def edit
     @feedback = Feedback.find_by_id(params[:id])
+    @submission = @feedback.submission
+    @assignment = @submission.assignment
   end
 
   def create
