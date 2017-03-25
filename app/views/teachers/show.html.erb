@@ -13,9 +13,9 @@
           <p> Linkedin: </p>
         </div>
         <div class="col s8 center">
-          <p><%=@teacher.first_name %> <%=@teacher.last_name %></p>
+          <p class="wrap"><%=@teacher.first_name %> <%=@teacher.last_name%></p>
           <p><%=@teacher.user_name %></p>
-          <p><%=@teacher.email %></p>
+          <p class="wrap"><%=@teacher.email %></p>
           <p><%=@teacher.slack %></p>
           <p><%=@teacher.github %></p>
         </div>
@@ -58,7 +58,7 @@
                   <% end %>
                   <br>
                   <br>
-                  <%c.assignments.each do |a|%>
+                  <%c.assignments.order(:assign_date).reverse.each do |a|%>
                     <p class="col m8">
                     <%= a.due_date.strftime("%m/%d/%Y") %> -
                     <%=link_to "#{a.title}", assignment_path(a) %>
