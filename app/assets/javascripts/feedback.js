@@ -1,9 +1,6 @@
-console.log("I am alive...");
-
 var dataset = [];                        //Initialize empty array
 
 $( document ).ready(function() {
-    console.log( "... and ready for d3!" );
     $.get('http://localhost:3000/feedbacks')
     .then(function(success){
       success.forEach(function(elem) {
@@ -15,7 +12,6 @@ $( document ).ready(function() {
       console.error(error);
     })
     .always(function(andForever) {
-      console.log("I am a turtlebot");
     })
     viz();
 });
@@ -63,7 +59,6 @@ $( document ).ready(function() {
       })
       .style("fill",  function(d) {
         var cirColor = color(d);  //Define color by data
-        console.log("color for",d, "is: ", cirColor);
         return cirColor;
       });
   }

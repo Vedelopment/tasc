@@ -20,10 +20,6 @@ body {
   /*background-color: #F6F6F6;*/
 }
 
-a {
-  color: green!important;
-}
-
 p {
   font-size: .8em;
 }
@@ -134,21 +130,22 @@ p {
 }
 
 .brand-logo {
-  width: 200px;
+  height: 40px;
   margin: 10px;
 }
 
 .profile_image {
   height: 200px;
   display: block;
-position: relative;
-
-border-color: white;
-border-width: 25px;
--moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
-border-style: solid;
-margin: 0 auto;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 3px;
+  // border-color: white;
+  // border-width: 25px;
+  // -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  // border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  // border-style: solid;
+  margin: 10px;
 }
 
 /*d3 stuff*/
