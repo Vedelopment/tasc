@@ -11,12 +11,12 @@
     <% end %>
   </div>
   <% @assignments.each do |a| %>
-  <div class ="row assignments hoverable">
+  <div class ="row assignments">
     <div class="row">
       <div class="col s8">
         <%= link_to "#{a.title}", assignment_path(a) %>
       </div>
-      <div class="col s3 offset-s1">
+      <div class="col s4">
         <%= a.due_date.strftime("Due on: %m/%d/%Y") %>
       </div>
     </div>
@@ -26,9 +26,9 @@
       </div>
       <div class="homework-submission col s4">
         <% if current_student && current_student.submissions.find_by(assignment_id: a.id) %>
-          <%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: a.id)), class:"btn center form-submit-style" %>
+          <%= link_to "Edit Your Submission", submission_path(current_student.submissions.find_by(assignment_id: a.id)) %>
         <% elsif current_student %>
-          <%= link_to "Submit", new_submission_path(a), class:"btn center  new-submit-style"%>
+          <%= link_to "Submit", new_submission_path(a), class:"btn center  green-submit-style"%>
         <% end %>
       </div>
     </div>

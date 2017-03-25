@@ -20,6 +20,10 @@ body {
   /*background-color: #F6F6F6;*/
 }
 
+a {
+  color: green!important;
+}
+
 p {
   font-size: .8em;
 }
@@ -60,11 +64,11 @@ p {
   border: solid 2px #FBD334!important;
 }
 
-.form-submit-style {
+.warning-submit-style {
   background-color: #FA4542!important;
 }
 
-.new-submit-style {
+.green-submit-style {
   background-color: #0BE000!important;
 }
 
@@ -90,8 +94,9 @@ p {
 }
 
 .profile-style {
-  border: solid rgba(18,87,159,.75);
-  background-color: rgba(18,87,159,.2);
+  padding: 4px;
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
 }
 
 .side-assignment-style {
