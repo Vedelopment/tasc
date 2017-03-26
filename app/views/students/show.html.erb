@@ -4,7 +4,7 @@
   <br>
   <div class="row">
     <div class="col sl4 summary-style">
-      <img src="<%= @student.profile_image %>" alt="profile" class="center profile_image">
+      <img src="<%= @student.profile_image %>" alt="profile" class="profile_image">
       <div>
         <table>
           <tr>
@@ -32,13 +32,11 @@
             <td><%= link_to @student.linkedin, "#{@student.linkedin}" %></td>
           </tr>
         </table>
-      </div>
-      <div class="row">
-        <div class="col s12 center">
+        <p class="dev-text-center">
           <% if @student == current_student %>
-          <%= link_to "Edit", edit_student_path(current_student), class:"btn green-submit-style" %>
+          <%= link_to "Edit Profile", edit_student_path(current_student)%>
           <% end %>
-        </div>
+        </p>
       </div>
     </div>
 

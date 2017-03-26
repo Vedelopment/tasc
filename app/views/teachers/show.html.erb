@@ -2,7 +2,7 @@
   <br>
   <div class="row">
     <div class="col sl4 summary-style">
-      <img src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/apple-touch-icon_Zb6Ub.png" alt="profile" class="center profile_image">
+      <img src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/apple-touch-icon_Zb6Ub.png" alt="profile" class="profile_image">
       <div>
         <table>
           <tr>
@@ -26,13 +26,11 @@
             <td><%= link_to @teacher.github, "#{@teacher.github}" %></td>
           </tr>
         </table>
-      </div>
-      <div class="row">
-        <div class="col s12 center">
+        <p class="dev-text-center">
           <% if @teacher == current_teacher %>
-            <%= link_to "Edit", edit_teacher_path(current_teacher), class:"btn green-submit-style" %>
+          <%= link_to "Edit Profile", edit_teacher_path(current_teacher)%>
           <% end %>
-        </div>
+        </p>
       </div>
     </div>
 

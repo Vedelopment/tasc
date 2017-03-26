@@ -21,7 +21,7 @@ body {
 }
 
 p {
-  font-size: .8em;
+  font-size: 14px;
 }
 table {
   margin: 1.3em 1em!important;
@@ -96,7 +96,6 @@ td {
 
 .summary-style {
   padding: 4px!important;
-  border: 2px solid rgba(0,0,0,0.2);
   border-radius: 3px;
 }
 
@@ -145,6 +144,9 @@ td {
 }
 .container {
   width: 90%!important;
+}
+.dev-text-center {
+  text-align: center;
 }
 
 /*d3 stuff*/
