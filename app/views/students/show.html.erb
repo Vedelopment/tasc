@@ -3,7 +3,7 @@
 <div class="container">
   <br>
   <div class="row">
-    <div class="col l4 summary-style">
+    <div class="col sl4 summary-style">
       <img src="<%= @student.profile_image %>" alt="profile" class="center profile_image">
       <div>
         <table>
@@ -43,8 +43,8 @@
     </div>
 
 <!-- Card with Tabs for each course -->
-    <div class="col m8">
-      <div class="col s11 offset-s1">
+    <div class="col m8 offset-s1">
+      <div class="col s11 offset-m2">
         <div class="card">
           <div class="card-content">
             <p></p>
@@ -82,14 +82,12 @@
                   <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
                     <% if @submissions.find_by({assignment_id: a.id}) && @display %>
                       <i class="tiny material-icons">done</i>
-                    <% else %>
-                      <i class="tiny material-icons">done</i>
-                    <% end %>
                   </p>
                   <!-- Feedback if provided -->
                   <p class="col m3">
                     <% if @submissions.find_by({assignment_id: a.id}).feedback %>
                       <%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %>
+                    <% end %>
                     <% end %>
                   </p> <!-- This </p> must come AFTER the end -->
                   <% end %>
