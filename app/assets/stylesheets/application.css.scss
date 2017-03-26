@@ -24,10 +24,11 @@ p {
   font-size: 14px;
 }
 table {
-  margin: 1.3em 1em!important;
+  margin: 1.3em 0!important;
+  font-size: 14px!important;
 }
 td {
-  padding: 0 8px 8px 5px!important;
+  padding: 0 8px 8px 0!important;
 }
 .background {
   background-color: rgba(0,0,0,.25)
@@ -96,7 +97,7 @@ td {
 
 .summary-style {
   padding: 4px!important;
-  border-radius: 3px;
+  margin: 0 auto!important;
 }
 
 .teacher-button-style {
@@ -130,19 +131,20 @@ td {
 }
 
 .profile_image {
-  height: 200px;
+  height: 150px;
   display: block;
   position: relative;
   border-radius: 100%;
   // border-color: white;
-  margin: 10px auto;
-}
-.container {
-  width: 90%!important;
+  margin: 10px 0;
 }
 .dev-text-center {
   text-align: center;
 }
+.container {
+  width: 90%!important;
+}
+
 
 /*d3 stuff*/
 div.bar {

@@ -21,18 +21,18 @@
           </tr>
           <tr>
             <td><b>Slack: </b></td>
-            <td><%= link_to @student.slack, "#{@student.slack}" %></td>
+            <td><%= @student.slack %></td>
           </tr>
           <tr>
             <td><b>Github: </b></td>
-            <td><%= link_to @student.github, "#{@student.github}" %></td>
+            <td><%= link_to @student.github, "https://github.com/#{@student.github}" %></td>
           </tr>
           <tr>
             <td><b>LinkedIn: </b></td>
-            <td><%= link_to @student.linkedin, "#{@student.linkedin}" %></td>
+            <td><%= link_to @student.linkedin, "https://www.linkedin.com/#{@student.linkedin}" %></td>
           </tr>
         </table>
-        <p class="dev-text-center">
+        <p>
           <% if @student == current_student %>
           <%= link_to "Edit Profile", edit_student_path(current_student)%>
           <% end %>

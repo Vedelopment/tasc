@@ -16,23 +16,23 @@ Course.destroy_all
 Teacher.destroy_all
 
 student_data = [
-  {first_name:"Ashley",last_name:"Richardson",user_name:"arichardson0",email:"arichardson0@wikimedia.org",password:"NrCvEnyDSk",slack:"arichardson0",github:"arichardson0",linkedin:"arichardson0"},
-  {first_name:"Martha",last_name:"Young",user_name:"myoung1",email:"myoung1@1688.com",password:"OrTKAGx7KDwH",slack:"myoung1",github:"myoung1",linkedin:"myoung1"},
-  {first_name:"Terry",last_name:"Lopez",user_name:"tlopez2",email:"tlopez2@cam.ac.uk",password:"YgxQJB7VQZr",slack:"tlopez2",github:"tlopez2",linkedin:"tlopez2"},
-  {first_name:"Johnny",last_name:"Holmes",user_name:"jholmes3",email:"jholmes3@wordpress.org",password:"a36bbs4K86w",slack:"jholmes3",github:"jholmes3",linkedin:"jholmes3"},
-  {first_name:"Willie",last_name:"Spencer",user_name:"wspencer4",email:"wspencer4@mac.com",password:"oxTR0mC9id",slack:"wspencer4",github:"wspencer4",linkedin:"wspencer4"},
-  {first_name:"Ronald",last_name:"Torres",user_name:"rtorres5",email:"rtorres5@bizjournals.com",password:"yUoZzApoo2",slack:"rtorres5",github:"rtorres5",linkedin:"rtorres5"},
-  {first_name:"Doris",last_name:"Bennett",user_name:"dbennett6",email:"dbennett6@newyorker.com",password:"DPBla6wEul",slack:"dbennett6",github:"dbennett6",linkedin:"dbennett6"},
-  {first_name:"Benjamin",last_name:"Payne",user_name:"bpayne7",email:"bpayne7@ucoz.com",password:"JbmEU7Hpla6U",slack:"bpayne7",github:"bpayne7",linkedin:"bpayne7"},
-  {first_name:"Sandra",last_name:"Stone",user_name:"sstone8",email:"sstone8@tumblr.com",password:"9Lksr7iwajF",slack:"sstone8",github:"sstone8",linkedin:"sstone8"},
-  {first_name:"Brandon",last_name:"Mendoza",user_name:"bmendoza9",email:"bmendoza9@utexas.edu",password:"XmwD1gdE",slack:"bmendoza9",github:"bmendoza9",linkedin:"bmendoza9"},
-  {first_name: "GA",last_name: "Student",user_name: "GA-Student",email: "GA@student.com",password: "GAisnum1",slack: "GA-Student",github: "devtestaccount",linkedin: "GA-Student"}
+  {first_name:"Ashley",last_name:"Richardson",user_name:"arichardson0",email:"arichardson0@wikimedia.org",password:"NrCvEnyDSk",slack:"arichardson0",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Martha",last_name:"Young",user_name:"myoung1",email:"myoung1@1688.com",password:"OrTKAGx7KDwH",slack:"myoung1",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Terry",last_name:"Lopez",user_name:"tlopez2",email:"tlopez2@cam.ac.uk",password:"YgxQJB7VQZr",slack:"tlopez2",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Johnny",last_name:"Holmes",user_name:"jholmes3",email:"jholmes3@wordpress.org",password:"a36bbs4K86w",slack:"jholmes3",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Willie",last_name:"Spencer",user_name:"wspencer4",email:"wspencer4@mac.com",password:"oxTR0mC9id",slack:"wspencer4",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Ronald",last_name:"Torres",user_name:"rtorres5",email:"rtorres5@bizjournals.com",password:"yUoZzApoo2",slack:"rtorres5",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Doris",last_name:"Bennett",user_name:"dbennett6",email:"dbennett6@newyorker.com",password:"DPBla6wEul",slack:"dbennett6",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Benjamin",last_name:"Payne",user_name:"bpayne7",email:"bpayne7@ucoz.com",password:"JbmEU7Hpla6U",slack:"bpayne7",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Sandra",last_name:"Stone",user_name:"sstone8",email:"sstone8@tumblr.com",password:"9Lksr7iwajF",slack:"sstone8",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Brandon",last_name:"Mendoza",user_name:"bmendoza9",email:"bmendoza9@utexas.edu",password:"XmwD1gdE",slack:"bmendoza9",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name: "GA",last_name: "Student",user_name: "GA-Student",email: "GA@student.com",password: "GAisnum1",slack: "GA-Student",github: "devtestaccount",linkedin: "school/15248519?pathWildcard=15248519"}
 ]
 Student.create(student_data)
 
 teacher_data = [
-  {first_name:"Margaret",last_name:"Sullivan",user_name:"msullivan0",email:"msullivan0@cisco.com",password:"J2CUN15C7pMt",slack:"msullivan0",github:"msullivan0"},
-  {first_name:"Catherine",last_name:"Hicks",user_name:"chicks1",email:"chicks1@nifty.com",password:"aBgyiJi9",slack:"chicks1",github:"chicks1"},
+  {first_name:"Margaret",last_name:"Sullivan",user_name:"msullivan0",email:"msullivan0@cisco.com",password:"J2CUN15C7pMt",slack:"msullivan0",github:"devtestaccount"},
+  {first_name:"Catherine",last_name:"Hicks",user_name:"chicks1",email:"chicks1@nifty.com",password:"aBgyiJi9",slack:"chicks1",github:"devtestaccount"},
   {first_name: "GA",last_name: "Teacher",user_name: "GA-Teacher",email: "GA@teacher.com",password: "GAisnum1",slack: "GA-Teacher",github: "devtestaccount"}
 ]
 Teacher.create(teacher_data)

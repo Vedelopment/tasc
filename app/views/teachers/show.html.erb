@@ -19,14 +19,14 @@
           </tr>
           <tr>
             <td><b>Slack: </b></td>
-            <td><%= link_to @teacher.slack, "#{@teacher.slack}" %></td>
+            <td><%= @teacher.slack %></td>
           </tr>
           <tr>
             <td><b>Github: </b></td>
             <td><%= link_to @teacher.github, "#{@teacher.github}" %></td>
           </tr>
         </table>
-        <p class="dev-text-center">
+        <p>
           <% if @teacher == current_teacher %>
           <%= link_to "Edit Profile", edit_teacher_path(current_teacher)%>
           <% end %>
