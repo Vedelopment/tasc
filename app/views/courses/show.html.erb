@@ -17,7 +17,7 @@
 
       <% @course.assignments.order(:assign_date).reverse.each do |a| %>
         <% if a.visible === true  %>
-          <div class ="row hoverable assignments">
+          <div class ="row assignments">
             <div class="col s8">
               <h6><%= link_to "#{a.title}", assignment_path(a) %></h6>
             </div>
@@ -61,7 +61,7 @@
 
   <h5><%= link_to "Feedback:", feedbacks_path %></h5>
   <hr>
-  <div class="row hoverable feedbacks">
+  <div class="row feedbacks">
     <div class="col m8">
       Feedback for:
     </div>

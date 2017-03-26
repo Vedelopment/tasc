@@ -61,7 +61,7 @@ We find that the most imporatant use of our site is that the most relevant infor
 
 * teachers can create assignments - like creating a homework assignment.
 * teachers can create feedbacks on submissions - like providing feedback on homework.
-* teachers can look at all assignments and all submissions - like looking at all homework assignments and all homework submissions from all students. 
+* teachers can look at all assignments and all submissions - like looking at all homework assignments and all homework submissions from all students.
 
 ### Students
 
@@ -102,7 +102,7 @@ end
 <div>
       <% if current_student == @submission.student %>
         <div class="col s12 center">
-          <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
+          <%= link_to "Edit Submission", edit_submission_path(@submission), class:"waves-effect btn waves-light green-submit-style" %>
         </div>
       <% end %>
     </div>
@@ -116,11 +116,11 @@ end
     <% if @submission.feedback %>
       <%= @submission.feedback.content %>
       <div class="center">
-        <%= link_to "Edit Feedback", edit_feedback_path(@submission.feedback), class:"waves-effect btn waves-light form-submit-style" %>
+        <%= link_to "Edit Feedback", edit_feedback_path(@submission.feedback), class:"waves-effect btn waves-light green-submit-style" %>
       </div>
     <% else %>
       <div class="center">
-        <%= link_to "Provide Feedback", new_feedback_path(@submission), class:"waves-effect btn waves-light form-submit-style" %>
+        <%= link_to "Provide Feedback", new_feedback_path(@submission), class:"waves-effect btn waves-light green-submit-style" %>
       </div>
     <% end %>
   </div>
