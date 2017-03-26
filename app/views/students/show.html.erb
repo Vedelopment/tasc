@@ -3,46 +3,50 @@
 <div class="container">
   <br>
   <div class="row">
-    <div class="col sl4 summary-style">
-      <img src="<%= @student.profile_image %>" alt="profile" class="profile_image">
-      <div>
-        <table>
-          <tr>
-            <td><b>Name: </b></td>
-            <td><%=@student.first_name %> <%=@student.last_name%></td>
-          </tr>
-          <tr>
-            <td><b>User Name: </b></td>
-            <td><%=@student.user_name %></td>
-          </tr>
-          <tr>
-            <td><b>Email: </b></td>
-            <td><%=@student.email %></td>
-          </tr>
-          <tr>
-            <td><b>Slack: </b></td>
-            <td><%= @student.slack %></td>
-          </tr>
-          <tr>
-            <td><b>Github: </b></td>
-            <td><%= link_to @student.github, "https://github.com/#{@student.github}" %></td>
-          </tr>
-          <tr>
-            <td><b>LinkedIn: </b></td>
-            <td><%= link_to @student.linkedin, "https://www.linkedin.com/#{@student.linkedin}" %></td>
-          </tr>
-        </table>
-        <p>
-          <% if @student == current_student %>
-          <%= link_to "Edit Profile", edit_student_path(current_student)%>
-          <% end %>
-        </p>
+    <div class="col s14 summary-style">
+      <div class="dev-bio-info">
+        <img src="<%= @student.profile_image %>" alt="profile" class="profile_image">
+      </div>
+      <div class="dev-bio-info">
+        <div>
+          <table>
+            <tr>
+              <td><b>Name: </b></td>
+              <td><%=@student.first_name %> <%=@student.last_name%></td>
+            </tr>
+            <tr>
+              <td><b>User Name: </b></td>
+              <td><%=@student.user_name %></td>
+            </tr>
+            <tr>
+              <td><b>Email: </b></td>
+              <td><%=@student.email %></td>
+            </tr>
+            <tr>
+              <td><b>Slack: </b></td>
+              <td><%= @student.slack %></td>
+            </tr>
+            <tr>
+              <td><b>Github: </b></td>
+              <td><%= link_to @student.github, "https://github.com/#{@student.github}" %></td>
+            </tr>
+            <tr>
+              <td><b>LinkedIn: </b></td>
+              <td><%= link_to @student.linkedin, "https://www.linkedin.com/#{@student.linkedin}" %></td>
+            </tr>
+          </table>
+          <p>
+            <% if @student == current_student %>
+            <%= link_to "Edit Profile", edit_student_path(current_student)%>
+            <% end %>
+          </p>
+        </div>
       </div>
     </div>
 
 <!-- Card with Tabs for each course -->
-    <div class="col m8 offset-s1">
-      <div class="col s11 offset-m2">
+    <div class="col m8 offset-s1 dev-course-card">
+      <div class="col s11 offset-m3">
         <div class="card">
           <div class="card-content">
             <p></p>

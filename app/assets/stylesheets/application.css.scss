@@ -95,8 +95,17 @@ td {
     background-size: cover;
 }
 
+.container {
+  width: 95%!important;
+}
+.dev-course-card {
+  max-width: 50%;
+  margin-top: 5%;
+  margin-right: 5%;
+}
 .summary-style {
-  padding: 4px!important;
+  max-width: 50%;
+  padding: 10px!important;
   margin: 0 auto!important;
 }
 
@@ -141,9 +150,6 @@ td {
 .dev-text-center {
   text-align: center;
 }
-.container {
-  width: 90%!important;
-}
 
 
 /*d3 stuff*/
@@ -169,4 +175,46 @@ div.bar {
   border: 2px solid black;
   padding: 10px;
   width: 400px;
+}
+
+@media (max-width: 900px) {
+  td {
+    font-size: 13px;
+    padding: 0 8px 4px 0 !important;
+  }
+  .dev-bio-info {
+    // display: inline;
+    // float: left;
+    // margin: 10px 10px 10px 12%;
+  }
+  .profile_image {
+    height: 100px;
+    display: inline;
+  }
+  .summary-style {
+    max-width: 85%;
+    float: none!important;
+    margin: 10px auto!important;
+  }
+  .dev-course-card {
+    max-width: 95%;
+    width: 100%!important;
+    padding: 0!important;
+  }
+  .col.offset-m3 {
+    margin-left: 5%!important;
+  }
+}
+@media (max-width: 601px) {
+  .summary-style {
+    max-width: 85%;
+    margin: 10px 10%;
+  }
+  .dev-course-card {
+    float: none!important;
+    max-width: 99%;
+    width: 100%!important;
+    margin-left: 0!important;
+    padding: 0!important;
+  }
 }
