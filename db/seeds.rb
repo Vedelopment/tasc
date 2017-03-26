@@ -156,9 +156,9 @@ feedback_data = [{
   }]
 Feedback.create(feedback_data)
 
-
 Student.all.each do |f|
   Course.first.students << f
+  Student.get_profile_pic(f)
 end
 
 Course.second.students << [Student.first, Student.second, Student.third]
