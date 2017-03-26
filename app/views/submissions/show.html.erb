@@ -3,7 +3,7 @@
 <br>
 <div class="row">
   <div class="row">
-    <div class="col m3 offset-m1 side-assignment-style">
+    <div class="col m3 offset-m1 summary-style">
       <h4 class="center">Assignment</h4>
       <br>
       <div class="col s12">
@@ -27,7 +27,7 @@
             <br>
             <br>
             <div class="col m12">
-              <%= @submission.link %>
+              <%= link_to @submission.link, "#{@submission.link}" %>
             </div>
             <div class="">
               <% if current_student == @submission.student %>

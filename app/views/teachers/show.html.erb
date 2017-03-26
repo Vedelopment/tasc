@@ -1,24 +1,31 @@
 <div class="container">
   <br>
   <div class="row">
-    <div class="col m4 profile-style">
-      <img src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/apple-touch-icon_Zb6Ub.png" alt="profile" class="center">
-      <div class="row">
-        <div class="col s4">
-          <p> Name: </p>
-          <p> User Name: </p>
-          <p> Email: </p>
-          <p> Slack: </p>
-          <p> Github: </p>
-          <p> Linkedin: </p>
-        </div>
-        <div class="col s8 center">
-          <p class="wrap"><%=@teacher.first_name %> <%=@teacher.last_name%></p>
-          <p><%=@teacher.user_name %></p>
-          <p class="wrap"><%=@teacher.email %></p>
-          <p><%=@teacher.slack %></p>
-          <p><%=@teacher.github %></p>
-        </div>
+    <div class="col m4 summary-style">
+      <img src="https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/apple-touch-icon_Zb6Ub.png" alt="profile" class="center profile_image">
+      <div>
+        <table>
+          <tr>
+            <td><b>Name: </b></td>
+            <td><%=@teacher.first_name %> <%=@teacher.last_name%></td>
+          </tr>
+          <tr>
+            <td><b>User Name: </b></td>
+            <td><%=@teacher.user_name %></td>
+          </tr>
+          <tr>
+            <td><b>Email: </b></td>
+            <td><%=@teacher.email %></td>
+          </tr>
+          <tr>
+            <td><b>Slack: </b></td>
+            <td><%= link_to @teacher.slack, "#{@teacher.slack}" %></td>
+          </tr>
+          <tr>
+            <td><b>Github: </b></td>
+            <td><%= link_to @teacher.github, "#{@teacher.github}" %></td>
+          </tr>
+        </table>
       </div>
       <div class="row">
         <div class="col s12 center">
