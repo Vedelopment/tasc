@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @student = Student.confirm(student_params)
       login(@student)
       flash[:notice] = "You've signed in."
-      redirect_to course_path(Course.first)
+      redirect_to student_path(@student)
     elsif @teacher = Teacher.confirm(student_params)
       tlogin(@teacher)
       flash[:notice] = "You've signed in."
