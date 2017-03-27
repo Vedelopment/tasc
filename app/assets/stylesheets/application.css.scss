@@ -60,6 +60,10 @@ ul {
     background-color: #0BE000!important;
 }
 
+.teacher-button-style {
+    background-color: #FA4542!important;
+}
+
 .form-style h4 {
     text-align: center;
 }
@@ -93,10 +97,6 @@ ul {
     max-width: 40%;
     padding: 0 0 0 20px !important;
     margin: 0 auto !important;
-}
-
-.teacher-button-style {
-    background-color: #FA4542!important;
 }
 
 .about-pic {
@@ -193,6 +193,11 @@ table.dev-table td {
     color: rgba(0,0,0,0.5)!important;
     padding: 0!important;
     margin: 0!important;
+}
+
+.btn {
+    font-size: 12px;
+    padding: 0 1.2em!important;
 }
 
 /////////////////////  D3 Styles  /////////////////////////
