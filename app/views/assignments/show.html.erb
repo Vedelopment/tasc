@@ -8,21 +8,21 @@
 
       <div class="col m6">
         <h5>Assignment:</h5>
-        <div class="row assignments hoverable">
+        <div class="row assignments">
           <h4><%= @assignment.title %></h4>
           <h6><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %></h6>
           <hr>
           <% if current_student %>
           <div class="homework-submission">
             <% if current_student.submissions.find_by(assignment_id: @assignment.id) %>
-              <%= link_to "View Your Submission", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center form-submit-style" %>
+              <%= link_to "Edit Your Submission", submission_path(current_student.submissions.find_by(assignment_id: @assignment.id)), class:"btn center green-submit-style" %>
             <% else %>
-              <%= link_to "Submit", new_submission_path(@assignment), class:"btn center form-submit-style"%>
+              <%= link_to "Submit", new_submission_path(@assignment), class:"btn center green-submit-style"%>
             <% end %>
           </div>
           <% elsif current_teacher %>
             <div class="row">
-              <%=link_to "Edit", edit_assignment_path(@assignment), class:"btn center teacher-button-style" %>
+              <%=link_to "Edit", edit_assignment_path(@assignment), class:"btn center green-submit-style" %>
             </div>
           <% end %>
 
@@ -44,7 +44,7 @@
           <div>
             <% if current_teacher %>
             <h5>Submissions:</h5>
-            <div class="col m12 assignments hoverable">
+            <div class="col m12 assignments">
               <% @assignment.submissions.each do |c| %>
                   <li><%=link_to "#{c.student.first_name} #{c.student.last_name[0]}.", submission_path(c)%></li>
               <% end %>

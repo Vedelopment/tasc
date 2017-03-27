@@ -28,6 +28,11 @@
           <% end %>
         </div>
       <% end %>
+       <% if current_teacher && !@feedback %>
+         <div class="center">
+            <%= link_to "Provide Feedback", new_feedback_path(@submission), class:"waves-effect btn waves-light  green-submit-style" %>
+          </div>
+        <% end %>
     </div>
 
 
@@ -84,6 +89,13 @@
                     <h6>Score: <%= @feedback.score %></h6>
                   </div>
                 </div>
+
+              <% if current_teacher %>
+               <div class="center">
+                  <%= link_to "Edit Feedback", edit_feedback_path(@submission.feedback), class:"waves-effect btn waves-light green-submit-style" %>
+                </div>
+              <% end %>
+
               </div>
             <% end %>
           </div>

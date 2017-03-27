@@ -15,190 +15,114 @@ Assignment.destroy_all
 Course.destroy_all
 Teacher.destroy_all
 
-student_data = [{
-  first_name: "Ivana",
-  last_name: "Tudor",
-  user_name: "ivyT",
-  email: "ivyT@google.com",
-  password: "aaaaa6",
-  slack: "ivyT",
-  github: "image",
-  linkedin: "IvyT"
-  }, {
-    first_name: "Amanda",
-    last_name: "Hodgkins",
-    user_name: "AmandaH",
-    email: "Amandahugs@google.com",
-    password: "aaaaa6",
-    slack: "AmandaH",
-    github: "image",
-    linkedin: "AHugunkys"
-  }, {
-    first_name: "George",
-    last_name: "Jetson",
-    user_name: "MeetMe",
-    email: "MistaJ2@google.com",
-    password: "aaaaa6",
-    slack: "MistaJ2",
-    github: "image",
-    linkedin: "GeorgeJ"
-  }, {
-    first_name: "Dexter",
-    last_name: "Morgan",
-    user_name: "Dex",
-    email: "splatterGuy@google.com",
-    password: "aaaaa6",
-    slack: "Dex",
-    github: "image",
-    linkedin: "DexterMorgan"
-  }, {
-    first_name: "LD",
-    last_name: "D",
-    user_name: "TheDD",
-    email: "LD@google.com",
-    password: "aaaaa6",
-    slack: "eldee",
-    github: "image",
-    linkedin: "eldee"
-    }, {
-      first_name: "hodor",
-      last_name: "hodor",
-      user_name: "hodor",
-      email: "hodor@hodor.hodor",
-      password: "hodor6",
-      slack: "hodor",
-      github: "image",
-      linkedin: "hodor"
-    }, {
-      first_name: "GA",
-      last_name: "Student",
-      user_name: "GA-Student",
-      email: "GA@student.com",
-      password: "GAisnum1",
-      slack: "GA-Student",
-      github: "generalassembly",
-      linkedin: "GA-Student"
-      }]
+student_data = [
+  {first_name:"Ashley",last_name:"Richardson",user_name:"arichardson0",email:"arichardson0@wikimedia.org",password:"NrCvEnyDSk",slack:"arichardson0",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Martha",last_name:"Young",user_name:"myoung1",email:"myoung1@1688.com",password:"OrTKAGx7KDwH",slack:"myoung1",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Terry",last_name:"Lopez",user_name:"tlopez2",email:"tlopez2@cam.ac.uk",password:"YgxQJB7VQZr",slack:"tlopez2",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Johnny",last_name:"Holmes",user_name:"jholmes3",email:"jholmes3@wordpress.org",password:"a36bbs4K86w",slack:"jholmes3",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Willie",last_name:"Spencer",user_name:"wspencer4",email:"wspencer4@mac.com",password:"oxTR0mC9id",slack:"wspencer4",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Ronald",last_name:"Torres",user_name:"rtorres5",email:"rtorres5@bizjournals.com",password:"yUoZzApoo2",slack:"rtorres5",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Doris",last_name:"Bennett",user_name:"dbennett6",email:"dbennett6@newyorker.com",password:"DPBla6wEul",slack:"dbennett6",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Benjamin",last_name:"Payne",user_name:"bpayne7",email:"bpayne7@ucoz.com",password:"JbmEU7Hpla6U",slack:"bpayne7",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Sandra",last_name:"Stone",user_name:"sstone8",email:"sstone8@tumblr.com",password:"9Lksr7iwajF",slack:"sstone8",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name:"Brandon",last_name:"Mendoza",user_name:"bmendoza9",email:"bmendoza9@utexas.edu",password:"XmwD1gdE",slack:"bmendoza9",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
+  {first_name: "Student",last_name: "at GA",user_name: "GA-Student",email: "GA@student.com",password: "GAisnum1",slack: "GA-Student",github: "devtestaccount",linkedin: "school/15248519?pathWildcard=15248519"}
+]
 Student.create(student_data)
 
-
-  teacher_data = [{
-    first_name: "Walter",
-    last_name: "White",
-    user_name: "TheOneWhoKnocks",
-    email: "WW@google.com",
-    password: "aaaaa6",
-    slack: "MisterWhite",
-    github: "WWhite"
-  }, {
-    first_name: "Mister",
-    last_name: "Cooper",
-    user_name: "HangWithMe",
-    email: "Coops@google.com",
-    password: "aaaaa6",
-    slack: "WishIWasPlayingBBall",
-    github: "Cooooop"
-  }, {
-    first_name: "GA",
-    last_name: "Teacher",
-    user_name: "GA-Teacher",
-    email: "GA@teacher.com",
-    password: "GAisnum1",
-    slack: "GA-Teacher",
-    github: "GA-Teacher"
-  }]
+teacher_data = [
+  {first_name:"Margaret",last_name:"Sullivan",user_name:"msullivan0",email:"msullivan0@cisco.com",password:"J2CUN15C7pMt",slack:"msullivan0",github:"devtestaccount"},
+  {first_name:"Catherine",last_name:"Hicks",user_name:"chicks1",email:"chicks1@nifty.com",password:"aBgyiJi9",slack:"chicks1",github:"devtestaccount"},
+  {first_name: "Teacher",last_name: "at GA",user_name: "GA-Teacher",email: "GA@teacher.com",password: "GAisnum1",slack: "GA-Teacher",github: "devtestaccount"}
+]
 Teacher.create(teacher_data)
 
 
 course_data = [{
-  name: "WDI",
-  number: 34,
-  github: "https://github.com/sf-wdi-34/schedule"
+    name: "WDI",
+    number: 34,
+    github: "https://github.com/sf-wdi-34/schedule"
   }, {
     name: "WDI",
     number: 35,
     students: [],
     github: "https://github.com/sf-wdi-35/schedule#"
-    }]
+  }]
 
 Course.create(course_data)
 
-ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pharetra convallis est ut efficitur. In placerat, lorem id blandit congue, justo ligula varius mi, ut tincidunt nulla ex ac ipsum. Praesent nec purus erat. Donec malesuada mauris odio, sit amet imperdiet magna dictum vitae. Morbi iaculis pulvinar risus a posuere. Nulla hendrerit varius felis euismod sodales. Phasellus vulputate ipsum accumsan arcu lobortis, eu malesuada augue laoreet. Ut mauris elit, pellentesque a blandit quis, cursus et risus.
-
-Ut leo purus, pharetra non euismod ut, tincidunt quis velit. Sed sit amet velit non dolor pharetra lobortis. Curabitur porttitor mauris ac elementum sollicitudin. Ut at malesuada diam, at lobortis velit. Phasellus aliquam elit cursus, mollis sem nec, commodo tortor. In hac habitasse platea dictumst. Fusce dapibus magna eget nisi lobortis fringilla. Vestibulum fermentum ligula augue, mollis ullamcorper libero lacinia cursus. Nam euismod laoreet metus vestibulum facilisis"
-
 assignment_data = [{
-  title: "this is how we do it",
-  instructions: "it's friday night and I feel all right.",
-  assign_date: DateTime.new(2015,03,02),
-  due_date: DateTime.new(2015,04,02),
-  duration: 1.0,
-  visible: true,
-  course: Course.first
+    title: "Lighting Talks, episode 2",
+    instructions: "Prep a lightning talk for Monday afternoon! Further details: https://github.com/sf-wdi-34/lightning-talk/blob/master/README.md",
+    assign_date: DateTime.new(2015,03,02),
+    due_date: DateTime.new(2015,04,02),
+    duration: 1.0,
+    visible: true,
+    course: Course.first
   }, {
-    title: "Putting the fun in function!",
-    instructions: ipsum,
+    title: "Hash Maps",
+    instructions: "Spend 30 minutes looking over the hash map lab. It has a coding challenge you can try if you'd like. If so, fork and clone it, and spend your time modifying and understanding just the put method. Further details: https://github.com/sf-wdi-34/hash-map-lab#coding-challenge",
     assign_date: DateTime.new(2015,04,02),
     due_date: DateTime.new(2015,05,02),
     duration: 0.25,
     visible: true,
     course: Course.first
   }, {
-    title: "Always limber up before body parsing.",
-    instructions: ipsum,
+    title: "Refactor your rails app.",
+    instructions: "Finish the Steps to Refactor listed in the Rails Views & Helpers training. Remember to refrence the external resources and the class glossary/cheatsheet. Set a time limit for each task to attempt it without looking at the solutions (maybe 20 minutes), then compare your approach to the solution and make sure you understand how to complete the task. Further details: https://github.com/sf-wdi-34/rails_views_helpers_training",
     assign_date: DateTime.new(2015,05,02),
     due_date: DateTime.new(2015,10,02),
     duration: 7.0,
     visible: true,
     course: Course.first
   }, {
-    title: "Fear of commitment leads to lost data.",
-    instructions: ipsum,
+    title: "Continue work on personal portfolio.",
+    instructions: "Rebuild or refine your portfolio site. Choose 3-5 projects to include on the site. Make sure that your choices are consistent with the range of skills you want to display on the job market. If you select group work, be sure to highlight the portion you worked on. Further Details: https://github.com/sf-wdi-34/final-portfolio",
     assign_date: DateTime.new(2015,06,02),
     due_date: DateTime.new(2015,07,02),
     duration: 0.5,
     visible: true,
     course: Course.first
   }, {
-    title: "A wonderful game",
-    instructions: ipsum,
+    title: "Build your first project!",
+    instructions: "Start coding your Project 0. Remember to test out small pieces as you go, and build a simple (skateboard) version first. Further details: https://github.com/sf-wdi-34/project-0",
     assign_date: DateTime.new(2015,06,02),
     due_date: DateTime.new(2015,07,02),
     duration: 1.5,
-    visible: false,
+    visible: true,
     course: Course.first
   }]
 Assignment.create(assignment_data)
 
 
 submissions_data = [{
-  content: ipsum,
-  link: "https://www.google.com",
-  assignment: Assignment.all.sample,
-  student: Student.all.sample
-  }, {
-    content: ipsum,
-    link: "http://img.memecdn.com/epic-face_o_232179.gif",
+    content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+    link: "https://github.com/devtestaccount/sample_one",
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }, {
-    content: ipsum,
-    link: "https://s-media-cache-ak0.pinimg.com/originals/48/10/7e/48107e9a87c50894b348df59fc875830.jpg",
+    content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+    link: "https://github.com/devtestaccount/sample_two",
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }, {
-    content: "bagels for a snack sound good",
-    link: "https://www.google.com",
+    content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+    link: "https://github.com/devtestaccount/sample_three",
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }, {
-    content: ipsum,
-    link: "https://www.google.com",
+    content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+    link: "https://github.com/devtestaccount/sample_four",
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }, {
-    content: "i think we're alone now.  there doesn't seem to be anyone aroooooound.",
-    link: "https://www.google.com",
+    content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+    link: "https://github.com/devtestaccount/sample_five",
+    assignment: Assignment.all.sample,
+    student: Student.all.sample
+  }, {
+    content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+    link: "https://github.com/devtestaccount/sample_six",
     assignment: Assignment.all.sample,
     student: Student.all.sample
   }]
@@ -206,72 +130,72 @@ Submission.create(submissions_data)
 
 
 feedback_data = [{
-  score: 2.4,
-  content: ipsum,
-  submission: Submission.first
+    score: 2.4,
+    content: "Sample Feedback One. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
+    submission: Submission.first
   }, {
     score: 3.6,
-    content: "Did you know that the best time to start implementing friendly URLs is always?",
+    content: "Sample Feedback Two. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: Submission.second
   }, {
     score: 4.5,
-    content: "I can only think of one thing worth wishing for on your birthday would be some magic way to make URLs just a little more friendly.",
+    content: "Sample Feedback Three. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: Submission.third
   }, {
     score: 3.0,
-    content: ipsum,
+    content: "Sample Feedback Four. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: Submission.fourth
   }, {
     score: 2.0,
-    content: ipsum,
+    content: "Sample Feedback Five. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: Submission.fifth
   }, {
     score: 1.0,
-    content: "TL:DR",
+    content: "Sample Feedback Six. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: Submission.last
   }]
 Feedback.create(feedback_data)
 
-
 Student.all.each do |f|
   Course.first.students << f
+  Student.get_profile_pic(f)
 end
 
-Course.second.students << [Student.first, Student.second, Student.third]
+Course.second.students << [Student.first, Student.second, Student.third, Student.last]
 
-Assignment.all.each do |f|
-  Course.first.assignments << f
-end
+Course.first.assignments << [Assignment.first, Assignment.second, Assignment.third, Assignment.last]
+Course.second.assignments << [Assignment.fourth, Assignment.fifth]
+
+# Assignment.all.each do |f|
+#   Course.first.assignments << f
+#   Course.second.assignments << f
+# end
 
 Teacher.all.each do |f|
   Course.first.teachers << f
   Course.second.teachers << f
 end
 
-# Submission.all.each do |f|
-#   Assignment.all.sample.submissions << f
-# end
-
-
 #Below is the code that sets up just the info for the sample accounts
 
-sample_submission = [{content: ipsum,
-link: "https://www.google.com",
-assignment: Assignment.first,
-student: Student.last
+sample_submission = [{
+  content: "Sample Submission One. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+  link: "https://github.com/devtestaccount/sample_one",
+  assignment: Assignment.first,
+  student: Student.last
 }, {
-  content: ipsum,
-  link: "http://img.memecdn.com/epic-face_o_232179.gif",
+  content: "Sample Submission Two. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+  link: "https://github.com/devtestaccount/sample_two",
   assignment: Assignment.third,
   student: Student.last
 }, {
-  content: ipsum,
-  link: "https://s-media-cache-ak0.pinimg.com/originals/48/10/7e/48107e9a87c50894b348df59fc875830.jpg",
+  content: "Sample Submission Three. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+  link: "https://github.com/devtestaccount/sample_three",
   assignment: Assignment.fourth,
   student: Student.last
 }, {
-  content: "bagels for a snack sound good",
-  link: "https://www.google.com",
+  content: "Sample Submission Four. Here is my submission for this assigment. I had some trouble with images on the heroku deployed version but everything else is working as expected. Please let me know how you feel about the site flow, I've gotten a few comments that there are some navigation buttons that could improve the experience and also if you notice any logic that could benefit from refactoring.",
+  link: "https://github.com/devtestaccount/sample_four",
   assignment: Assignment.last,
   student: Student.last
 }]
@@ -279,20 +203,20 @@ student: Student.last
 sam_sub = Submission.create(sample_submission)
 
 sample_feedback = [{
-  score: 2.4,
-  content: ipsum,
-  submission: sam_sub[0]
+    score: 2.4,
+    content: "Sample Feedback One. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
+    submission: sam_sub[0]
   }, {
     score: 3.6,
-    content: "Did you know that the best time to start implementing friendly URLs is always?",
+    content: "Sample Feedback Two. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: sam_sub[1]
   }, {
     score: 3.0,
-    content: ipsum,
+    content: "Sample Feedback Three. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: sam_sub[2]
   }, {
     score: 3.14,
-    content: ipsum,
+    content: "Sample Feedback Four. Great work and interesting app idea. Code is DRY and well-indented. Think about ways you could separate some of the logic into smaller components. Let's meet in person to discuss more detailed feedback.",
     submission: sam_sub[3]
   }]
 

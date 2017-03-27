@@ -14,70 +14,136 @@
  *= require_self
  *= require materialize
  */
-
- @import "materialize";
-body {
-  /*background-color: #F6F6F6;*/
-}
+@import "materialize";
 
 p {
-  font-size: .8em;
+    font-size: 14px;
+}
+
+ul {
+    padding: 0!important;
+    margin: 0!important;
 }
 
 .background {
-  background-color: rgba(0,0,0,.25)
+    background-color: rgba(0,0,0,.25);
 }
 
 .assignments {
-  box-shadow: 0px 5px 7px 3px rgba(0,0,0,.1),
-              0 5px 7px -2px rgba(0,0,0,.12);
-  border-radius: .3em;
-  /*background-color: rgba(250,250,250,1);*/
-  padding: 1em;
+    box-shadow: 0 5px 7px 3px rgba(0,0,0,.05), 0 5px 7px -2px rgba(0,0,0,.06);
+    border-radius: 0.3em;
+    padding: 4px 2px 2px 2px;
 }
 
 .feedbacks {
-  box-shadow: 0px 5px 7px 3px rgba(0,0,0,.1),
-              0 5px 7px -2px rgba(0,0,0,.12);
-  border-radius: .3em;
-  /*background-color: rgba(250,250,250,1);*/
-  padding: 1em;
-
-}
-.form-style {
-  /*background-color: #F6F6F6;*/
-  /*color: black;*/
+    box-shadow: 0 5px 7px 3px rgba(0,0,0,.05), 0 5px 7px -2px rgba(0,0,0,.06);
+    border-radius: 0.3em;
+    padding: 1em;
 }
 
 .form-control {
-  border: solid 2px lightgrey!important;
+    border: solid 2px lightgrey!important;
 }
 
 .form-control:focus {
-  border-bottom: none!important;
-  box-shadow: none!important;
-  text-decoration: none!important;
-  border: solid 2px #FBD334!important;
+    border-bottom: none!important;
+    box-shadow: none!important;
+    text-decoration: none!important;
+    border: solid 2px #FBD334!important;
 }
 
-.form-submit-style {
-  background-color: #FA4542!important;
+.warning-submit-style {
+    background-color: #FA4542!important;
 }
 
-.new-submit-style {
-  background-color: #0BE000!important;
+.green-submit-style {
+    background-color: #0BE000!important;
 }
 
 .form-style h4 {
-  text-align: center;
+    text-align: center;
+}
+
+.dev-course-card {
+    max-width: 55%;
+    margin-top: 3% !important;
+    margin-right: 20px !important;
+}
+
+.dev-card-header {
+    font-size: 1.3em;
+    color: rgba(0,0,0,.5);
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+.dev-card-left {
+    // display: inline;
+    max-width: 3px;
+    text-align: left;
+}
+
+.dev-card-right {
+    display: inline;
+    max-width: 30px;
+    text-align: right;
+}
+
+.summary-style {
+    max-width: 40%;
+    padding: 0 0 0 20px !important;
+    margin: 0 auto !important;
+}
+
+.teacher-button-style {
+    background-color: #FA4542!important;
+}
+
+.about-pic {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.about-pic:hover {
+    transform: scale(1.1);
+}
+
+.hover-pic div {
+    visibility: hidden;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    right: 30%;
+}
+
+.hover-pic:hover div {
+    visibility: visible;
+}
+
+.brand-logo {
+    height: 40px;
+    margin: 10px;
+}
+
+.profile_image {
+    height: 150px;
+    display: block;
+    position: relative;
+    border-radius: 100%;
+    // border-color: white;
+    margin: 10px 0;
+}
+
+.dev-text-center {
+    text-align: center;
 }
 
 #navbar {
-  background-color: #000000;
+    background-color: #000000;
 }
 
 #navbar li:hover {
-  background-color: #FA4542;
+    background-color: #FA4542;
 }
 
 #parallax {
@@ -88,61 +154,48 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.profile-style {
-  border: solid rgba(18,87,159,.75);
-  background-color: rgba(18,87,159,.2);
+////////////////////  Overwrite Materialize  /////////////////////
+.container {
+    width: 95%!important;
+    padding-top: 1em;
 }
 
-.side-assignment-style {
-  background-color: lightgrey;
-  border: solid grey;
+table.dev-table {
+    margin: 1.3em 0;
+    font-size: 14px;
 }
 
-.teacher-button-style {
-  background-color: #FA4542!important;
+table.dev-table td {
+    padding: 0 8px 8px 0;
 }
 
-.about-pic {
-  width: 90%;
-  border-radius: 20px;
+.tabs {
+    overflow-x: hidden!important;
 }
 
-.about-pic:hover {
-  transform: scale(1.1);
+.tabs .indicator {
+    background-color: rgba(0,0,0,0.8)!important;
 }
 
-.hover-pic div {
-  visibility: hidden;
-  position: absolute;
-  left: 30%;
-  top: 20%;
-  right: 30%
+.tabs .tab a.active {
+    background-color: rgba(0,0,0,0)!important;
+    color: rgba(0,0,0,0.5)!important;
 }
 
-.hover-pic:hover div {
-  visibility: visible;
+.tabs .tab a:hover {
+    background-color: rgba(0,0,0,0)!important;
+    color: rgba(0,0,0,0.5)!important;
 }
 
-.brand-logo {
-  width: 200px;
-  margin: 10px;
+.tabs .tab a {
+    font-size: 1.8em!important;
+    background-color: rgba(0,0,0,0)!important;
+    color: rgba(0,0,0,0.5)!important;
+    padding: 0!important;
+    margin: 0!important;
 }
 
-.profile_image {
-  height: 200px;
-  display: block;
-position: relative;
-
-border-color: white;
-border-width: 25px;
--moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
-border-style: solid;
-margin: 0 auto;
-}
-
-/*d3 stuff*/
+/////////////////////  D3 Styles  /////////////////////////
 div.bar {
     display: inline-block;
     width: 20px;
@@ -152,17 +205,68 @@ div.bar {
 }
 
 .chart-container {
-  margin: 3em 3em 3em 0;
+    margin: 3em 3em 3em 0;
 }
 
 #graphBar {
-  border: 2px solid black;
-  padding: 10px;
-  width: 300px;
+    border: 2px solid black;
+    padding: 10px;
+    width: 300px;
 }
 
 #graphCircle {
-  border: 2px solid black;
-  padding: 10px;
-  width: 400px;
+    border: 2px solid black;
+    padding: 10px;
+    width: 400px;
+}
+//////////////////// Media Query Breakpoints ////////////////
+@media (max-width: 1000px) {
+    table.dev-table td {
+        font-size: 13px;
+        padding: 0 8px 4px 0;
+    }
+
+    .dev-bio-info {
+        // display: inline;
+        // float: left;
+        // margin: 10px 10px 10px 12%;
+    }
+
+    .profile_image {
+        display: inline;
+    }
+
+    .summary-style {
+        max-width: 500px;
+        float: none!important;
+        margin-left: 5% !important;
+    }
+
+    .dev-course-card {
+        max-width: 95%;
+        width: 100%!important;
+        padding: 0 !important;
+    }
+
+    .col.offset-m3 {
+        margin-left: 5% !important;
+    }
+}
+@media (max-width: 601px) {
+    .profile_image {
+        height: 100px;
+    }
+
+    .summary-style {
+        max-width: 90%;
+        margin: 10px 10%;
+    }
+
+    .dev-course-card {
+        float: none!important;
+        max-width: 99%;
+        width: 100%!important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
 }
