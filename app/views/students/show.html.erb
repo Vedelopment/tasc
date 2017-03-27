@@ -96,15 +96,15 @@
                               <div class="col s6 right-align">
                               <!-- Determines if submitted -->
                                 <ul> <!-- This <p> must remain BEFORE the if -->
-                                  <% if @submissions.find_by({assignment_id: a.id}) && @display %>
+                                  <% if @submissions.exists?({assignment_id: a.id}) == true && @display %>
                                     <li>Submitted</li>
-                                  <!-- Feedback if provided -->
                                   <% if @submissions.find_by({assignment_id: a.id}).feedback %>
                                     <li><%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %></li>
-                                  <% if @submissions.find_by({assignment_id: a.id}).present? %>
+                                  <% end %>
+                                  <% end %>
+
+                                  <% if @submissions.exists?({assignment_id: a.id}) == false %>
                                     <li>Not Submitted</li>
-                                  <% end %>
-                                  <% end %>
                                   <% end %>
                                 </ul>
                               </div>

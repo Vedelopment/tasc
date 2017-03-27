@@ -39,4 +39,5 @@ class Student < ApplicationRecord
     username = temp_array[temp_array.length - 1]
     return username
   end
+
 end
