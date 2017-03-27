@@ -4,6 +4,11 @@
   <div class="row">
     <div class="col m6">
       <h4>WDI 34</h4>
+      <% if current_student %>
+        <h6><%= link_to "Back to your profile", student_path(current_student) %></h6>
+      <% elsif current_teacher %>
+        <h6><%= link_to "Back to your profile", teacher_path(current_teacher) %></h6>
+      <% end %>
     </div>
       <div class="col m6 right-align">
         <h5><%= link_to "Schedule", "#{@course.github}", class: "waves-effect waves-light btn green" %></h5>
