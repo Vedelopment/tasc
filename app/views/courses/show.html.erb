@@ -15,9 +15,17 @@
 
       </div>
   </div>
+
   <div class="row">
     <div class="col m6">
-      <h5>Assignments:</h5>
+      <div class="row">
+        <div class="col m6">
+          <h5>Assignments:</h5>
+        </div>
+        <div class="col m6 right-align">
+          <h6><%= link_to "Create Assignment", new_assignment_path(@course), class: "waves-effect waves-light btn green-submit-style" %></h6>
+        </div>
+      </div>
       <h6><%= link_to "View All", assignments_path(@course) %></h6>
       <hr>
 
