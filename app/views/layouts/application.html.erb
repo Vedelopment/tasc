@@ -3,6 +3,7 @@
   <head>
     <title>Tasc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag 'favicon.png' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
@@ -17,6 +18,7 @@
       <div class="nav-wrapper">
         <a href="#" data-activates='dropdown2' class="button-collapse dropdown-button grey-text lighten-4 right"><i class="material-icons">menu</i></a>
         <a href="/"><img class="brand-logo" src="/TASC_logo.png"/></a>
+
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_student %>
             <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
