@@ -42,7 +42,9 @@
             <p></p>
           </div>
           <div class="card-tabs">
-
+            <% if @teacher.courses.count > 1 %>
+              <h6 class="dev-card-header">Course Assignment Overview<% if @teacher.courses.count > 1 %>s<% end %></h6>
+            <% end %>
             <!-- Code that establishes tabs for each course -->
             <ul class="tabs tabs-fixed-width">
               <% @teacher.courses.each do |c| %>
@@ -57,7 +59,8 @@
                   <div class="row">
 
                   <!-- Assignments -->
-                  <p class="col s8">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
+                  <h6><%= link_to "#{c.name} #{c.number}", course_path(c) %></h6>
+                  <p class="col s8">Assignments:</p>
                   <% if current_teacher %>
                     <p class="col s4"> Released:</p>
                   <% end %>

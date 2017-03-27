@@ -161,11 +161,15 @@ Student.all.each do |f|
   Student.get_profile_pic(f)
 end
 
-Course.second.students << [Student.first, Student.second, Student.third]
+Course.second.students << [Student.first, Student.second, Student.third, Student.last]
 
-Assignment.all.each do |f|
-  Course.first.assignments << f
-end
+Course.first.assignments << [Assignment.first, Assignment.second, Assignment.third, Assignment.last]
+Course.second.assignments << [Assignment.fourth, Assignment.fifth]
+
+# Assignment.all.each do |f|
+#   Course.first.assignments << f
+#   Course.second.assignments << f
+# end
 
 Teacher.all.each do |f|
   Course.first.teachers << f

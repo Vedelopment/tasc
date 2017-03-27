@@ -3,16 +3,22 @@
 <div class="container">
   <div class="row">
     <div class="col m6">
-      <h4><%= link_to "#{@course.name} #{@course.number}", course_path(@course) %></h4>
+      <h4>WDI 34</h4>
+      <% if current_student %>
+        <h6><%= link_to "Back to your profile", student_path(current_student) %></h6>
+      <% elsif current_teacher %>
+        <h6><%= link_to "Back to your profile", teacher_path(current_teacher) %></h6>
+      <% end %>
     </div>
       <div class="col m6 right-align">
-        <h5><%= link_to "Schedule", "#{@course.github}", class: "waves-effect waves-light btn red" %></h5>
+        <h5><%= link_to "Schedule", "#{@course.github}", class: "waves-effect waves-light btn green" %></h5>
 
       </div>
   </div>
   <div class="row">
-    <div class="col m7">
-      <h5><%= link_to "Assignments:", assignments_path(@course) %></h5>
+    <div class="col m6">
+      <h5>Assignments:</h5>
+      <h6><%= link_to "View All", assignments_path(@course) %></h6>
       <hr>
 
       <% @course.assignments.order(:assign_date).reverse.each do |a| %>
@@ -21,17 +27,17 @@
             <div class="col s8">
               <h6><%= link_to "#{a.title}", assignment_path(a) %></h6>
             </div>
-            <div class="col s3 offset-s1">
+            <div class="col s3 offset-m1">
               <%= a.due_date.strftime("Due on: %m/%d/%Y") %>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
-    <div class="col m5">
+    <div class="col m5 offset-m1">
       <div class="row">
         <div class="col s6 ">
-          <h5><%= link_to "Students:", students_path(@course) %></h5>
+          <h5>Students:</h5>
           <hr>
           <ol>
           <% @course.students.each do |s| %>
@@ -40,7 +46,7 @@
         </ol>
         </div>
         <div class="col s6">
-          <h5><%= link_to "Teachers:", teachers_path(@course) %></h5>
+          <h5>Teachers:</h5>
           <hr>
           <ol>
           <% @course.teachers.each do |t| %>
@@ -58,30 +64,34 @@
 
 
   <% if current_student && current_student.submissions.any? {|s| s.feedback} %>
-
-  <h5><%= link_to "Feedback:", feedbacks_path %></h5>
-  <hr>
-  <div class="row feedbacks">
-    <div class="col m8">
-      Feedback for:
-    </div>
-    <div class="col m3">
-      Score:
-    </div>
-
-
-      <%  current_student.submissions.each do |s| %>
-      <% if s.feedback %>
+  <div class="row">
+    <div class="col m6">
+      <h5>Feedback:</h5>
+      <h6><%= link_to "View All", feedbacks_path %></h6>
+      <hr>
+      <div class="row feedbacks">
         <div class="col m8">
-          <%= link_to "#{s.assignment.title}", feedback_path(s.feedback) %>
+          Feedback for:
         </div>
         <div class="col m3">
-          <%= link_to "#{s.feedback.score}", feedback_path(s.feedback)%>
+          Score:
         </div>
+
+
+          <%  current_student.submissions.each do |s| %>
+          <% if s.feedback %>
+            <div class="col m8">
+              <%= link_to "#{s.assignment.title}", feedback_path(s.feedback) %>
+            </div>
+            <div class="col m3">
+              <%= link_to "#{s.feedback.score}", feedback_path(s.feedback)%>
+            </div>
+            <% end %>
+           <% end  %>
+          <% elsif current_student %>
+          <h6>Your feedback will appear here once provided.</h6>
         <% end %>
-       <% end  %>
-      <% elsif current_student %>
-      <h6>Your feedback will appear here once provided.</h6>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
