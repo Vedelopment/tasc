@@ -54,12 +54,22 @@
             <div class="card-content grey lighten-4">
               <% @teacher.courses.each do |c| %>
 
+
               <!-- Code for content of each course card -->
                 <div id="<%= c.id %>">
                   <div class="row">
 
-                  <!-- Assignments -->
+                  <!-- Course Title -->
                   <h6><%= link_to "#{c.name} #{c.number}", course_path(c) %></h6>
+
+                  <!-- If current_teacher, make new assignment -->
+                  <% if current_teacher %>
+                    <div class="make-new col m6">
+                      <%= link_to "Create a new Assignment", new_assignment_path(c), :class =>"btn green-submit-style right" %>
+                    </div>
+                  <% end %>
+
+                  <!-- Assignments -->
                   <p class="col s8">Assignments:</p>
                   <% if current_teacher %>
                     <p class="col s4"> Released:</p>
