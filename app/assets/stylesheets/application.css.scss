@@ -71,7 +71,8 @@ ul {
 }
 
 .dev-card-header {
-    color: rgba(0,0,0,.3);
+    font-size: 1.3em;
+    color: rgba(0,0,0,.5);
     margin: 0 0 1em;
     text-align: center;
 }
@@ -170,6 +171,29 @@ table.dev-table td {
 .tabs {
     overflow-x: hidden!important;
 }
+
+.tabs .indicator {
+    background-color: rgba(0,0,0,0.8)!important;
+}
+
+.tabs .tab a.active {
+    background-color: rgba(0,0,0,0)!important;
+    color: rgba(0,0,0,0.5)!important;
+}
+
+.tabs .tab a:hover {
+    background-color: rgba(0,0,0,0)!important;
+    color: rgba(0,0,0,0.5)!important;
+}
+
+.tabs .tab a {
+    font-size: 1.8em!important;
+    background-color: rgba(0,0,0,0)!important;
+    color: rgba(0,0,0,0.5)!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+
 /////////////////////  D3 Styles  /////////////////////////
 div.bar {
     display: inline-block;
