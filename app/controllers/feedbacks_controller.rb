@@ -13,6 +13,8 @@ class FeedbacksController < ApplicationController
 
   def show
     @feedback = Feedback.find_by_id(params[:id])
+    @submission = @feedback.submission
+    @assignment = @submission.assignment
     if current_student != @feedback.submission.student
       redirect_to student_path(current_student)
     end
@@ -21,10 +23,13 @@ class FeedbacksController < ApplicationController
   def new
     @feedback = Feedback.new
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def edit
     @feedback = Feedback.find_by_id(params[:id])
+    @submission = @feedback.submission
+    @assignment = @submission.assignment
   end
 
   def create
