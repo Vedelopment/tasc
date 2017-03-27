@@ -16,8 +16,9 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="nav-wrapper">
-        <a href="#" data-activates='dropdown2' class="button-collapse dropdown-button grey-text lighten-4"><i class="material-icons">menu</i></a>
-        <a href="/"><img class="brand-logo" src="/TASC_logo_2.png"/></a>
+        <a href="#" data-activates='dropdown2' class="button-collapse dropdown-button grey-text lighten-4 right"><i class="material-icons">menu</i></a>
+        <a href="/"><img class="brand-logo" src="/TASC_logo.png"/></a>
+
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_student %>
             <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
@@ -49,7 +50,7 @@
               <% end %>
             </ul>
           <% end %>
-        <ul class="dropdown-content" id="dropdown2">
+        <ul class="dropdown-content right" id="dropdown2">
           <% if current_student %>
             <li><%= link_to "#{current_student.first_name}", student_path(current_student) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
