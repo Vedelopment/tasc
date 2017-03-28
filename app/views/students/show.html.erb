@@ -1,5 +1,4 @@
 <!-- Student Profile Page -->
-
 <div class="container">
 
   <!-- Page Row One -->
@@ -10,10 +9,10 @@
       <div class="dev-bio-info">
         <img src="<%= @student.profile_image %>" alt="profile" class="profile_image">
       </div>
+
+      <!-- Profile Information -->
       <div class="dev-bio-info">
         <div>
-
-          <!-- Profile Information -->
           <table class="dev-table">
             <tr>
               <td><b>Name: </b></td>
@@ -72,24 +71,23 @@
             </ul>
             </br>
             </br>
+
             <!-- Course Content -->
             <% @student.courses.each do |c| %>
               <div class="card-content">
 
                 <!-- Course id assign for each tab -->
                 <div id="<%= c.id %>">
-                  <div>
-                    <div class="row">
+                  <div class="row">
 
-                      <!-- Title -->
-                      <div class="col m6">
-                        <h5><%= link_to "View Course #{c.name} #{c.number}", course_path(c) %></h5>
-                      </div>
+                    <!-- Course Title -->
+                    <div class="col m6">
+                      <h5><%= link_to "View Course #{c.name} #{c.number}", course_path(c) %></h5>
+                    </div>
 
-                      <!-- Schedule Link -->
-                      <div class="col m6 right-align">
-                        <h6><%= link_to "Schedule", "#{c.github}", class: "waves-effect waves-light btn green-submit-style" %></h6>
-                      </div>
+                    <!-- Schedule Link -->
+                    <div class="col m6 right-align">
+                      <h6><%= link_to "Schedule", "#{c.github}", class: "waves-effect waves-light btn green-submit-style" %></h6>
                     </div>
                   </div>
 

@@ -32,7 +32,8 @@ ul {
 .assignments {
     box-shadow: 0 5px 7px 3px rgba(0,0,0,.05), 0 5px 7px -2px rgba(0,0,0,.06);
     border-radius: 0.3em;
-    padding: 4px 2px 2px 2px;
+    padding: 1em 1em 0.5em 1em;
+    margin: 1em;
 }
 
 .feedbacks {
@@ -58,6 +59,10 @@ ul {
 
 .green-submit-style {
     background-color: #0BE000!important;
+}
+
+.teacher-button-style {
+    background-color: #FA4542!important;
 }
 
 .form-style h4 {
@@ -95,13 +100,11 @@ ul {
     margin: 0 auto !important;
 }
 
-.teacher-button-style {
-    background-color: #FA4542!important;
-}
-
 .about-pic {
-    width: 90%;
-    border-radius: 20px;
+    display: inline-block;
+    width: 140px;
+    border-radius: 100%;
+    margin: 0 3em;
 }
 
 .about-pic:hover {
@@ -125,8 +128,21 @@ ul {
     margin: 10px;
 }
 
+.dev-about {
+    max-width: 40%;
+    margin: 2em auto;
+}
+
+.dev-bio-text {
+    display: inline-block;
+    // height: 600px;
+    vertical-align: top;
+    width: 22%;
+    margin: 1em;
+}
+
 .profile_image {
-    height: 150px;
+    width: 150px;
     display: block;
     position: relative;
     border-radius: 100%;
@@ -195,6 +211,11 @@ table.dev-table td {
     margin: 0!important;
 }
 
+.btn {
+    font-size: 12px;
+    padding: 0 1.2em!important;
+}
+
 /////////////////////  D3 Styles  /////////////////////////
 div.bar {
     display: inline-block;
@@ -205,19 +226,19 @@ div.bar {
 }
 
 .chart-container {
-    margin: 3em 3em 3em 0;
+  // border: 2px solid black;
+  padding: 16px 10px 10px 10px;
+  max-width: 95%;
+}
+
+.dev-graph-div {
+  // width: 100%
 }
 
 #graphBar {
-    border: 2px solid black;
-    padding: 10px;
-    width: 300px;
 }
 
 #graphCircle {
-    border: 2px solid black;
-    padding: 10px;
-    width: 400px;
 }
 //////////////////// Media Query Breakpoints ////////////////
 @media (max-width: 1000px) {
