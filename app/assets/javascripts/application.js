@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// = require turbolinks
 //= require jquery.turbolinks
-//= require_tree .
 //= require materialize-sprockets
 //= require rails.validations
 //= require d3
+//= require_tree .

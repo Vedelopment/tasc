@@ -1,21 +1,42 @@
 var dataset = [];                        //Initialize empty array
 
 $( document ).ready(function() {
-    $.get('http://localhost:3000/feedbacks')
-    .then(function(success){
-      success.forEach(function(elem) {
-        dataset.push(Math.floor(elem.score+1));
-      })
-      viz(dataset);
-    })
-    .catch(function(error){
-      console.error(error);
-    })
-    .always(function(andForever) {
-    })
-    viz();
+  $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: 'http://localhost:3000/feedbacks',
+            dataType: 'json',
+            success: function (feedbacks) {
+                    feedbacks.forEach(function(feedback) {
+                      dataset.push(feedback.score+1);
+                    })
+                    viz(dataset);
+            },
+            error: function (error) {
+              console.log("error retrieving data");
+            }
+    });
 });
 
+// // $(document).on('ready page:load', function () { //This version works the same as .ready but does not solve error messages
+// // $(document).on('turbolinks:load', function() { // This version doe not remove divs and keeps adding to graph
+//     d3.select("#graphBar").selectAll("div").remove();
+//     console.log("removed");
+//
+//     $.get('http://localhost:3000/feedbacks')
+//     .then(function(success){
+//       success.forEach(function(elem) {
+//         dataset.push(elem.score+1);
+//       })
+//       viz(dataset);
+//     })
+//     // .catch(function(error){
+//     //   console.log("I am an error turtle");
+//     // })
+//     .always(function(andForever) {
+//       console.log(".always");
+//     })
+//     viz();
 
   var viz = function(dataset){
     d3.select("#graphBar").selectAll("div")
