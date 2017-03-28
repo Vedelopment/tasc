@@ -58,7 +58,8 @@ ul {
 }
 
 .green-submit-style {
-    background-color: #0BE000!important;
+    background-color: #FA4542!important;
+    // background-color: #0BE000!important;
 }
 
 .teacher-button-style {
@@ -275,7 +276,7 @@ div.bar {
 }
 @media (max-width: 601px) {
     .profile_image {
-        height: 100px;
+        width: 100px;
     }
 
     .summary-style {

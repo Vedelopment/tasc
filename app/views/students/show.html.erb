@@ -120,7 +120,7 @@
                                 <% end %>
                                 <% end %>
                                 <!-- Determines if not submitted -->
-                                <% if @submissions.exists?({assignment_id: a.id}) == false %>
+                                <% if @submissions.exists?({assignment_id: a.id}) == false && @display %>
                                   <li>Not Submitted</li>
                                 <% end %>
                               </ul>
