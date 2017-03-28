@@ -1,15 +1,80 @@
 <div class="container">
-  <h5>Feedback for <%= link_to "#{@feedback}", feedbacks_path %></h5>
   <div class="row">
-    <div class="col s11">
-      <h6>Feedback:</h6>
-      <hr>
-      <%= @feedback.content %>
+
+    <!-- Section for showing the feedback -->
+    <div class="col m5">
+      <br>
+      <br>
+      <h5>Feedback for <%= link_to "#{@assignment.title}", assignment_path(@assignment) %></h5>
+      <div class="row">
+        <div class="col s11">
+          <h6>Feedback:</h6>
+          <hr>
+          <%= @feedback.content %>
+        </div>
+        <div class="col s1">
+          <h6>score</h6>
+          <hr>
+          <span class="right"><%= @feedback.score %></span>
+        </div>
+      </div>
     </div>
-    <div class="col s1">
-      <h6>score</h6>
-      <hr>
-      <span class="right"><%= @feedback.score %></span>
+
+
+    <!-- Tabbed Card for Assignment/Submission View -->
+    <div class="col m6 offset-m1">
+      <br>
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <p></p>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a href="#test4">Assignment</a></li>
+              <li class="tab"><a class="active" href="#test5">Submission</a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4">
+
+            <!-- Section for showing the assignment. -->
+            <div id="test4">
+              <div class="row">
+                <h4><%= @assignment.title %></h4>
+                <h6><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %></h6>
+                <hr>
+                <h5>Instructions:</h5>
+                <p><%= @assignment.instructions %></p>
+                <hr>
+
+                <div class="left">
+                  Estimated duration: <%= @assignment.duration %>
+                </div>
+                <div class="right">
+                  <%= @assignment.assign_date.strftime("Assigned on: %m/%d/%Y") %>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Section for showing the assignment -->
+            <div id="test5">
+              <div class="row">
+                <h4 class="center">Your Submitted Homework</h4>
+                <br>
+                <div class="col m12">
+                  <%= @submission.content %>
+                </div>
+                <br>
+                <br>
+                <div class="col m12">
+                  <h6><%=link_to "Submission Link", @submission.link %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

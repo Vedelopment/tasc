@@ -23,7 +23,13 @@ class Student < ApplicationRecord
   end
 
   def self.get_github_img (github_user)
-    github_username = Student.parse_github_username(github_user)
+    if github_user.include? "http"
+      github_username = Student.parse_github_username(github_user)
+    elsif github_user == ""
+      github_username = "image"
+    else
+      github_username = github_user
+    end
     response = HTTParty.get('https://api.github.com/users/' + github_username)
     return response["avatar_url"]
   end
@@ -33,4 +39,5 @@ class Student < ApplicationRecord
     username = temp_array[temp_array.length - 1]
     return username
   end
+
 end

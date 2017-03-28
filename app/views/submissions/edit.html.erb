@@ -1,0 +1,41 @@
+
+<br>
+<br>
+<div class="row">
+  <div class="row">
+    <div class="col m3 offset-m1 summary-style">
+      <h4 class="center">Assignment</h4>
+      <br>
+      <div class="col s12">
+        <h5><%= "#{@assignment.title}" %></h5>
+        <hr>
+        <p class="center"><b>Instructions</b></p>
+        <p><%= "#{@assignment.instructions}" %></p>
+        <br>
+        <%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %>
+      </div>
+    </div>
+    <div class="col m8">
+      <div class="col m9 offset-m1 form form-style">
+        <h4 class="center">Edit Your Homework</h4>
+        <br>
+        <%= form_for @submission, url: {action: 'update', id: @submission.id}, validate: true do |f| %>
+          <div class="col m12">
+            Insert your solution for the assignment here:
+            <br>
+            <%= f.text_area :content, class: "form-control materialize-textarea" %>
+          </div>
+          <div class="col m12">
+            Link:
+            <br>
+            <%= f.text_field :link, class: "form-control" %>
+          </div>
+          <div class="col s12 center">
+            <%= f.submit "Save Submission", class: "waves-effect btn waves-light form-button green-submit-style" %>
+            <br><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

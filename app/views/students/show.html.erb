@@ -1,93 +1,146 @@
 <!-- Student Profile Page -->
-
 <div class="container">
-  <br>
+
+  <!-- Page Row One -->
   <div class="row">
-    <div class="col m4 profile-style">
-      <img src="<%= @student.profile_image %>" alt="profile" class="center">
-      <div class="row">
-        <div class="col s4">
-          <p> First: </p>
-          <p> Last: </p>
-          <p> User Name: </p>
-          <p> Email: </p>
-          <p> Slack: </p>
-          <p> Github: </p>
-          <p> Linkedin: </p>
-        </div>
-        <div class="col s8 center">
-          <p><%=@student.first_name %></p>
-          <p><%=@student.last_name %></p>
-          <p><%=@student.user_name %></p>
-          <p><%=@student.email %></p>
-          <p><%=@student.slack %></p>
-          <p><%=@student.github %></p>
-          <p><%=@student.linkedin %></p>
-        </div>
+
+    <!-- Student Profile Area -->
+    <div class="col s14 summary-style">
+      <div class="dev-bio-info">
+        <img src="<%= @student.profile_image %>" alt="profile" class="profile_image">
       </div>
-      <div class="row">
-        <div class="col s12 center">
-          <% if @student == current_student %>
-          <%= link_to "Edit", edit_student_path(current_student), class:"btn form-submit-style" %>
-          <% end %>
+
+      <!-- Profile Information -->
+      <div class="dev-bio-info">
+        <div>
+          <table class="dev-table">
+            <tr>
+              <td><b>Name: </b></td>
+              <td><%=@student.first_name %> <%=@student.last_name%></td>
+            </tr>
+            <tr>
+              <td><b>User Name: </b></td>
+              <td><%=@student.user_name %></td>
+            </tr>
+            <tr>
+              <td><b>Email: </b></td>
+              <td><%=@student.email %></td>
+            </tr>
+            <tr>
+              <td><b>Slack: </b></td>
+              <td><%= @student.slack %></td>
+            </tr>
+            <tr>
+              <td><b>Github: </b></td>
+              <td><%= link_to @student.github, "https://github.com/#{@student.github}" %></td>
+            </tr>
+            <tr>
+              <td><b>LinkedIn: </b></td>
+              <td><%= link_to @student.linkedin, "https://www.linkedin.com/#{@student.linkedin}" %></td>
+            </tr>
+          </table>
+
+          <!-- Edit Profile Button -->
+          <p>
+            <% if @student == current_student %>
+            <%= link_to "Edit Profile", edit_student_path(current_student)%>
+            <% end %>
+          </p>
+
         </div>
       </div>
     </div>
+    <!-- End of Student Profile Area -->
 
+    <!-- Course Overview Card Tabs -->
+    <div class="col m8 offset-s1 dev-course-card">
+      <div class="col s11 offset-m3">
+        <div class="col m12">
 
-<!-- Card with Tabs for each course -->
-    <div class="col m8">
-      <div class="col s11 offset-s1">
-        <div class="card">
+          <!-- Card Title -->
           <div class="card-content">
-            <p></p>
+            <h6 class="dev-card-header">Course Assignment Overview<% if @student.courses.count > 1 %>s<% end %></h6>
           </div>
-          <div class="card-tabs">
 
-            <!-- Code that establishes tabs for each course -->
+          <!-- Create Course Tabs -->
+          <div class="card-tabs">
             <ul class="tabs tabs-fixed-width">
               <% @student.courses.each do |c| %>
-              <li class="tab"><%=link_to "#{c.name} #{c.number}", "##{c.id}"%></li>
+                <li class="tab"><%=link_to "#{c.name} #{c.number}", "##{c.id}"%></li>
               <% end %>
             </ul>
-            <div class="card-content grey lighten-4">
-              <% @student.courses.each do |c| %>
+            </br>
+            </br>
 
-              <!-- Code for content of each course card -->
-              <div id="<%= c.id %>">
-                <div class="row">
+            <!-- Course Content -->
+            <% @student.courses.each do |c| %>
+              <div class="card-content">
+
+                <!-- Course id assign for each tab -->
+                <div id="<%= c.id %>">
+                  <div class="row">
+
+                    <!-- Course Title -->
+                    <div class="col m6">
+                      <h5><%= link_to "View Course #{c.name} #{c.number}", course_path(c) %></h5>
+                    </div>
+
+                    <!-- Schedule Link -->
+                    <div class="col m6 right-align">
+                      <h6><%= link_to "Schedule", "#{c.github}", class: "waves-effect waves-light btn green-submit-style" %></h6>
+                    </div>
+                  </div>
 
                   <!-- Assignments -->
-                  <p class="col s8">Assignments for <%= link_to "#{c.name} #{c.number}", course_path(c) %>:</p>
-                  <p class="col s4"> Submitted:</p>
-                  <br>
-                  <br>
-                  <%c.assignments.each do |a|%>
-                  <p class="col m8">
-                    <%= a.due_date.strftime("%m/%d/%Y") %> -
-                    <%=link_to "#{a.title}", assignment_path(a) %>
-                  </p>
+                  <h5><%= link_to "Assignments:", assignments_path(c) %></h5>
+                  <hr>
+                  <div class="row">
+                    <div class="col s12">
 
-                  <!-- Determines if submitted -->
-                  <p class="col m1"> <!-- This <p> must remain BEFORE the if -->
-                    <% if @submissions.find_by({assignment_id: a.id}) %>
-                    X
-                  </p>
-                  <!-- Feedback if provided -->
-                  <p class="col m3">
-                    <%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %>
-                    <% end %>
-                  </p> <!-- This </p> must come AFTER the end -->
-                  <% end %>
+                      <!-- Display each in reverse order -->
+                      <% c.assignments.order(:assign_date).reverse.each do |a| %>
+                        <% if a.visible === true  %>
+                          <div class ="row assignments">
+
+                            <!-- Assignment Title and Date -->
+                            <div class="col s6 left-align">
+                              <h6><%= link_to "#{a.title}", assignment_path(a) %></h6>
+                              <p><%= a.due_date.strftime("Due on: %m/%d/%Y") %></p>
+                            </div>
+
+                            <!-- Assignment Submission and Feedback -->
+                            <div class="col s6 right-align">
+                              <!-- Determines if submitted -->
+                              <ul>
+                                <% if @submissions.exists?({assignment_id: a.id}) == true && @display %>
+                                  <li>Submitted</li>
+                                <!-- Determines if feedback exists and shows link -->
+                                <% if @submissions.find_by({assignment_id: a.id}).feedback %>
+                                  <li><%=link_to "Feedback", feedback_path(@submissions.find_by({assignment_id: a.id}).feedback) %></li>
+                                <% end %>
+                                <% end %>
+                                <!-- Determines if not submitted -->
+                                <% if @submissions.exists?({assignment_id: a.id}) == false && @display %>
+                                  <li>Not Submitted</li>
+                                <% end %>
+                              </ul>
+                            </div>
+
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <% end %>
+            <% end %>
+            <!-- End of Course Content -->
 
-            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- End of Course Overview Card -->
 
   </div>
 </div>

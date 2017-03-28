@@ -1,26 +1,35 @@
 class FeedbacksController < ApplicationController
 
+  before_filter :require_login
+
   def index
-    # @student = Student.find_by_id(params[:id])
     @feedback = Feedback.all
 
-    # respond_to do |format|
-    #   format.json { render :json => @feedback .to_json }
-    #   format.html
-    # end
+    respond_to do |format|
+      format.json { render :json => @feedback .to_json }
+      format.html
+    end
   end
 
   def show
     @feedback = Feedback.find_by_id(params[:id])
+    @submission = @feedback.submission
+    @assignment = @submission.assignment
+    if current_student != @feedback.submission.student
+      redirect_to student_path(current_student)
+    end
   end
 
   def new
     @feedback = Feedback.new
     @submission = Submission.find_by_id(params[:id])
+    @assignment = @submission.assignment
   end
 
   def edit
     @feedback = Feedback.find_by_id(params[:id])
+    @submission = @feedback.submission
+    @assignment = @submission.assignment
   end
 
   def create
@@ -54,7 +63,7 @@ class FeedbacksController < ApplicationController
   def destroy
     @feedback = Feedback.find_by_id(params[:id])
     @feedback.delete
-    # redirect_to current_teacher
+    redirect_to current_teacher
   end
 
   private

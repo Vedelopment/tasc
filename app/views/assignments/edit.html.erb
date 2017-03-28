@@ -15,7 +15,7 @@
       <div class="col m12">
         Instructions:
         <br>
-        <%= f.text_field :instructions, class: "form-control" %>
+        <%= f.text_area :instructions, class: "form-control materialize-textarea" %>
       </div>
       <div class="col m12">
         Due Date:
@@ -38,7 +38,7 @@
       </div>
       <div class="col m6 offset-m3">
         <br>
-        <%= f.submit "Save assignment", class: "waves-effect waves-light btn form-button form-submit-style" %>
+        <%= f.submit "Save assignment", class: "waves-effect waves-light btn form-button green-submit-style" %>
         <br><br>
       </div>
       <% end %>

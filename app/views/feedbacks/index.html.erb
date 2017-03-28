@@ -1,0 +1,45 @@
+<div class="container">
+  <h4>Submission Feedback</h4>
+
+  <div class="row">
+
+    <!-- d3 viz charts -->
+    <div class="col m6">
+      <!-- bar graph -->
+      <div class="assignments">
+        <h5>Bar:</h5>
+        <div id="graphBar" class="chart-container"></div>
+        <h6>Student Progress as Bar Chart</h6>
+        <br>
+      </div>
+      <!-- bubble graph -->
+      <div class="assignments">
+        <h5>Bubble:</h5>
+        <div id="graphCircle" class="chart-container"></div>
+        <h6>Student Progress as Bubbles</h6>
+      </div>
+    </div>
+
+    <div class="col m6">
+      <div class="row">
+        <% @feedback.each do |f| %>
+          <div class="row assignments">
+            <div class="col m10">
+              <h6>Feedback:</h6>
+              <hr>
+              <%= f.content %>
+            </div>
+            <div class="col m2">
+              <h6>Score:</h6>
+              <hr>
+              <span><%= f.score %></span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
