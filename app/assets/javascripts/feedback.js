@@ -5,7 +5,7 @@ $( document ).ready(function() {
   $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: 'http://localhost:3000/feedbacks',
+            url: 'https://floating-lowlands-88571.herokuapp.com/feedbacks',
             dataType: 'json',
             success: function (feedbacks) {
                     feedbacks.forEach(function(feedback) {
