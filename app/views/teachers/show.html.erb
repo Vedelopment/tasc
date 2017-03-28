@@ -92,9 +92,11 @@
                       <div class="col m6">
                         <h5><%= link_to "Assignments:", assignments_path(c) %></h5>
                       </div>
-                      <div class="col m6 right-align">
-                        <h6><%= link_to "Create Assignment", new_assignment_path(c), class: "waves-effect waves-light btn green-submit-style" %></h6>
-                      </div>
+                      <% if current_teacher %>
+                        <div class="col m6 right-align">
+                          <h6><%= link_to "Create Assignment", new_assignment_path(c), class: "waves-effect waves-light btn green-submit-style" %></h6>
+                        </div>
+                      <% end %>
                     </div>
                   </div>
 
