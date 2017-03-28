@@ -1,11 +1,12 @@
 var dataset = [];
+var data_url = 'https://floating-lowlands-88571.herokuapp.com/feedbacks';
 
 $( document ).ready(function() {
 // $(document).on('page:change', function() {
   $.ajax({
             type: "GET",
             contentType: "application/json; charset=utf-8",
-            url: 'http://localhost:3000' || 'https://floating-lowlands-88571.herokuapp.com/feedbacks',
+            url: data_url,
             dataType: 'json',
             success: function (feedbacks) {
                     feedbacks.forEach(function(feedback) {
