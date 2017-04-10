@@ -9,7 +9,7 @@
 - password: GAisnum1
 
 ##### Teacher Account:
-- email: GA@student.com
+- email: GA@teacher.com
 - password: GAisnum1
 
 #### Elevator Pitch:
