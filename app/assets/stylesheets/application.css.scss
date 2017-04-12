@@ -154,6 +154,11 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.teacher-account, .student-account {
+  border: 1px solid black;
+  margin: 5px;
+}
 ////////////////////  Overwrite Materialize  /////////////////////
 .container {
     width: 95%!important;
