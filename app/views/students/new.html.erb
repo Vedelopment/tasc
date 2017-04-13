@@ -2,8 +2,11 @@
 
 <div class="container">
   <div class="row">
-    <br>
-    <br>
+    <div class="new-user-note col m6 offset-m3">
+      <p>This application is in an alpha state.  To make the exploration process easier the login page has details for logging in with accounts that have populated data.</p>
+    </div>
+  </div>
+  <div class="row">
     <div class="col m6 offset-m3 form form-style">
       <h4>Create your Student Account</h4>
       <%= form_for [@course, @student], url: new_student_path, validate: true do |f| %>

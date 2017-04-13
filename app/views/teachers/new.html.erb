@@ -1,5 +1,10 @@
 <h1>New Teacher page</h1>
 <div class="row">
+  <div class="new-user-note col m6 offset-m3">
+    <p>This application is in an alpha state.  To make the exploration process easier the login page has details for logging in with accounts that have populated data.</p>
+  </div>
+</div>
+<div class="row">
   <div class="col m6 offset-m3 form">
     <%= form_for [@course, @teacher], url: new_teacher_path, validate: true do |f| %>
       <div class="col m12">
