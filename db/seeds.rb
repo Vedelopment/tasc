@@ -26,14 +26,14 @@ student_data = [
   {first_name:"Benjamin",last_name:"Payne",user_name:"bpayne7",email:"bpayne7@ucoz.com",password:"JbmEU7Hpla6U",slack:"bpayne7",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
   {first_name:"Sandra",last_name:"Stone",user_name:"sstone8",email:"sstone8@tumblr.com",password:"9Lksr7iwajF",slack:"sstone8",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
   {first_name:"Brandon",last_name:"Mendoza",user_name:"bmendoza9",email:"bmendoza9@utexas.edu",password:"XmwD1gdE",slack:"bmendoza9",github:"devtestaccount",linkedin:"school/15248519?pathWildcard=15248519"},
-  {first_name: "GA",last_name: "Student",user_name: "GA-Student",email: "GA@student.com",password: "GAisnum1",slack: "GA-Student",github: "devtestaccount",linkedin: "school/15248519?pathWildcard=15248519"}
+  {first_name: "Student",last_name: "at GA",user_name: "GA-Student",email: "GA@student.com",password: "GAisnum1",slack: "GA-Student",github: "devtestaccount",linkedin: "school/15248519?pathWildcard=15248519"}
 ]
 Student.create(student_data)
 
 teacher_data = [
   {first_name:"Margaret",last_name:"Sullivan",user_name:"msullivan0",email:"msullivan0@cisco.com",password:"J2CUN15C7pMt",slack:"msullivan0",github:"devtestaccount"},
   {first_name:"Catherine",last_name:"Hicks",user_name:"chicks1",email:"chicks1@nifty.com",password:"aBgyiJi9",slack:"chicks1",github:"devtestaccount"},
-  {first_name: "GA",last_name: "Teacher",user_name: "GA-Teacher",email: "GA@teacher.com",password: "GAisnum1",slack: "GA-Teacher",github: "devtestaccount"}
+  {first_name: "Teacher",last_name: "at GA",user_name: "GA-Teacher",email: "GA@teacher.com",password: "GAisnum1",slack: "GA-Teacher",github: "devtestaccount"}
 ]
 Teacher.create(teacher_data)
 

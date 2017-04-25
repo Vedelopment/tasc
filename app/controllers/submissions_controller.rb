@@ -5,6 +5,7 @@ class SubmissionsController < ApplicationController
   def show
     @submission = Submission.find_by_id(params[:id])
     @assignment = @submission.assignment
+    @feedback = @submission.feedback || nil
   end
 
   def new

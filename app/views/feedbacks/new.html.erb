@@ -1,8 +1,10 @@
 <!-- Form for feedback creation -->
 <div class="container">
-  <h4><b>Give Feedback</b></h4>
+  <br>
+  <br>
   <div class="row">
-    <div class="col m6 offset-m3 form form-style">
+    <div class="col m6 form form-style">
+      <h4><b>PROVIDE FEEDBACK</b></h4>
       <%= form_for [@submission, @feedback], url: create_feedback_path do |f| %>
         <div class="col m12">
           Score:
@@ -21,38 +23,59 @@
         </div>
       <% end %>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="row">
-    <div class="col m3 offset-m1 summary-style">
-      <h4 class="center">Assignment</h4>
+
+    <!-- Tabbed Card for Assignment/Submission View -->
+    <div class="col m6">
       <br>
-      <div class="col s12">
-        <h5><%= link_to "#{@submission.assignment.title}",  assignment_path(@submission.assignment)%></h5>
-        <hr>
-        <%= @submission.assignment.due_date.strftime("Due on: %m/%d/%Y") %>
-      </div>
-    </div>
-    <div class="col m8">
-      <div class="col m9 offset-m1 form form-style">
-        <h4 class="center">Student Homework</h4>
-        <br>
-        <div class="col m12">
-          <b>Student's Homework</b>
-          <br>
-          <%= @submission.content %>
-        </div>
-        <div class="col m12">
-          <% if @submission.link %>
-            <b>Link:</b>
-            <br>
-            <%= "#{@submission.link}"  %>
-          <% end %>
-          <hr>
-          <b>Created </b> <%= @submission.created_at.strftime("%m/%d/%Y") %>
-          <br>
-          <b>Edited </b> <%= @submission.updated_at.strftime("%m/%d/%Y") %>
+      <div class="row">
+        <div class="card">
+          <div class="card-content">
+            <p></p>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a href="#test4">Assignment</a></li>
+              <li class="tab"><a class="active" href="#test5">Submission</a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4">
+
+            <!-- Section for showing the assignment. -->
+            <div id="test4">
+              <div class="row">
+                <h4><%= @assignment.title %></h4>
+                <h6><%= @assignment.due_date.strftime("Due on: %m/%d/%Y") %></h6>
+                <hr>
+                <h5>Instructions:</h5>
+                <p><%= @assignment.instructions %></p>
+                <hr>
+
+                <div class="left">
+                  Estimated duration: <%= @assignment.duration %>
+                </div>
+                <div class="right">
+                  <%= @assignment.assign_date.strftime("Assigned on: %m/%d/%Y") %>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Section for showing the assignment -->
+            <div id="test5">
+              <div class="row">
+                <h5 class="center"><%= @submission.student.first_name %>'s Homework</h5>
+                <br>
+                <div class="col m12">
+                  <%= @submission.content %>
+                </div>
+                <br>
+                <br>
+                <div class="col m12">
+                  <h6><%=link_to "Submission Link", @submission.link %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
